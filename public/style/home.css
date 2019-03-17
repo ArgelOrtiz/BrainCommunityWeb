@@ -1,0 +1,53 @@
+
+form.search button,  form.search input[type=text] {
+  box-sizing:border-box;
+}
+
+form.search input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 70%;
+  background: #FFFFFF;
+}
+
+form.search button {
+
+  float:left;
+  width:20%;
+  padding:10px;
+  background:#00BFFF;
+  color:white;
+  font-size:17px;
+  border: 1px solid grey;
+  border-left:none;
+  cursor:pointer;
+}
+
+.logoBrain{
+  height:80px;
+  left: 30px;
+  top:0px;
+
+}
+
+form.search button:hover {
+  background: #00CFFF;
+}
+
+form.search::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.search{
+
+  top:20px;
+  right:90px;
+  left:90px;
+  position:absolute;
+  margin:auto;
+  max-width:400px;
+}
