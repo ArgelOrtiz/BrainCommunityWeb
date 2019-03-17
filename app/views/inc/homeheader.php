@@ -22,6 +22,10 @@
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
 
-      <button class="loginButton" type="button" name="button">Login</button>
+
+        <a href="<?php echo ROUTE_URL.'/Login';?>">
+          <button class="loginButton" type="button" name="button" onclick="">Login</button>
+        </a>
+
 
     </div>

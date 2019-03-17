@@ -25,12 +25,6 @@ form.search button {
   cursor:pointer;
 }
 
-.logoBrain{
-  height:80px;
-  left: 30px;
-  top:0px;
-
-}
 
 form.search button:hover {
   background: #00CFFF;
@@ -57,7 +51,39 @@ form.search::after {
 .categoryDiv{
 
   position: relative;
+  top:0px;
+  left: 0px;
+  width: 25%;
+  min-width: 150px;
+
 }
+/*vertical menu*/
+.categoryDiv{
+  position:relative;
+  width:200px;
+  top:0px;
+  left:0px;
+  background:#FFFFFF;
+}
+
+
+.categoryDiv a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.categoryDiv a:hover {
+  background-color: #ccc;
+}
+
+.categoryDiv a.active {
+  background-color: #00BFFF;
+  color: white;
+}
+
 
 /*banner*/
 #banner{
