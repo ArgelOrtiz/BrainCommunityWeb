@@ -10,9 +10,10 @@
     {
       // code...
     }
-
     public function index(){
-        $this->view('pages/login');
+      $data = '0';
+
+      $this->view('pages/login',$data);
 
     }
 
@@ -26,20 +27,37 @@
       $username = $_POST['username'];
       $password = $_POST['password'];
 
-      $result = $this->loginModel->login_user($username,$password);
+      $result = $this->loginModel->verifyUser($username);
 
       if ($result != null) {
         // code...
-        $this->controller('home');
 
+        if ($result->PASSWORD === $password) {
+          // code...
+          $this->controller('home');
+        }else{
+          //bad password
+          $this->controller('Login/badPass');
+        }
 
       }else{
-        // $data = 0;
-        $this->controller('Login');
-
+        //user doesn't exist
+        $this->controller('Login/badUser');
       }
 
+    }
 
+    public function badUser(){
+      $data = '1';
+
+      $this->view('pages/login',$data);
+
+    }
+
+    public function badPass(){
+      $data = '2';
+
+      $this->view('pages/login',$data);
     }
   }
 

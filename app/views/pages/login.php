@@ -13,17 +13,29 @@
         <h5 align="left">Nombre De Usuario</h5>
 
 
-        <h4 id="ValidationUserName">El usuario es obligatorio*</h4>
+        <h4 class="errText" id="ValidationUserName">El usuario es obligatorio*</h4>
         <input id="GeneralInput" type="text" name="username" /><br>
 
         <h5 align = "left">Contraseña</h5>
 
-        <h4 id="ValidationPassword">La contraseña es obligatoria*</h4>
+        <h4 class="errText" id="ValidationPassword">La contraseña es obligatoria*</h4>
         <input id="GeneralInput" type="password" name="password" value=""/>
 
         <br/><br/>
+        <?php
 
-        <h4 id="UsernameError">Usuario no encontrado</h4>
+        if ($data == '1') {
+          // code...
+          ?>
+          <h4>Usuario no encontrado</h4>
+          <?php
+        }else if($data == '2'){
+          // code...
+          ?>
+          <h4>Contraseña incorreta</h4>
+          <?php
+        }
+         ?>
 
         <br/><br/>
 

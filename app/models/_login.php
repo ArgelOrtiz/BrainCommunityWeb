@@ -7,12 +7,18 @@
       $this->db = new DataBase;
     }
 
-    public function login_user($username,$password){
+    public function login_user($id,$password){
 
-
-      $this->db->query("SELECT id FROM `ic_user` WHERE (username = '$username' and PASSWORD = '$password')");
+      $this->db->query("SELECT * FROM ic_user WHERE (id = '$id' and PASSWORD = '$password')");
 
       return $this->db->registry();
+    }
+
+    public function verifyUser($username){
+      $this->db->query("SELECT * FROM ic_user WHERE username = '$username'");
+
+      return $this->db->registry();
+
     }
 
 

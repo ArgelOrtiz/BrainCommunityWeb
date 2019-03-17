@@ -130,11 +130,13 @@ h3{
   margin-top:0px;
   margin-bottom:0px;
 }
+h4.errText{
+  visibility:hidden;
+}
 
 h4{
 
   color:red;
-  visibility:hidden;
   margin-top:0px;
   margin-bottom:0px;
   font-size: 10px;
