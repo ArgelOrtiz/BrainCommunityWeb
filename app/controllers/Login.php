@@ -34,6 +34,19 @@
 
         if ($result->PASSWORD === $password) {
           // code...
+          session_start();
+          $_SESSION['id'] = $result->id;
+          $_SESSION['email'] = $result->email;
+          $_SESSION['username'] = $result->username;
+          $_SESSION['first_name'] = $result->first_name;
+          $_SESSION['middle_name'] = $result->middle_name;
+          $_SESSION['last_name'] = $result->last_name;
+          $_SESSION['birthday'] = $result->birthday;
+          $_SESSION['country'] = $result->country;
+          $_SESSION['gender'] = $result->gender;
+
+
+
           $this->controller('home');
         }else{
           //bad password

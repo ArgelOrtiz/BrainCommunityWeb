@@ -21,11 +21,23 @@
         <input id="searchInput" type="text" placeholder="Search.." name="searchInput">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
+      <?php session_start(); ?>
 
+      <?php if ($_SESSION['id']!=null){ ?>
+
+        <a href="<?php echo ROUTE_URL.'/Login';?>">
+          <button class="loginButton" type="button" name="button" onclick="">Perfil</button>
+        </a>
+
+      <?php }else{ ?>
 
         <a href="<?php echo ROUTE_URL.'/Login';?>">
           <button class="loginButton" type="button" name="button" onclick="">Login</button>
         </a>
+
+      <?php } ?>
+
+
 
 
     </div>
