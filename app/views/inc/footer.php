@@ -1,11 +1,11 @@
 
-  <!-- <div class="footer">
+  <div class="footer">
 
     <h6>Brain Community</h6>
     <h6>Brain Corp.</h6>
     <h6>braincomunnity@gmail.com</h6>
 
-  </div> -->
+  </div>
 
   <script type="text/javascript" src="<?php echo ROUTE_URL; ?>/js/main.js"></script>
 

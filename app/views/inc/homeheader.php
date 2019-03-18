@@ -23,7 +23,7 @@
       </form>
       <?php session_start(); ?>
 
-      <?php if ($_SESSION['id']){ ?>
+      <?php if ($_SESSION){ ?>
 
         <a href="<?php echo ROUTE_URL.'/Profile';?>">
           <button class="loginButton" type="button" name="button" onclick="">Perfil</button>

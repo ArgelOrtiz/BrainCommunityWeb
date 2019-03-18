@@ -171,7 +171,8 @@ hr{
 /*footer*/
 
 .footer{
-  position:absolute;
+  margin-top: 20%;
+  position:relative;
   width: 100%;
   height:auto;
   background: #1C1C1C;
