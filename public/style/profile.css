@@ -1,0 +1,43 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  position: relative;
+  width: 80%;
+  left: 10%;
+  top: 20%;
+  right: 10%;
+  margin-top: 5%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.editProfile{
+  background: #1C1C1C;
+  color:#00BFFF;
+  border-color: #00BFFF;
+  height:30px;
+  width:150px;
+}
+
+button.editProfile:hover{
+  background: #00BFFF;
+  color:#1C1C1C;
+  border-color: #1C1C1C;
+}
+@media screen and (max-width:600px){
+  .editProfile{
+    width:50px;
+  }
+}
+
+td.editRow{
+text-align: center;
+}
