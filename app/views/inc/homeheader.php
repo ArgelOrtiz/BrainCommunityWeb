@@ -23,9 +23,9 @@
       </form>
       <?php session_start(); ?>
 
-      <?php if ($_SESSION['id']!=null){ ?>
+      <?php if ($_SESSION['id']){ ?>
 
-        <a href="<?php echo ROUTE_URL.'/Login';?>">
+        <a href="<?php echo ROUTE_URL.'/Profile';?>">
           <button class="loginButton" type="button" name="button" onclick="">Perfil</button>
         </a>
 

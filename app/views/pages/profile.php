@@ -1,1 +1,1 @@
-<h1>prueba de carga de vista profile</h1>
+﻿<?php  require ROUTE_APP.'/views/inc/header.php';?>

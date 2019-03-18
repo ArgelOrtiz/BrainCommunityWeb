@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Brain Community</title>
-
-
-    <link rel="stylesheet" type="text/css" href="..\Style\General.css"
-
-
-  </head>
-  <body id="BodyStyle">
+﻿<?php  require ROUTE_APP.'/views/inc/header.php';?>
     <form >
 
       <div id="Header">

@@ -22,6 +22,10 @@
 
     }
 
+    public function forgotPassword(){
+      $this->view('pages/forgot_password');
+    }
+
     public function login(){
       $this->loginModel = $this->model('_login');
       $username = $_POST['username'];
