@@ -46,21 +46,12 @@ form.search::after {
   max-width:400px;
 }
 
-/*categorias*/
 
-.categoryDiv{
-
-  position: relative;
-  top:0px;
-  left: 0px;
-  width: 25%;
-  min-width: 150px;
-
-}
 /*vertical menu*/
 .categoryDiv{
   position:relative;
-  width:200px;
+  min-width: 200px;
+  width:20%;
   top:0px;
   left:0px;
   background:#FFFFFF;
@@ -82,6 +73,12 @@ form.search::after {
 .categoryDiv a.active {
   background-color: #00BFFF;
   color: white;
+}
+
+@media screen and (max-width:800px){
+  .categoryDiv{
+    visibility:hidden;
+  }
 }
 
 

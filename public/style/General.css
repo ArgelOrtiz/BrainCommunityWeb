@@ -149,6 +149,12 @@ h5{
   margin-top:35px;
 }
 
+h6{
+  margin-bottom:5px;
+  margin-top:0px;
+
+}
+
 hr{
 
   margin-top:0px;
@@ -160,4 +166,16 @@ hr{
   height:80px;
   left: 30px;
   top:0px;
+}
+
+/*footer*/
+
+.footer{
+  position:absolute;
+  width: 100%;
+  height:auto;
+  background: #1C1C1C;
+  color:#FFFFFF;
+  left: 0px;
+  bottom:0px;
 }
