@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Brain Community</title>
-
     <style>
     #EditText{
 
@@ -16,8 +15,7 @@
 
   </head>
   <body >
-    <form>
-
+	<form name="Register"  method="post" action="<?php echo ROUTE_URL.'/Login/register'?>" onsubmit="return validar()">
       <div id="Header">
 
       </div>
