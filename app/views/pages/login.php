@@ -3,6 +3,7 @@
     <form name="Login"  method="post" action="<?php echo ROUTE_URL.'/Login/login'?>" onsubmit="return verifyLogin()">
 
       <div id="LeftBanner" >
+      
       </div>
 
       <div id="CenterBanner">
@@ -45,3 +46,5 @@
      </div>
 
     </form>
+
+    <?php  require ROUTE_APP.'/views/inc/footer.php';?>

@@ -35,4 +35,9 @@
         <td>_country_</td>
         <td class="editRow"> <button class="editProfile" type="button" name="button">Editar</button> </td>
       </tr>
+      <tr>
+        <th>Genero</th>
+        <td>_gemder_</td>
+        <td class="editRow"> <button class="editProfile" type="button" name="button">Editar</button> </td>
+      </tr>
     </table>

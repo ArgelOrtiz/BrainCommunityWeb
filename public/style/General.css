@@ -94,27 +94,24 @@ button.loginButton {
 }
 
 #LeftBanner{
-  width:35%;
-  height:calc(100% - 80px) ;
-  top:80px;
-  left:0px;
+
+  top: 0px;
+  left: 0px;
   position:absolute;
-  z-index:3;
-  text-align:start;
-  background:#c1c1c1;
-  background-position:right;
-  background-repeat:no-repeat;
+  width: 35%;
+  height:calc(100% - 80px);
+  background: #1C1C1C;
+  color:#FFFFFF;
+  bottom:0px;
   background-image:url('../Resource/fondo.jpg');
-  font-size: 10px;
 }
 
 #CenterBanner{
 
-  top:40%;
+  top:200px;
   left:50%;
   position:absolute;
   text-align:left;
-
 
 }
 body{
@@ -177,11 +174,21 @@ hr{
 /*footer*/
 
 .footer{
-  position:relative;
+  bottom: 0px;
+  left: 0px;
+  position:absolute;
   width: 100%;
   height:80px;
   background: #1C1C1C;
   color:#FFFFFF;
-  left: 0px;
-  bottom:0px;
+}
+
+
+/*visibility:hidden; en menos de 800px*/
+
+@media screen and (max-width:800px){
+  #LeftBanner{
+    visibility:hidden;
+  }
+
 }
