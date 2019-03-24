@@ -41,7 +41,7 @@
 
         <input id="GeneralButton" type="submit" name="Enter"/>
 	<br><br>
-	<a href="<?php echo ROUTE_URL.'/Login/register'?>">Registrate</a>
+	<a href="<?php echo ROUTE_URL.'/Register'?>">Registrate</a>
   <a href="<?php echo ROUTE_URL.'/Login/forgotPassword'?>">¿Olvido su contraseña?</a>
      </div>
 

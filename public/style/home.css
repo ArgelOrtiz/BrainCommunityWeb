@@ -104,5 +104,5 @@ form.search::after {
   left:0px;
   width: 100%;
   height: auto;
-
+  box-shadow: 0px 2px 10px #00BFFF;
 }

@@ -36,5 +36,4 @@
      </div>
 
     </form>
-  </body>
-</html>
+  <?php  require ROUTE_APP.'/views/inc/footer.php';?>

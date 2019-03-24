@@ -17,10 +17,6 @@
 
     }
 
-    public function register(){
-      $this->view('pages/register');
-
-    }
 
     public function forgotPassword(){
       $this->view('pages/forgot_password');
