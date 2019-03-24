@@ -3,7 +3,7 @@
 
   width:35%;
   height:70%;
-  top:80px;
+  top:0px;
   left:50px;
   z-index: 3;
   position:relative;
@@ -13,7 +13,7 @@
 }
 
 div.registerConteiner   input.EditText{
-    float:left;
+    left:0px;
     width:40%;
 }
 
@@ -80,9 +80,9 @@ button.loginButton {
 #RightBanner{
 
   width:35%;
-  height:95%;
-  top:5%;
-  right:0%;
+  height:calc(100% - 160px);
+  top:80px;
+  right:0px;
   position:fixed;
   z-index:1;
   text-align:start;
@@ -95,11 +95,11 @@ button.loginButton {
 
 #LeftBanner{
 
-  top: 0px;
+  top: 80px;
   left: 0px;
   position:absolute;
-  width: 35%;
-  height:calc(100% - 80px);
+  width: 30%;
+  height:calc(100% - 160px);
   background: #1C1C1C;
   color:#FFFFFF;
   bottom:0px;
@@ -109,7 +109,8 @@ button.loginButton {
 #CenterBanner{
 
   top:200px;
-  left:50%;
+  left:40%;
+  right:10%;
   position:absolute;
   text-align:left;
 
@@ -149,7 +150,7 @@ h4{
 h5{
 
   margin-bottom:5px;
-  margin-top:35px;
+  margin-top:25px;
 }
 
 h6{
@@ -187,7 +188,11 @@ hr{
 /*visibility:hidden; en menos de 800px*/
 
 @media screen and (max-width:800px){
-  #LeftBanner{
+  #LeftBanner, #RightBanner{
+    visibility:hidden;
+  }
+
+  .footer{
     visibility:hidden;
   }
 

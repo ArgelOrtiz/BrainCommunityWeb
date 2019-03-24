@@ -30,7 +30,14 @@
 
     }
 
-    public function search($data){
+    public function search(){
+
+      $posts = $this->postModel->getCategory();
+
+      $data = [
+        'title' => 'Bienvenido a community',
+        'posts' => $posts
+      ];
 
       $this->view('pages/home',$data);
 

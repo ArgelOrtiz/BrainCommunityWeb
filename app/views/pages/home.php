@@ -14,4 +14,6 @@
 
 </div>
 
+  </body>
+
 <?php  require ROUTE_APP.'/views/inc/footer.php';?>
