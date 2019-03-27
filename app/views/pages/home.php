@@ -12,8 +12,202 @@
 
   </div>
 
+  <div class="postsContainer">
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+    <div class="posts">
+        <h3 id="title">Titulo</h3>
+
+        <h6>Descripcion</h6>
+
+        <h5 id="category">Category</h5>
+    </div>
+
+  </div>
+
 </div>
 
-  </body>
-
-<?php  require ROUTE_APP.'/views/inc/footer.php';?>
+<?php  require ROUTE_APP.'/views/inc/homefooter.php';?>

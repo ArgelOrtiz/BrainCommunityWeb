@@ -19,15 +19,27 @@ class Register extends Controller
   public function check_in(){
     $this->registerModel = $this->model('_register');
 
-    $email = $_POST['email'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $name     = $_POST['name'];
-    $last_name  = $_POST['last_name'];
-    $middle_name  = $_POST['middle_name'];
-    $birthday   = $_POST['birthday'];
-    $country  = $_POST['country'];
-    $gender   = $_POST['gender'];
+
+    if ($_POST['gender'] == M) {
+      // code...
+      $newg = 2;
+    }elseif ($_POST['gender'] == F) {
+      // code...
+      $newg = 1;
+    }else {
+      // code...
+      $newg = 0;
+    }
+
+    $email        = $_POST['email'];
+    $username     = $_POST['username'];
+    $password     = $_POST['password'];
+    $name         = $_POST['name'];
+    $last_name    = $_POST['secondName'];
+    $middle_name  = $_POST['firstName'];
+    $birthday     = $_POST['birthday'];
+    $country      = $_POST['country'];
+    $gender       = $newg;
 
 
     $data =[
@@ -47,6 +59,7 @@ class Register extends Controller
     if ($result != null) {
       // code...
       $this->controller('Login');
+
     }else{
       $this->controller('Home');
     }

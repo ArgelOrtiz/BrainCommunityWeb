@@ -1,5 +1,5 @@
 ﻿<?php  require ROUTE_APP.'/views/inc/header.php';?>
-	<form name="Register"  method="post" action="<?php echo ROUTE_URL.'/Login/register'?>" onsubmit="return verifyRegister()">
+	<form name="Register"  method="post" action="<?php echo ROUTE_URL.'/Register/check_in'?>" onsubmit="return verifyRegister()">
       <div id="Header">
 
       </div>
@@ -20,10 +20,10 @@
     <input class="EditText" id="GeneralInput" type="text" name="email" value=""  /> <h4 class="errText" id="ValidationEmail">*</h4>
 
     <h5 align="left" >Nombre de usuario</h5>
-    <input class="EditText" id="GeneralInput" type="text" name="userName" value="" /> <h4 class="errText" id="ValidationUserName">*</h4>
+    <input class="EditText" id="GeneralInput" type="text" name="username" value="" /> <h4 class="errText" id="ValidationUserName">*</h4>
 
     <h5 align="left" >Contraseña</h5>
-    <input class="EditText" id="GeneralInput" type="password" name="pass" value="" /> <h4 class="errText" id="ValidationPass">*</h4>
+    <input class="EditText" id="GeneralInput" type="password" name="password" value="" /> <h4 class="errText" id="ValidationPass">*</h4>
 
     <h5 align="left" >Confirmar contraseña</h5>
     <input class="EditText" id="GeneralInput" type="password" name="confirmPass" /> <h4 class="errText" id="ValidationConfirmPass">*</h4>

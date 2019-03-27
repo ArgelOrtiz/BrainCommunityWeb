@@ -14,25 +14,30 @@ class _register
 
   public function register_user($data){
 
-    date_default_timezone_set('America/Mexico_City')
+    date_default_timezone_set('America/Mexico_City');
 
-    if ($data->country != null && $data->country != '') {
+    if(empty($data->country)) {
       // code...
-      $extracountry = $data->country :
-    }else{
       $extracountry = NULL ;
-    }
-
-    if ($data->gender != null && $data->gender != '') {
-      // code...
-      $extragender = $data->gender;
     }else{
-      $extragender = null;
-
+      $extracountry = $data['country'];
     }
-    $this->db->query(INSERT INTO `ic_user` VALUES (NULL, $data->email, $data->username, $data->password, $data->first_name, $data->middle_name, $data->last_name, $data->birthday, $extracountry, $extragender, '', date_default_timezone_get(), date_default_timezone_get(), 0, 0, 0, 0));
 
-    return $this->db->registry();
+    if (empty($data->gender)) {
+      // code...
+      $extragender = null;
+    }else{
+      $extragender = $data['gender'];
+    }
+
+    $currentdate = date('y-m-d');
+
+
+    $query = "INSERT INTO `ic_user` VALUES (NULL, '".$data['email']."', '".$data['username']."', '".$data['password']."', '".$data['name']."', '".$data['last_name']."', '".$data['middle_name']."', '".$data['birthday']."', '$extracountry', '0', 1, '$currentdate', '$currentdate', 0, 0, 0, 0)";
+
+    $this->db->query($query);
+
+    return $this->db->execute();
 
   }
 }

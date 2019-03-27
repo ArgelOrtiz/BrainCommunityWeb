@@ -1,11 +1,4 @@
-<html>
-<head>
-	<title>Post</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-
-<body>
-	<div id="header"></div>
+<?php  require ROUTE_APP.'/views/inc/header.php';?>
 	<div id="left"></div>
 	<div id="right"></div>
 	<div id="principal">
@@ -19,7 +12,7 @@
 
 	        <div class="container">
 	        	<div style="background:#e6e6e6;" class="row">
-	            	<div style="color:black; font-size: 13px;" class="col-sm">Nombre de usuario</div> 
+	            	<div style="color:black; font-size: 13px;" class="col-sm">Nombre de usuario</div>
 	            	<div style="color:black; font-size: 13px;" class="col-sm text-right">Fecha</div>
 	            </div>
 	   			<div style="background:#e6e6e6;" class="row">
@@ -44,10 +37,10 @@
 	            	<div style="color:black; font-size: 14;" class="col-sm text-justify">Descripción detallada de la pregunta.</div>
 	            </div>
 	            <div style="background:#e6e6e6;" class="row">
-	            	<div style="color:black; font-size: 13px;" class="col-sm">Nombre de usuario</div> 
+	            	<div style="color:black; font-size: 13px;" class="col-sm">Nombre de usuario</div>
 	            	<div style="color:black; font-size: 13px;" class="col-sm text-right">Fecha</div>
-	           		
-	           		
+
+
 	            </div>
 	            <div style="background:#e6e6e6;" class="row">
 	            	<button style="margin-bottom:20px; margin-left:10px; margin-right:10px;" class="col-sm"> A favor</button>
@@ -57,5 +50,5 @@
 
 		</div>  <!-- Container -->
 	</div>
-</body> 
+</body>
 </html>
