@@ -35,15 +35,16 @@
         if ($result->PASSWORD === $password) {
           // code...
           session_start();
-          $_SESSION['id'] = $result->id;
-          $_SESSION['email'] = $result->email;
-          $_SESSION['username'] = $result->username;
-          $_SESSION['first_name'] = $result->first_name;
-          $_SESSION['middle_name'] = $result->middle_name;
-          $_SESSION['last_name'] = $result->last_name;
-          $_SESSION['birthday'] = $result->birthday;
-          $_SESSION['country'] = $result->country;
-          $_SESSION['gender'] = $result->gender;
+          $_SESSION['id']           = $result->id;
+          $_SESSION['email']        = $result->email;
+          $_SESSION['username']     = $result->username;
+          $_SESSION['first_name']   = $result->first_name;
+          $_SESSION['middle_name']  = $result->middle_name;
+          $_SESSION['last_name']    = $result->last_name;
+          $_SESSION['birthday']     = $result->birthday;
+          $_SESSION['country']      = $result->country;
+          $_SESSION['gender']       = $result->gender;
+          $_SESSION['role']         = $result->role;
 
 
 
@@ -72,7 +73,19 @@
 
       $this->view('pages/login',$data);
     }
+
+    public function logout(){
+      session_start();
+
+      // remove all session variables
+      session_unset();
+
+      // destroy the session
+      session_destroy();
+
+      $this->controller('home');
+    }
+
+
   }
-
-
  ?>

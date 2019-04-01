@@ -167,6 +167,7 @@ hr{
 /*logo*/
 
 .logoBrain{
+  position:absolute;
   height:80px;
   left: 30px;
   top:0px;
@@ -196,4 +197,11 @@ hr{
     visibility:hidden;
   }
 
+  .icon-bar{
+    visibility:hidden;
+  }
+
+  .postsContainer{
+    left:2%;
+  }
 }

@@ -13,6 +13,6 @@
   define('ROUTE_URL','http://localhost:8080/BrainCommunityWeb');
 
   //nombre del sitio
-  define('NAME_SITE','_NAME_SITE');
+  define('NAME_SITE','Brain Community');
 
  ?>

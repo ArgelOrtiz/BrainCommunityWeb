@@ -19,6 +19,18 @@ class Register extends Controller
   public function check_in(){
     $this->registerModel = $this->model('_register');
 
+    $usernameValidation = $this->registerModel->verify_username($_POST['username']);
+    if ($usernameValidation->exist != 0) {
+      // code...
+      exit();
+    }
+
+    $emailValidation = $this->registerModel->verify_email($_POST['email']);
+    if ($emailValidation->exist != 0) {
+      // code...
+      exit();
+    }
+
 
     if ($_POST['gender'] == M) {
       // code...

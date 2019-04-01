@@ -25,9 +25,17 @@
 
       <?php if ($_SESSION){ ?>
 
-        <a href="<?php echo ROUTE_URL.'/Profile';?>">
-          <button class="loginButton" type="button" name="button" onclick="">Perfil</button>
-        </a>
+        <div class="icon-bar">
+        <a href="<?php echo ROUTE_URL.'/Profile';?>"><i class="fa fa fa-user"></i></a>
+
+        <?php if ($_SESSION['role'] == 0){ ?>
+        <a href="#"> <i class="	fa fa-suitcase"></i> </a>
+      <?php }?>
+
+        <a href="#"><i class="fa fa-file-o"></i></a>
+        <a href="#"><i class="fa fa-file-text"></i></a>
+        <a href="<?php echo ROUTE_URL.'/Login/logout'?>"><i class="fa fa-sign-out"></i></a>
+      </div>
 
       <?php }else{ ?>
 
@@ -36,7 +44,6 @@
         </a>
 
       <?php } ?>
-
 
 
 
