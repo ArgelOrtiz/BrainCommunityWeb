@@ -1,5 +1,6 @@
 <?php  require ROUTE_APP.'/views/inc/homeheader.php';?>
 
+
 <div class="mainContainer" >
 
   <img id="banner" src="<?php echo ROUTE_URL;?>/resource/ejemplo1.jpg" alt="">
@@ -14,199 +15,437 @@
 
   <div class="postsContainer">
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
+    <div class="card bg-light text-dark" id="posts">
 
-        <h6>Descripcion</h6>
+      <div class="category">
+        <img src="/categoria.jpg" alt=""/>
+      </div>
 
-        <h5 id="category">Category</h5>
+      <div class="identity">
+        <h5>Titulo</h5>
+      </div>
+
+      <div class="description">
+        <p> Descripcion............. </p>
+      </div>
+
+      <div class="extra">
+        <h6 class="coments">Comentarios</h1>
+        <h6 class="date">Fecha</h1>
+      </div>
+
     </div>
 
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
-
-        <h6>Descripcion</h6>
-
-        <h5 id="category">Category</h5>
-    </div>
-
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
-
-        <h6>Descripcion</h6>
-
-        <h5 id="category">Category</h5>
-    </div>
-
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
-
-        <h6>Descripcion</h6>
-
-        <h5 id="category">Category</h5>
-    </div>
-
-    <div class="posts">
-        <h3 id="title">Titulo</h3>
-
-        <h6>Descripcion</h6>
-
-        <h5 id="category">Category</h5>
-    </div>
+    <div class="container"><ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+  </div>
 
   </div>
+
 
 </div>
 

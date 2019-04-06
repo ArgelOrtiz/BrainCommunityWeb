@@ -130,10 +130,11 @@ h1{
 }
 
 h3{
-
   margin-top:0px;
   margin-bottom:0px;
 }
+
+
 h4.errText{
   visibility:hidden;
 }
@@ -163,6 +164,7 @@ hr{
 
   margin-top:0px;
 }
+
 
 /*logo*/
 
@@ -201,7 +203,4 @@ hr{
     visibility:hidden;
   }
 
-  .postsContainer{
-    left:2%;
-  }
 }
