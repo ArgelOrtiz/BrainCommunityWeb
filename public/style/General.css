@@ -94,12 +94,11 @@ button.loginButton {
 }
 
 #LeftBanner{
-
-  top: 80px;
+  top:80px;
   left: 0px;
   position:absolute;
   width: 30%;
-  height:calc(100% - 160px);
+  height:calc(100% - 80px);
   background: #1C1C1C;
   color:#FFFFFF;
   bottom:0px;
@@ -117,7 +116,8 @@ button.loginButton {
 }
 body{
 
-  background:#F2F2F2;
+  /*background-image: url("../Resource/white background.jpg");*/
+  background-image: url("../Resource/201.png");
   margin:0px;
   height: 100%;
 

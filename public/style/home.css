@@ -1,65 +1,37 @@
-/*header del home*/
-.HomeHeader{
-  height:80px;
-  width:100%;
-  top:0%;
-  left:0%;
-  z-index:3;
-  position:relative;
-  text-align: end;
-  background: #1C1C1C;
-  color: #1C1C1C;
-  font-size: 10px;
-}
-
-
-
-/*search bar*/
-form.search button,  form.search input[type=text] {
+*{
   box-sizing:border-box;
 }
 
-form.search input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 70%;
-  background: #FFFFFF;
-}
-
-form.search button {
-
-  float:left;
-  width:20%;
-  padding:10px;
-  background:#00BFFF;
-  color:white;
-  font-size:17px;
-  border: 1px solid grey;
-  border-left:none;
-  cursor:pointer;
+body{
+  background-image: url("../Resource/201.png");
+  margin:0px;
+  height: 100%;
 }
 
 
-form.search button:hover {
-  background: #00CFFF;
+/*navigation bar*/
+#navbar{
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ overflow: hidden;
+ background-color: #1C1C1C;
+ position: -webkit-sticky; /* Safari */
+ position: sticky;
+ top: 0;
+ z-index: 3;
 }
 
-form.search::after {
-  content: "";
-  clear: both;
-  display: table;
+.navbar-inverse .navbar-brand{
+  color:#00BFFF !important;
 }
 
-.search{
-
-  top:20px;
-  right:110px;
-  left:110px;
-  position:absolute;
-  margin:auto;
-  max-width:400px;
+.active a{
+  background: #00BFFF !important;
+}
+/*Contenedor*/
+.mainContainer{
+  margin:0px;
 }
 
 
@@ -104,44 +76,15 @@ form.search::after {
 
 /*banner*/
 #banner{
+  margin-top: 0px;
   position: relative;
   max-height: 60%;
-  top: 0px;
-  left:0px;
   width: 100%;
   height:auto;
   box-shadow: 0px 2px 10px #00BFFF;
 }
 
 
-
-/*menu*/
-.icon-bar {
-  position: absolute;
-  top:80px;
-  right: 0px;
-  width: 90px;
-  z-index: 3;
-  background-color: #00BFFF;
-}
-
-.icon-bar a {
-  display: block;
-  text-align: center;
-  height: 28px;
-  width:60px;
-  padding: 16px;
-  color: white;
-  font-size: 35px;
-}
-
-.icon-bar a:hover {
-  background-color: #1C1C1C;
-}
-
-.active {
-  background-color: #1C1C1C;
-}
 
 
 /*posteos*/
@@ -153,7 +96,7 @@ form.search::after {
   /*especifica si los elementos flexibles deben envolverse o no.*/
   flex-wrap: wrap;
 
-  z-index: 3;
+  z-index: 1;
   width:70%;
   height:auto;
   left: 25%;
@@ -166,9 +109,10 @@ form.search::after {
 
 
 #posts{
-  background: white;
-  z-index: 4;
+  /*background-image: url("../Resource/white background.jpg") !important;*/
+  z-index: 1;
   box-sizing:border-box;
+   background: white;
 
   /*hace la caja flecible*/
   display:flex;
@@ -186,6 +130,10 @@ form.search::after {
   height:300px;
 
   box-shadow: 0px 2px 10px #00BFFF;
+}
+
+#posts:hover{
+  opacity: 0.75;
 }
 
 .category{
@@ -227,7 +175,7 @@ form.search::after {
 }
 
 .extra{
-  z-index: 5;
+  z-index: 1;
   display: flex;
   flex-direction: row;
   justify-content:space-around;
