@@ -10,16 +10,18 @@
 
         <h1 align="left">Iniciar Sesion en Brain Community</h1>
         <h3 align = "left">Ingrese los detalles de su cuenta</h3>
-        <h5 align="left">Nombre De Usuario</h5>
-
 
         <h4 class="errText" id="ValidationUserName">El usuario es obligatorio*</h4>
-        <input id="GeneralInput" type="text" name="username" /><br>
-
-        <h5 align = "left">Contraseña</h5>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input id="email" type="text" class="form-control" name="username" placeholder="Username">
+        </div>
 
         <h4 class="errText" id="ValidationPassword">La contraseña es obligatoria*</h4>
-        <input id="GeneralInput" type="password" name="password" value=""/>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+        </div>
 
         <br/><br/>
         <?php

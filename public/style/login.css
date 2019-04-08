@@ -1,0 +1,39 @@
+#LeftBanner{
+  top:80px;
+  left: 0px;
+  position:absolute;
+  width: 30%;
+  height:calc(100% - 80px);
+  background: #1C1C1C;
+  color:#FFFFFF;
+  bottom:0px;
+  background-image:url('../Resource/fondo.jpg');
+}
+
+#CenterBanner{
+
+  top:200px;
+  left:40%;
+  right:10%;
+  position:absolute;
+  text-align:left;
+
+}
+
+.input-group-addon{
+  background: #1C1C1C !important;
+}
+.input-group-addon i{
+  color: #00BFFF;
+}
+
+@media screen and (max-width:800px){
+  #CenterBanner{
+    left:10%;
+    right:10%;
+  }
+
+  #LeftBanner{
+    visibility:hidden;
+  }
+}

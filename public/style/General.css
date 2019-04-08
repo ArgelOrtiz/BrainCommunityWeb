@@ -93,27 +93,7 @@ button.loginButton {
   font-size: 10px;
 }
 
-#LeftBanner{
-  top:80px;
-  left: 0px;
-  position:absolute;
-  width: 30%;
-  height:calc(100% - 80px);
-  background: #1C1C1C;
-  color:#FFFFFF;
-  bottom:0px;
-  background-image:url('../Resource/fondo.jpg');
-}
 
-#CenterBanner{
-
-  top:200px;
-  left:40%;
-  right:10%;
-  position:absolute;
-  text-align:left;
-
-}
 body{
 
   /*background-image: url("../Resource/white background.jpg");*/
@@ -136,6 +116,7 @@ h3{
 
 
 h4.errText{
+  color:red;
   visibility:hidden;
 }
 
@@ -191,7 +172,7 @@ hr{
 /*visibility:hidden; en menos de 800px*/
 
 @media screen and (max-width:800px){
-  #LeftBanner, #RightBanner{
+  #RightBanner{
     visibility:hidden;
   }
 
@@ -202,5 +183,7 @@ hr{
   .icon-bar{
     visibility:hidden;
   }
+
+
 
 }

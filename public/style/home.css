@@ -108,7 +108,6 @@ body{
 
 .flip-card {
   box-sizing:border-box;
-  background-color: transparent;
 
   margin-left:3%;
   margin-bottom: 10px;
@@ -140,7 +139,7 @@ body{
 
 .flip-card-front {
   box-sizing:border-box;
-  background: white;
+  background:#eee !important;
   color: black;
   z-index: 2;
 
@@ -181,8 +180,8 @@ body{
 }
 
 .flip-card-back {
-  background-color: #1C1C1C;
-  color: white;
+  background-color: #eee;
+  color: black;
   transform: rotateY(180deg);
   z-index: 1;
 }

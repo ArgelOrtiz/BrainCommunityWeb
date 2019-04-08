@@ -32,26 +32,26 @@
           <a class="navbar-brand" href="#"><?php echo NAME_SITE; ?></a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a class="fa fa-home" href="#"></a></li>
 
           <?php if ($_SESSION){ ?>
 
-            <li ><a href="<?php echo ROUTE_URL.'/Profile';?>">Perfil</a></li>
+            <li ><a class="fa fa-user-circle-o" href="<?php echo ROUTE_URL.'/Profile';?>"></a></li>
 
           <?php if ($_SESSION['role'] == 0){ ?>
 
-            <li ><a href="#">Panel</a></li>
+            <li ><a class="fa fa-building-o" href="#"></a></li>
 
           <?php }?>
 
-            <li ><a href="<?php echo ROUTE_URL.'/Post'?>">Mis Post</a></li>
-            <li ><a href="#">Nuevo Post</a></li>
-            <li ><a href="<?php echo ROUTE_URL.'/Login/logout'?>">Logout</a></li>
+            <li ><a class="fa fa-folder-o" href="#"></a></li>
+            <li ><a class="fa fa-file-text-o" href="#"></a></li>
+            <li ><a  class="fa fa-sign-out" href="<?php echo ROUTE_URL.'/Login/logout'?>"></a></li>
 
 
           <?php }else{ ?>
 
-          <li><a href="<?php echo ROUTE_URL.'/Login';?>">Login</a></li>
+          <li><a class="fa fa-sign-in" href="<?php echo ROUTE_URL.'/Login';?>"></a></li>
 
           <?php } ?>
 
