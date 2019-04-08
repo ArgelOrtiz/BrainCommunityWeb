@@ -1,0 +1,31 @@
+@media screen and (max-width:1500px){
+  .flip-card{
+    margin-left:3%;
+
+    width: 30%;
+  }
+}
+
+@media screen and (max-width:800px){
+  .categoryDiv{
+    visibility:hidden;
+  }
+
+  .postsContainer{
+    width:100%;
+    left: 0%;
+  }
+
+  .flip-card{
+    margin-left: 2%;
+    width: 46%;
+  }
+}
+
+/*cambio de pantalla*/
+@media screen and (max-width:400px){
+  .flip-card{
+
+    width: 100%;
+  }
+}
