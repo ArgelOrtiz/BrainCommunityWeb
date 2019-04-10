@@ -47,7 +47,7 @@
 
         </div>
         <div class="modal-footer" >
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" style="background:#1C1C1C !important; color:#00BFFF; border:#00BFFF">Close</button>
         </div>
       </div>
     </div>

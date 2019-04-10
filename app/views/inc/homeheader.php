@@ -49,7 +49,7 @@
 
           <?php }?>
 
-            <li ><a class="fa fa-folder-o" href="#" title="Mis post"></a></li>
+            <li ><a class="fa fa-folder-o" href="<?php echo ROUTE_URL.'/MyPosts'?>" title="Mis post"></a></li>
             <li ><a class="fa fa-file-text-o" href="#" title="Nuevo post"></a></li>
             <li ><a  class="fa fa-sign-out" href="<?php echo ROUTE_URL.'/Login/logout'?>" title="Cerrar sesión"></a></li>
 
