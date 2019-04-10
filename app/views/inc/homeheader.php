@@ -18,6 +18,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
+    <script>
+      $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
 
     <title><?php echo NAME_SITE; ?></title>
   </head>
@@ -32,26 +37,26 @@
           <a class="navbar-brand" href="#"><?php echo NAME_SITE; ?></a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a class="fa fa-home" href="#"></a></li>
+          <li class="active"><a class="fa fa-home" href="" title="Home"></a></li>
 
           <?php if ($_SESSION){ ?>
 
-            <li ><a class="fa fa-user-circle-o" href="<?php echo ROUTE_URL.'/Profile';?>"></a></li>
+            <li ><a class="fa fa-user-circle-o" href="<?php echo ROUTE_URL.'/Profile';?>" title="Perfil"></a></li>
 
           <?php if ($_SESSION['role'] == 0){ ?>
 
-            <li ><a class="fa fa-building-o" href="#"></a></li>
+            <li ><a class="fa fa-building-o" href="#" title="Panel"></a></li>
 
           <?php }?>
 
-            <li ><a class="fa fa-folder-o" href="#"></a></li>
-            <li ><a class="fa fa-file-text-o" href="#"></a></li>
-            <li ><a  class="fa fa-sign-out" href="<?php echo ROUTE_URL.'/Login/logout'?>"></a></li>
+            <li ><a class="fa fa-folder-o" href="#" title="Mis post"></a></li>
+            <li ><a class="fa fa-file-text-o" href="#" title="Nuevo post"></a></li>
+            <li ><a  class="fa fa-sign-out" href="<?php echo ROUTE_URL.'/Login/logout'?>" title="Cerrar sesión"></a></li>
 
 
           <?php }else{ ?>
 
-          <li><a class="fa fa-sign-in" href="<?php echo ROUTE_URL.'/Login';?>"></a></li>
+          <li><a class="fa fa-sign-in" href="" data-toggle="modal" data-target="#myModal" title="Login"></a></li>
 
           <?php } ?>
 

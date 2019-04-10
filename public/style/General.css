@@ -1,21 +1,4 @@
-/*registro*/
-.registerConteiner{
 
-  width:35%;
-  height:70%;
-  top:0px;
-  left:50px;
-  z-index: 3;
-  position:relative;
-  text-align:left;
-  color:#000000;
-  font-size: 15px;
-}
-
-div.registerConteiner   input.EditText{
-    left:0px;
-    width:40%;
-}
 
 input:hover{
   border:1px solid #00BFFF
@@ -75,25 +58,6 @@ button.loginButton {
   font-size:20px;
   cursor:pointer
 }
-
-
-#RightBanner{
-
-  width:35%;
-  height:calc(100% - 160px);
-  top:80px;
-  right:0px;
-  position:fixed;
-  z-index:1;
-  text-align:start;
-  background:#c1c1c1;
-  background-position:left;
-  background-repeat:no-repeat;
-  background-image:url('../Resource/fondo.JPG');
-  font-size: 10px;
-}
-
-
 body{
 
   /*background-image: url("../Resource/white background.jpg");*/
@@ -156,27 +120,10 @@ hr{
   top:0px;
 }
 
-/*footer*/
-
-.footer{
-  bottom: 0px;
-  left: 0px;
-  position:absolute;
-  width: 100%;
-  height:80px;
-  background: #1C1C1C;
-  color:#FFFFFF;
-}
-
-
 /*visibility:hidden; en menos de 800px*/
 
 @media screen and (max-width:800px){
-  #RightBanner{
-    visibility:hidden;
-  }
-
-  .footer{
+ .footer{
     visibility:hidden;
   }
 

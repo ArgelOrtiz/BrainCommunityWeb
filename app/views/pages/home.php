@@ -8,6 +8,53 @@
 
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header" >
+          <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
+          <h4 class="modal-title">Login</h4>
+        </div>
+        <div class="modal-body" >
+          <!--Login content -->
+          <form name="Login"  method="post" action="<?php echo ROUTE_URL.'/Login/login'?>" onsubmit="return verifyLogin()">
+
+            <h1 align="left">Iniciar Sesion en Brain Community</h1>
+            <h3 align = "left">Ingrese los detalles de su cuenta</h3>
+
+            <h4 class="errText" id="ValidationUserName">El usuario es obligatorio*</h4>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="email" type="text" class="form-control" name="username" placeholder="Username">
+            </div>
+
+            <h4 class="errText" id="ValidationPassword">La contraseña es obligatoria*</h4>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+
+            <br><br>
+
+            <input class="loginButton" type="submit" name="Enter" value="Entrar"/>
+
+          	<br><br>
+          	<a href="<?php echo ROUTE_URL.'/Register'?>">Registrate</a>
+            <a href="<?php echo ROUTE_URL.'/Login/forgotPassword'?>">¿Olvido su contraseña?</a>
+
+          </form>
+
+        </div>
+        <div class="modal-footer" >
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <div class="postsContainer">
 
   <div class="flip-card">

@@ -8,6 +8,42 @@ body{
   height: 100%;
 }
 
+/*Modal login*/
+input-group{
+  width:70%;
+}
+
+.input-group-addon{
+  background: #1C1C1C !important;
+}
+.input-group-addon i{
+  color: #00BFFF;
+}
+
+input.loginButton {
+
+  width:20%;
+  color:#00BFFF;
+  background:#1C1C1C;
+  border: 0px;
+  font-size:15px;
+  cursor:pointer;
+}
+
+h4.errText{
+  color:red;
+  visibility:hidden;
+}
+
+.modal-header{
+  background:#1C1C1C;
+  color:#00BFFF;"
+}
+
+.modal-footer button{
+  background:#1C1C !important;
+}
+
 
 /*navigation bar*/
 #navbar{

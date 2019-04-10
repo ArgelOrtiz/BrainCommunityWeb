@@ -1,23 +1,17 @@
-#LeftBanner{
-  top:80px;
-  left: 0px;
-  position:absolute;
-  width: 30%;
-  height:calc(100% - 80px);
-  background: #1C1C1C;
-  color:#FFFFFF;
-  bottom:0px;
-  background-image:url('../Resource/fondo.jpg');
-}
 
 #CenterBanner{
-
+  position:relative;
   top:200px;
-  left:40%;
-  right:10%;
-  position:absolute;
+  right:20%;
+  left:20%;
+  bottom: 50px;
+  width: 60%;
+  height: auto;
   text-align:left;
+}
 
+.input-group{
+  width:70%;
 }
 
 .input-group-addon{

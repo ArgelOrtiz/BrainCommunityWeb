@@ -13,12 +13,13 @@
       $posts = $this->postModel->getCategory();
 
       $data = [
-        'title' => 'Bienvenido a community',
-        'posts' => $posts
+        'title'   => 'Bienvenido a community',
+        'posts'     => $posts
       ];
       $this->view('pages/home',$data);
 
     }
+
 
     public function post($id){
         echo $id;

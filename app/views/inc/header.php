@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<?php echo ROUTE_URL; ?>/style/general.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo ROUTE_URL; ?>/style/login.css"/>
     <script type="text/javascript" src="<?php echo ROUTE_URL; ?>/java/main.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">

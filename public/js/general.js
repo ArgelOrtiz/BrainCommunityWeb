@@ -42,6 +42,7 @@ function wrongUser(){
   }
 
   function verifyRegister(){
+
     var selector = 0;
 
     var email       = document.forms["Register"]["email"].value;
@@ -53,7 +54,7 @@ function wrongUser(){
     var secondName  = document.forms["Register"]["secondName"].value;
     var birthday    = document.forms["Register"]["birthday"].value;
     var terms       = document.forms["Register"]["terms"].value;
-
+    alert("test");
     if (email == "") {
       document.getElementById("ValidationEmail").style.visibility = "visible";
       selector = 1;
