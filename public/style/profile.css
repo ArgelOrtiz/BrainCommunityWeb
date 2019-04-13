@@ -1,3 +1,37 @@
+.modal-header{
+  background:#1C1C1C;
+  color:#00BFFF;
+  text-align: left;
+}
+
+.modal-footer{
+  justify-content: left;
+}
+
+.modal-header button{
+  color: white;
+}
+
+.modal-header button:hover{
+  color: #00BFFF;
+}
+
+.save{
+  background: #00BFFF;
+  color: white;
+  border:#1C1C1C;
+}
+
+.save:hover{
+  background:#1C1C1C;
+  color: #00BFFF;
+}
+
+.cancel{
+  background: red;
+  color: white;
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -21,6 +55,7 @@ tr:nth-child(even) {
 
 .editProfile{
   background: #1C1C1C;
+  border-radius:4px;
   color:#00BFFF;
   border-color: #00BFFF;
   height:30px;

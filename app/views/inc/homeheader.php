@@ -45,7 +45,7 @@
 
           <?php if ($_SESSION['role'] == 0){ ?>
 
-            <li ><a class="fa fa-building-o" href="#" title="Panel"></a></li>
+            <li ><a class="fa fa-building-o" href="<?php echo ROUTE_URL.'/AdminHome';?>" title="Panel"></a></li>
 
           <?php }?>
 
