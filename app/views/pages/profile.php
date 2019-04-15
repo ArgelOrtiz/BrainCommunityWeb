@@ -3,8 +3,6 @@
 
     <h1>Informacion del usuario</h1>
 
-    <?php session_start(); ?>
-
     <!-- Name Modal -->
     <div class="modal fade" id="nameModal" role="dialog">
       <div class="modal-dialog modal-sm">
@@ -15,9 +13,13 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <input type="text" class="form-control form-control-lg"  name="name" value="<?php echo $_SESSION['first_name']; ?>">
-              <br><br>
-              <input type="submit" class="form-control form-control-lg save" value="Guardar">
+              <form class="" action="<?php echo ROUTE_URL.'/Profile/editName'?>" method="post">
+
+                <input type="text" class="form-control form-control-lg"  name="name" value="<?php echo $_SESSION['first_name']; ?>">
+                <br><br>
+                <input type="submit" class="form-control form-control-lg save" value="Guardar">
+
+              </form>
             </div>
           </div>
           <div class="modal-footer">
@@ -119,27 +121,27 @@
       <tr>
         <th>Nombre de usuario</th>
         <td> <?php echo $_SESSION['username']; ?> </td>
-        <td class="editRow"> <button class="editProfile" type="button" >Editar</button> </td>
+        <td class="editRow"> <button class="form-control form-control-lg editButton" type="button" >Editar</button> </td>
       </tr>
       <tr>
         <th>Correo electronico</th>
         <td> <?php echo $_SESSION['email']; ?> </td>
-        <td class="editRow"> <button class="editProfile " type="button" name="button">Editar</button> </td>
+        <td class="editRow"> <button class="form-control form-control-lg editButton" type="button" name="button">Editar</button> </td>
       </tr>
       <tr>
         <th>Nombre</th>
         <td> <?php echo $_SESSION['first_name']; ?> </td>
-        <td class="editRow"> <button class="editProfile" type="button" data-toggle="modal" data-target="#nameModal">Editar</button> </td>
+        <td class="editRow"> <button class="form-control form-control-lg editButton" type="button" data-toggle="modal" data-target="#nameModal">Editar</button> </td>
       </tr>
       <tr>
         <th>Apellido paterno</th>
         <td> <?php echo $_SESSION['middle_name']; ?> </td>
-        <td class="editRow"> <button class="editProfile" type="button" data-toggle="modal" data-target="#middleModal">Editar</button> </td>
+        <td class="editRow"> <button class="form-control form-control-lg editButton" type="button" data-toggle="modal" data-target="#middleModal">Editar</button> </td>
       </tr>
       <tr>
         <th>Apellido materno</th>
         <td><?php echo $_SESSION['last_name']; ?></td>
-        <td class="editRow"> <button class="editProfile" type="button" data-toggle="modal" data-target="#lastModal">Editar</button> </td>
+        <td class="editRow"> <button class="form-control form-control-lg editButton" type="button" data-toggle="modal" data-target="#lastModal">Editar</button> </td>
       </tr>
       <tr>
         <th>País</th>
@@ -152,7 +154,7 @@
             echo "Vacío";
           } ?>
         </td>
-        <td class="editRow"> <button class="editProfile" type="button" data-toggle="modal" data-target="#countryModal">Editar</button> </td>
+        <td class="editRow"> <button class="form-control form-control-lg editButton" type="button" data-toggle="modal" data-target="#countryModal">Editar</button> </td>
       </tr>
       <tr>
         <th>Genero</th>
@@ -165,6 +167,6 @@
             echo "Vacío";
           } ?>
         </td>
-        <td class="editRow"> <button class="editProfile" type="button" data-toggle="modal" data-target="#genderModal">Editar</button> </td>
+        <td class="editRow"> <button class="form-control form-control-lg editButton" type="button" data-toggle="modal" data-target="#genderModal">Editar</button> </td>
       </tr>
     </table>

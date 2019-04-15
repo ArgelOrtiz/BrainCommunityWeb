@@ -16,21 +16,23 @@
   color: #00BFFF;
 }
 
-.save{
-  background: #00BFFF;
-  color: white;
-  border:#1C1C1C;
-}
-
-.save:hover{
-  background:#1C1C1C;
-  color: #00BFFF;
-}
 
 .cancel{
   background: red;
   color: white;
 }
+
+.editButton, .save{
+  background: #00BFFF;
+  color: white;
+}
+
+.editButton:focus, .editButton:hover, .save:hover{
+  background:#1C1C1C;
+  color: #00BFFF;
+}
+
+
 
 table {
   font-family: arial, sans-serif;
@@ -53,24 +55,8 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.editProfile{
-  background: #1C1C1C;
-  border-radius:4px;
-  color:#00BFFF;
-  border-color: #00BFFF;
-  height:30px;
-  width:150px;
-}
-
-button.editProfile:hover{
-  background: #00BFFF;
-  color:#1C1C1C;
-  border-color: #1C1C1C;
-}
 @media screen and (max-width:600px){
-  .editProfile{
-    width:50px;
-  }
+
 }
 
 td.editRow{
