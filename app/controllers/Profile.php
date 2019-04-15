@@ -26,7 +26,17 @@ class Profile extends Controller{
   public function editName(){
     $newName = $_POST['name'];
 
-    if ($this->editModel->nameEdit($newName)) {
+    if ($this->editModel->editName($newName)) {
+      // code...
+      $this->refreshData();
+      $this->controller('Profile');
+    }
+  }
+
+  public function editMiddleName(){
+    $newLast = $_POST['middle_name'];
+
+    if ($this->editModel->editMiddleName($newLast)) {
       // code...
       $this->refreshData();
       $this->controller('Profile');

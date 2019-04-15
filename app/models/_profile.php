@@ -13,8 +13,14 @@
       $this->db = new DataBase;
     }
 
-    public function nameEdit($name){
+    public function editName($name){
       $this->db->query("UPDATE ic_user SET first_name='$name'");
+
+      return $this->db->execute();
+    }
+
+    public function editMiddleName($last){
+      $this->db->query("UPDATE ic_user SET middle_name='$last'");
 
       return $this->db->execute();
     }
