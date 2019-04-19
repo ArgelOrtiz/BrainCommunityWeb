@@ -63,9 +63,11 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <input type="text" class="form-control form-control-lg"  name="name" value="<?php echo $_SESSION['last_name']; ?>">
-              <br><br>
-              <input type="submit" class="form-control form-control-lg save" value="Guardar">
+              <form class="" action="<?php echo ROUTE_URL.'/Profile/editLastName'?>" method="post">
+                <input type="text" class="form-control form-control-lg"  name="name" value="<?php echo $_SESSION['last_name']; ?>">
+                <br><br>
+                <input type="submit" class="form-control form-control-lg save" value="Guardar">
+              </form>
             </div>
           </div>
           <div class="modal-footer">

@@ -19,8 +19,14 @@
       return $this->db->execute();
     }
 
-    public function editMiddleName($last){
-      $this->db->query("UPDATE ic_user SET middle_name='$last'");
+    public function editMiddleName($middle){
+      $this->db->query("UPDATE ic_user SET middle_name='$middle'");
+
+      return $this->db->execute();
+    }
+
+    public function editLastName($last){
+      $this->db->query("UPDATE ic_user SET last_name='$last'");
 
       return $this->db->execute();
     }

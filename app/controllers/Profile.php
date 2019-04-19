@@ -34,15 +34,25 @@ class Profile extends Controller{
   }
 
   public function editMiddleName(){
-    $newLast = $_POST['middle_name'];
+    $newMiddle = $_POST['middle_name'];
 
-    if ($this->editModel->editMiddleName($newLast)) {
+    if ($this->editModel->editMiddleName($newMiddle)) {
       // code...
       $this->refreshData();
       $this->controller('Profile');
     }
   }
 
+  public function editLastName(){
+    $newLast = $_POST['last_name'];
+
+    if ($this->editModel->editLastName($newLast)) {
+      // code...
+      $this->refreshData();
+      $this->controller('Profile');
+    }
+  }
+  
   public function refreshData(){
     session_start();
     $result = $this->editModel->refreshData($_SESSION['id']);

@@ -48,7 +48,7 @@
 
       ?>
       <script>
-        window.location.replace("http://localhost:8080/BrainCommunityWeb/<?php echo $controller.$function.$data?>");
+        window.location.replace(ROUTE_URL."/<?php echo $controller.$function.$data?>");
        </script>
        <?php
 
