@@ -21,6 +21,16 @@ class MyPosts extends Controller
     }
 
   }
+
+  public function newPost(){
+    session_start();
+
+    if ($_SESSION) {
+      $this->view('pages/newPost');
+    }else{
+      $this->controller('NotFound');
+    }
+  }
 }
 
 

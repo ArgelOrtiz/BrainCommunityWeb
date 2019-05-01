@@ -29,8 +29,10 @@
 
       $result = $this->loginModel->verifyUser($username);
 
+      echo "zero";
       if ($result != null) {
         // code...
+        echo "first";
 
         if ($result->PASSWORD === $password) {
           // code...
@@ -46,17 +48,18 @@
           $_SESSION['gender']       = $result->gender;
           $_SESSION['role']         = $result->role;
 
+          echo "second";
 
 
           $this->controller('home');
         }else{
           //bad password
-          $this->controller('Login/badPass');
+
         }
 
       }else{
-        //user doesn't exist
-        $this->controller('Login/badUser');
+        //user doesn't exist.
+
       }
 
     }

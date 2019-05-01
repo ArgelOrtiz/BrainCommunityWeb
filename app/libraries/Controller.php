@@ -31,27 +31,18 @@
     }
 
     //termporal
-    public function controller($controller, $function = null,$data = null){
+    public function controller($location = null){
       //cargar
-
-      if ($function == null) {
-        $function = "";
-      }else{
-        $function = '/'.$function;
-      }
-
-      if ($data == null) {
-        $data = "";
+      if ($location != null ) {
+        // code...
+        $location = '/'.$location;
       }else {
-        $data = '/'.$data;
+        // code...
+        $location = '';
       }
 
-      ?>
-      <script>
-        window.location.replace(ROUTE_URL."/<?php echo $controller.$function.$data?>");
-       </script>
-       <?php
-
+      header('Location: '.ROUTE_URL.$location);
+      die();
     }
 
   }
