@@ -10,7 +10,7 @@
   */
 
   class Core{
-    protected $currencyController = 'home';
+    protected $currencyController = 'Home';
     protected $currencyMethod     = 'index';
     protected $parameters         = [];
 
