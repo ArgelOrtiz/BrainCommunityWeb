@@ -8,7 +8,7 @@
 
   </div>
 
-  <!-- Modal -->
+  <!--Login Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -22,7 +22,7 @@
 
             <h1 align="left">Iniciar Sesion en Brain Community</h1>
             <h3 align = "left">Ingrese los detalles de su cuenta</h3>
-
+            <?php echo 'URL:'.$_GET['url']; ?>
             <h4 class="errText" id="ValidationUserName">El usuario es obligatorio*</h4>
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>

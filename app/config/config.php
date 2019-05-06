@@ -10,7 +10,7 @@
   define('ROUTE_APP',dirname(dirname(__file__)));
 
   //ruta url ejemplo: http://localhost/BrainCommunityWeb/
-  define('ROUTE_URL','http://braincommunity.net/');
+  define('ROUTE_URL','http://braincommunity.net');
 
   //nombre del sitio
   define('NAME_SITE','Brain Community');

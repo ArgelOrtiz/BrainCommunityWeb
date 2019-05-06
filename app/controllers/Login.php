@@ -51,7 +51,7 @@
           echo "second";
 
 
-          $this->controller('home');
+          $this->controller('Home');
         }else{
           //bad password
 

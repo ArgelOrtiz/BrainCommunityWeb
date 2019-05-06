@@ -24,11 +24,9 @@
         // code...
         //si existe se configura como controlador actual ($currencyController)
         $this->currencyController = ucwords($url[0]);
-
         //unset indice
         unset($url[0]);
       }
-
       //requerir el controlador
       require_once '../app/controllers/'.$this->currencyController.'.php';
       $this->currencyController = new $this->currencyController;
@@ -62,6 +60,7 @@
 
     public function getUrl(){
       //echo $_GET['url'];
+
 
       if (isset($_GET['url'])) {
         // code...
