@@ -16,18 +16,20 @@ class Register extends Controller
 
   }
 
-  public function check_in(){
+  public function checkin(){
     $this->registerModel = $this->model('_register');
 
     $usernameValidation = $this->registerModel->verify_username($_POST['username']);
     if ($usernameValidation->exist != 0) {
       // code...
+      echo $usernameValidation->exist;
       exit();
     }
 
     $emailValidation = $this->registerModel->verify_email($_POST['email']);
     if ($emailValidation->exist != 0) {
       // code...
+      echo $emailValidation->exist;
       exit();
     }
 
@@ -70,10 +72,10 @@ class Register extends Controller
 
     if ($result != null) {
       // code...
-      $this->controller('Login');
+      $this->controller('Home');
 
     }else{
-      $this->controller('Home');
+      $this->controller('Register');
     }
 
 

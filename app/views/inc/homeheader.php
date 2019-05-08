@@ -20,18 +20,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <script>
-      $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-    </script>
-
     <title><?php echo NAME_SITE; ?></title>
   </head>
-  <body>
+  <body style="background: #EEE !important;">
      <?php session_start(); ?>
 
-    <img src="<?php echo ROUTE_URL; ?>/resource/banner.png" alt="Info Banner" style="position:relative; width:100%; height:auto;">
+    <img src="<?php echo ROUTE_URL; ?>/resource/home_banner.png" alt="Info Banner" style="position:relative; width:100%; height:auto;">
 
     <nav class="navbar navbar-inverse" id="navbar">
       <div class="container-fluid">
@@ -63,7 +57,7 @@
           <?php } ?>
 
         </ul>
-        <form class="navbar-form navbar-left" action="/action_page.php">
+        <form class="navbar-form navbar-left" action="/action_page.php" style="margin-left:30px;">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search" name="search">
             <div class="input-group-btn">

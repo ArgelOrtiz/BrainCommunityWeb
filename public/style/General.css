@@ -1,14 +1,4 @@
 
-
-input:hover{
-  border:1px solid #00BFFF
-}
-
-input:focus{
-  border:1px solid #0FBFFF
-}
-
-
 #GeneralButton{
 
   float:left;
@@ -61,7 +51,7 @@ button.loginButton {
 body{
 
   /*background-image: url("../Resource/white background.jpg");*/
-  background-image: url("../Resource/201.png");
+  background-image: url("../Resource/201.png") !important;
   margin:0px;
   height: 100%;
 

@@ -33,8 +33,9 @@
       if ($result != null) {
         // code...
         echo "first";
+        echo " :".$result->PASSWORD." - ".$password;
 
-        if ($result->PASSWORD === $password) {
+        if ($result->password === $password) {
           // code...
           session_start();
           $_SESSION['id']           = $result->id;
