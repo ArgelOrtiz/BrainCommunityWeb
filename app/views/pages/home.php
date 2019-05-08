@@ -53,32 +53,6 @@
     </div>
   </div>
 
-<!-- register modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header" >
-          <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
-          <h4 class="modal-title">Registro</h4>
-        </div>
-        <div class="modal-body" >
-          <!--Login content -->
-          <form name="Register"  method="post" action="<?php echo ROUTE_URL.'/Login/login'?>" onsubmit="return verifyLogin()">
-
-
-          </form>
-
-        </div>
-        <div class="modal-footer" >
-          <button type="button" class="btn btn-default" data-dismiss="modal" style="background:#1C1C1C !important; color:#00BFFF; border:#00BFFF">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
 
   <div class="postsContainer">
 
@@ -94,7 +68,7 @@
           <h6 class="date">Fecha</h1>
         </div>
       </div>
-      <div class="flip-card-back">
+      <div class="flip-card-back" onclick="#">
         <h4 class="title">Titulo</h4>
         <p class="description">Descripcion.....</p>
       </div>
@@ -274,17 +248,16 @@
 
   </div>
 
-    <div class="container">
-      <ul class="pagination justify-content-center">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-    </div>
-
-  </div>
+</div>
+<div class="container">
+  <ul class="pagination justify-content-center">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</div>
 
 
 </div>

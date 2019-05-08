@@ -1,4 +1,4 @@
-﻿<?php  require ROUTE_APP.'/views/inc/header.php';?>
+<?php  require ROUTE_APP.'/views/inc/header.php';?>
 <link rel="stylesheet" type="text/css" href="<?php echo ROUTE_URL; ?>/style/register.css"/>
 
 <form class="" action="<?php echo ROUTE_URL.'/Register/checkin'?>" method="post">
