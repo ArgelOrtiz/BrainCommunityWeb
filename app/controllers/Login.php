@@ -33,7 +33,6 @@
       if ($result != null) {
         // code...
         echo "first";
-        echo " :".$result->PASSWORD." - ".$password;
 
         if ($result->password === $password) {
           // code...

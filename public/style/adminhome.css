@@ -1,0 +1,131 @@
+body {
+    background: #f1f1f1;
+}
+
+p {
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.admin-sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.admin-sidebar .sidebar-header {
+    padding: 20px;
+    background: #6d7fcc;
+}
+
+.admin-sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+.admin-sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+.admin-sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+.admin-sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+.admin-sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+.wrapper {
+  float: left;
+  position: sticky;
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: stretch;
+}
+
+.admin-sidebar {
+  float: left;
+  position: sticky;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+}
+
+.admin-sidebar.active {
+    margin-left: -250px;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 55%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.admin-content{
+  background:red;
+  display:flex;
+  flex-direction: column;
+  position:absolute;
+  top:0px;
+  left:250px;
+  height:auto;
+  width:calc(100% - 250px);
+}
+
+.title-content{
+  background:yellow;
+  height: 150px;
+  width:100%;
+  margin-bottom: 15px;
+}
+
+.row-content{
+  background: purple;
+  height: 2000px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .admin-sidebar {
+        margin-left: -250px;
+    }
+    .admin-sidebar.active {
+        margin-left: 0;
+    }
+
+    .admin-content{
+      left:0px;
+      width:100%;
+    }
+}

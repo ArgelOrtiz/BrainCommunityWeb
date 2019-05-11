@@ -52,5 +52,10 @@
 
 .error-text{
   visibility: hidden;
-  color: red;
+  color: red ;
+}
+
+.error-reload{
+  color:red;
+  margin-left:5px;
 }
