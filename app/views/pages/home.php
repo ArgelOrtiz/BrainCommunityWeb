@@ -8,11 +8,13 @@
 
   </div>
 
-  <script type="text/javascript">
-    $(window).on('load',function(){
-        $('#myModal').modal('show');
-    });
-</script>
+  <?php if (!$_SESSION){ ?>
+    <script type="text/javascript">
+      $(window).on('load',function(){
+          $('#myModal').modal('show');
+      });
+    </script>
+  <?php } ?>
 
   <!--Login Modal -->
   <div class="modal fade" id="myModal" role="dialog">
