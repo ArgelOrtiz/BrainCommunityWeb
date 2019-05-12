@@ -16,7 +16,7 @@
 
     <title><?php echo NAME_SITE; ?></title>
   </head>
-  <body style="background: #EEE !important;">
+  <body >
     <div class="Header">
       <a href="<?php echo ROUTE_URL.'/Home';?>">
         <img class="logoBrain" src="<?php echo ROUTE_URL;?>/resource/brain_logo_blue.png" alt="Brain Community">

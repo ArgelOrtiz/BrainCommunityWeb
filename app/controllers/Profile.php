@@ -4,11 +4,13 @@
  *
  */
 class Profile extends Controller{
-  private $editModel;
+  private $profileModel;
+  private $experienceResult;
 
   function __construct()
   {
-    $this->editModel = $this->model('_profile');
+    $this->profileModel = $this->model('_profile');
+    $this->getExperience();
     // code...
   }
 
@@ -16,7 +18,11 @@ class Profile extends Controller{
     session_start();
     if ($_SESSION) {
       // code...
-      $this->view('pages/profile');
+
+      $data = [
+        'experience' =>$experienceResult
+      ];
+      $this->view('pages/profile',$data);
     }else{
       $this->controller('NotFound');
     }
@@ -24,19 +30,26 @@ class Profile extends Controller{
   }
 
   public function editName(){
-    $newName = $_POST['name'];
+    session_start();
+    $newName  = $_POST['name'];
+    $id       = $_SESSION['id'];
 
-    if ($this->editModel->editName($newName)) {
+    if ($this->profileModel->editName($newName, $id)) {
       // code...
       $this->refreshData();
       $this->controller('Profile');
+    }else {
+      // code...
+      $this->controller('Home');
     }
   }
 
   public function editMiddleName(){
+    session_start();
     $newMiddle = $_POST['middle_name'];
+    $id       = $_SESSION['id'];
 
-    if ($this->editModel->editMiddleName($newMiddle)) {
+    if ($this->profileModel->editMiddleName($newMiddle, $id)) {
       // code...
       $this->refreshData();
       $this->controller('Profile');
@@ -44,18 +57,63 @@ class Profile extends Controller{
   }
 
   public function editLastName(){
+    session_start();
     $newLast = $_POST['last_name'];
+    $id       = $_SESSION['id'];
 
-    if ($this->editModel->editLastName($newLast)) {
+    if ($this->profileModel->editLastName($newLast, $id)) {
       // code...
       $this->refreshData();
       $this->controller('Profile');
     }
   }
-  
+
+  public function editCountry(){
+    session_start();
+    $newCountry = $_POST['country'];
+    $id       = $_SESSION['id'];
+
+    if ($this->profileModel->editCountry($newCountry, $id)) {
+      // code...
+      $this->refreshData();
+      $this->controller('Profile');
+    }
+  }
+
+  public function editGender(){
+    session_start();
+    $newGender = $_POST['gender'];
+
+    if ($newGender == M) {
+      // code...
+      $newGender = 2;
+    }elseif ($newGender == F) {
+      // code...
+      $newGender = 1;
+    }else {
+      // code...
+      $newGender = 0;
+    }
+
+    $id       = $_SESSION['id'];
+
+    if ($this->profileModel->editGender($newGender, $id)) {
+      // code...
+      $this->refreshData();
+      $this->controller('Profile');
+    }
+  }
+
+  function getExperience(){
+    session_start();
+    $id       = $_SESSION['id'];
+
+    $this->experienceResult = $this->profileModel->getExperience($id);
+  }
+
   public function refreshData(){
     session_start();
-    $result = $this->editModel->refreshData($_SESSION['id']);
+    $result = $this->profileModel->refreshData($_SESSION['id']);
 
     if ($result) {
       // code...

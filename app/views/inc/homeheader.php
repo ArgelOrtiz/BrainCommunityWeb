@@ -22,7 +22,7 @@
 
     <title><?php echo NAME_SITE; ?></title>
   </head>
-  <body style="background: #EEE !important;">
+  <body >
      <?php session_start(); ?>
 
     <img src="<?php echo ROUTE_URL; ?>/resource/home_banner.png" alt="Info Banner" style="position:relative; width:100%; height:auto;">

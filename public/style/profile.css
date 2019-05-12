@@ -34,10 +34,11 @@
 
 
 
-table {
+.profile-table {
+  /* background:white !important;
+  color:black !important; */
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  position: relative;
   width: 80%;
   left: 10%;
   top: 20%;
@@ -45,15 +46,7 @@ table {
   margin-top: 5%;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
 
 @media screen and (max-width:600px){
 

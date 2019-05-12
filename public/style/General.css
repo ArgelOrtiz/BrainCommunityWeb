@@ -1,4 +1,3 @@
-
 #GeneralButton{
 
   float:left;
@@ -51,7 +50,7 @@ button.loginButton {
 body{
 
   /*background-image: url("../Resource/white background.jpg");*/
-  background-image: url("../Resource/201.png") !important;
+  background-image: url("../resource/201.png") !important;
   margin:0px;
   height: 100%;
 

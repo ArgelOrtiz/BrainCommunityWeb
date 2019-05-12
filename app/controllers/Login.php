@@ -29,10 +29,8 @@
 
       $result = $this->loginModel->verifyUser($username);
 
-      echo "zero";
       if ($result != null) {
         // code...
-        echo "first";
 
         if ($result->password === $password) {
           // code...
