@@ -49,6 +49,20 @@
       return $this->db->records();
     }
 
+    public function getClasification(){
+      $this->db->query("SELECT * from clasification");
+
+      return $this->db->records();
+    }
+
+    public function createExperience($data){
+      $this->db->query("INSERT into experience
+        values (null,'".$data['id']."','".$data['clasification']."','".$data['name']."','".$data['summary']."','".$data['extra']."',
+        '".$data['start_date']."','".$data['end_date']."') ");
+
+      return $this->db->execute();
+    }
+
     public function refreshData($id, $id){
       $this->db->query("SELECT * from ic_user WHERE id='$id'");
 

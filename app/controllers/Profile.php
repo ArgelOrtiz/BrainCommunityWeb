@@ -6,21 +6,27 @@
 class Profile extends Controller{
   private $profileModel;
   private $experienceResult;
+  private $clasification;
 
   function __construct()
   {
+    session_start();
+    $this->experienceResult = [];
+    $this->clasification =[];
     $this->profileModel = $this->model('_profile');
     $this->getExperience();
+    $this->getClasification();
     // code...
   }
 
   public function index(){
-    session_start();
+
     if ($_SESSION) {
       // code...
 
       $data = [
-        'experience' =>$experienceResult
+        'experience' => $this->experienceResult,
+        'clasification' => $this->clasification
       ];
       $this->view('pages/profile',$data);
     }else{
@@ -30,7 +36,7 @@ class Profile extends Controller{
   }
 
   public function editName(){
-    session_start();
+
     $newName  = $_POST['name'];
     $id       = $_SESSION['id'];
 
@@ -45,7 +51,7 @@ class Profile extends Controller{
   }
 
   public function editMiddleName(){
-    session_start();
+
     $newMiddle = $_POST['middle_name'];
     $id       = $_SESSION['id'];
 
@@ -57,7 +63,7 @@ class Profile extends Controller{
   }
 
   public function editLastName(){
-    session_start();
+
     $newLast = $_POST['last_name'];
     $id       = $_SESSION['id'];
 
@@ -69,7 +75,7 @@ class Profile extends Controller{
   }
 
   public function editCountry(){
-    session_start();
+
     $newCountry = $_POST['country'];
     $id       = $_SESSION['id'];
 
@@ -81,7 +87,7 @@ class Profile extends Controller{
   }
 
   public function editGender(){
-    session_start();
+
     $newGender = $_POST['gender'];
 
     if ($newGender == M) {
@@ -105,14 +111,44 @@ class Profile extends Controller{
   }
 
   function getExperience(){
-    session_start();
+
     $id       = $_SESSION['id'];
 
     $this->experienceResult = $this->profileModel->getExperience($id);
   }
 
+  function getClasification(){
+    $this->clasification = $this->profileModel->getClasification();
+  }
+
+  function createExperience(){
+
+    $data =[
+      'id'            => $_SESSION['id'],
+      'clasification' => $_POST['clasification'],
+      'name'          => $_POST['name'],
+      'summary'       => $_POST['summary'],
+      'extra'         => $_POST['extra'],
+      'start_date'    => $_POST['start_date'],
+      'end_date'      => $_POST['end_date']
+    ];
+
+    print_r($data);
+
+    $resutl = $this->profileModel->createExperience($data);
+
+    if ($result) {
+      // code...
+      $this->refreshData();
+      $this->controller('Profile');
+    }else {
+      // code...
+      echo 'error';
+    }
+  }
+
   public function refreshData(){
-    session_start();
+
     $result = $this->profileModel->refreshData($_SESSION['id']);
 
     if ($result) {
