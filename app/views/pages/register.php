@@ -27,8 +27,8 @@ if (isset($data)) {
     $email = $data['email'];
     $username = $data['username'];
     $name = $data['name'];
-    $first_name = $data['first_name'];
-    $second_name = $data['second_name'];
+    $first_name = $data['middle_name'];
+    $second_name = $data['last_name'];
     $birthday = $data['birthday'];
 
     if (isset($data['country'])) {
@@ -44,17 +44,17 @@ if (isset($data)) {
       $gender = $data['gender'];
 
       switch ($gender) {
-        case '2':
+        case 2:
           // code...
-          $gender = 'M';
+          $gender = 'Masculino';
           break;
-          case '1':
+        case 1:
             // code...
-            $gender = 'F';
+            $gender = 'Femenino';
             break;
         default:
           // code...
-          $gender = 'Other';
+          $gender = 'Otherl';
           break;
       }
 
@@ -64,11 +64,11 @@ if (isset($data)) {
     }
 
     switch ($data['type']) {
-      case '1':
+      case '2':
         // code...
         $error_code = 'El correo '.$email.' ya ha esta en uso';
         break;
-      case '2':
+      case '1':
         $error_code = 'El nombre de usuario '.$username.' ya esta en uso';
         break;
       default:
@@ -93,10 +93,10 @@ if (isset($data)) {
           <h4 class="modal-title">Registro</h4>
         </div>
         <div class="modal-body">
-          <label class="error-reload" id="error-email" ><?php echo $error_code; ?></label>
+          <label class="message-reload" id="error-email" ><?php echo $error_code; ?></label>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default close-modal-button" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -202,21 +202,11 @@ if (isset($data)) {
           <div class="title-content-row">
             <label >Genero</label>
           </div>
-          <select class=" " name="gender" value="<?php echo $gender; ?>">
+          <select class=" form-control  " name="gender" value="<?php echo $gender; ?>">
             <option value="Other">Otro</option>
             <option value="F">Femenino</option>
             <option value="M">Masculino</option>
           </select>
-
-        </div>
-
-        <!-- terms -->
-        <div class="row-content form-group  ">
-          <div class="title-content-row">
-            <label >Terminos y condiciones</label>
-          </div>
-
-          <input class="  checkbox"   type="checkbox" name="terms"  />
 
         </div>
 

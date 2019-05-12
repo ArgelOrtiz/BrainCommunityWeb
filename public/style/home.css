@@ -40,8 +40,11 @@ h4.errText{
   color:#00BFFF;"
 }
 
-.modal-footer button{
-  background:#1C1C !important;
+
+.close-modal-button{
+  background:#1C1C1C !important;
+  color:#00BFFF !important;
+  border:#00BFFF !important;
 }
 
 
