@@ -11,7 +11,6 @@
 				<div class="row-content">
 
 				</div>
-
 			</div>
 
 <?php  require ROUTE_APP.'/views/inc/admin/footer.php';?>
