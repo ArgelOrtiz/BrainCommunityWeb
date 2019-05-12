@@ -5,15 +5,17 @@
  */
 class Profile extends Controller{
   private $profileModel;
+  private $registerModel;
   private $experienceResult;
   private $clasification;
 
   function __construct()
   {
     session_start();
-    $this->experienceResult = [];
-    $this->clasification =[];
-    $this->profileModel = $this->model('_profile');
+    $this->experienceResult   = [];
+    $this->clasification      = [];
+    $this->profileModel       = $this->model('_profile');
+    $this->registerModel      = $this->model('_register');
     $this->getExperience();
     $this->getClasification();
     // code...
@@ -33,6 +35,35 @@ class Profile extends Controller{
       $this->controller('NotFound');
     }
 
+  }
+
+  public function editUserName(){
+    $newUserName  = $_POST['username'];
+    $id           = $_SESSION['id'];
+
+    if ($newUserName === $_SESSION['username']) {
+      // code...
+      $this->controller('Profile');
+      die();
+    }
+
+    $result = $this->registerModel->verify_username($newUserName);
+
+    if ($result->exist != 0) {
+      // code... the username exist
+      echo 'El nombre de usuario ya exist';
+      die();
+    }
+
+
+    if ($this->profileModel->editUserName($newUserName, $id)) {
+      // code...
+      $this->refreshData();
+      $this->controller('Profile');
+    }else {
+      // code...
+      $this->controller('Home');
+    }
   }
 
   public function editName(){

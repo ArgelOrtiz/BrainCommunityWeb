@@ -13,6 +13,12 @@
       $this->db = new DataBase;
     }
 
+    public function editUserName($userName, $id){
+      $this->db->query("UPDATE ic_user SET username='$userName' WHERE id='$id'");
+
+      return $this->db->execute();
+    }
+
     public function editName($name, $id){
       $this->db->query("UPDATE ic_user SET first_name='$name' WHERE id='$id'");
 

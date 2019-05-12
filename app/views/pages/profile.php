@@ -32,6 +32,32 @@
 
       <div class="content-profile-row" >
 
+        <!-- username Modal -->
+        <div class="modal fade" id="userNameModal" role="dialog">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Nombre de usuario</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <form class="" action="<?php echo ROUTE_URL.'/Profile/editUserName'?>" method="post">
+
+                    <input type="text" class="form-control form-control-lg"  name="username" value="<?php echo $_SESSION['username']; ?>">
+                    <br><br>
+                    <input type="submit" class="form-control form-control-lg save" value="Guardar">
+
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancelar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Name Modal -->
         <div class="modal fade" id="nameModal" role="dialog">
           <div class="modal-dialog modal-sm">
@@ -165,7 +191,7 @@
           <tr>
             <th>Nombre de usuario</th>
             <td> <?php echo $_SESSION['username']; ?> </td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" >Editar</button> </td>
+            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#userNameModal">Editar</button> </td>
           </tr>
           <tr>
             <th>Correo electronico</th>
