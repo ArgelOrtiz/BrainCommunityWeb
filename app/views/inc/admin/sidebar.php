@@ -31,13 +31,13 @@
                 <a href="#">Home</a>
             </li>
             <li>
-                <a href="#">Usuarios</a>
+                <a href="<?php echo ROUTE_URL.'/AdminHome/users'?>">Usuarios</a>
             </li>
 						<li>
 								<a href="#">Categorías</a>
 						</li>
 						<li>
-								<a href="#">Preguntas</a>
+								<a href="<?php echo ROUTE_URL.'/AdminHome/questions'?>">Preguntas</a>
 						</li>
 						<li>
 								<a href="#">Respuestas</a>

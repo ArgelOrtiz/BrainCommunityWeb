@@ -3,11 +3,10 @@
 			<div class="admin-content">
 
 				<div class="title-content">
-
 				</div>
 
 				<div class="row-content">
-					Hola
+					
 				</div>
 			</div>
 

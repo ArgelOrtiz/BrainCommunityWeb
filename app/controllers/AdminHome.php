@@ -14,7 +14,13 @@ class AdminHome extends Controller
     $this->view('pages/admin/adminHome');
   }
 
+  public function users(){
+    $this->view('pages/admin/adminUsers');
+  }
 
+  public function questions(){
+    $this->view('pages/admin/adminQuestions');
+  }
 }
 
 
