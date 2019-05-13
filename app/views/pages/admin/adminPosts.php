@@ -8,7 +8,11 @@
   <div class="row-content">
 			<h4>Lista de posts</h4>
 			<hr/>
-
+      <div align = center>
+            <button type="button" class = "btn btn-success btn-lg">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true">Nuevo Post</span>
+              </button>
+          </div>
 			<div class="table-responsive">
 			<table class="table table-striped table-hover">
 				<tr>

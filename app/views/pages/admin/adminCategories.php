@@ -4,10 +4,14 @@
   <div class="title-content">
     <h3>Categorias</h3>
   </div>
-
   <div class="row-content">
 			<h4>Lista de categorias</h4>
 			<hr/>
+      <div align = center>
+            <button type="button" class = "btn btn-success btn-lg">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true">Nueva Categoria</span>
+              </button>
+          </div>
 
 			<div class="table-responsive">
 			<table class="table table-striped table-hover">
