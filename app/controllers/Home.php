@@ -10,7 +10,7 @@
 
     public function index(){
 
-      $posts = $this->postModel->getCategory();
+      $posts = $this->postModel->getCategories();
 
       $data = [
         'title'   => 'Bienvenido a community',
