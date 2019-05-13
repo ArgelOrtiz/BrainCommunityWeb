@@ -19,6 +19,12 @@
       return $this->db->execute();
     }
 
+    public function editEmail($email, $id){
+      $this->db->query("UPDATE ic_user SET email='$email' WHERE id='$id'");
+
+      return $this->db->execute();
+    }
+
     public function editName($name, $id){
       $this->db->query("UPDATE ic_user SET first_name='$name' WHERE id='$id'");
 
@@ -65,6 +71,12 @@
       $this->db->query("INSERT into experience
         values (null,'".$data['id']."','".$data['clasification']."','".$data['name']."','".$data['summary']."','".$data['extra']."',
         '".$data['start_date']."','".$data['end_date']."') ");
+
+      return $this->db->execute();
+    }
+
+    public function deleteExperience($id){
+      $this->db->query("DELETE from experience WHERE id='$id'");
 
       return $this->db->execute();
     }

@@ -22,7 +22,44 @@
       break;
   }
 
+  if ($data['type'] === 1) {
+    // code...
+    $message = 'El nombre de usuario ya esta en uso';
+  }else if ($data['type'] === 2) {
+    // code...
+    $message = 'El correo ya esta en uso';
+  }
+
+  if ($data['type'] != 0) {
+    // code...
+    ?>
+    <script type="text/javascript">
+        $(window).on('load',function(){
+            $('#errorModal').modal('show');
+        });
+    </script>
+    <?php
+  }
+
    ?>
+
+
+   <!-- Modal -->
+     <div class="modal fade fade" id="errorModal" role="dialog">
+       <div class="modal-dialog modal-sm">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h4 class="modal-title">Perfil</h4>
+           </div>
+           <div class="modal-body">
+             <label class="message-reload" ><?php echo $message; ?></label>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-default close-modal-button" data-dismiss="modal">Close</button>
+           </div>
+         </div>
+       </div>
+     </div>
 
     <div class="profile-container" >
 
@@ -45,6 +82,32 @@
                   <form class="" action="<?php echo ROUTE_URL.'/Profile/editUserName'?>" method="post">
 
                     <input type="text" class="form-control form-control-lg"  name="username" value="<?php echo $_SESSION['username']; ?>">
+                    <br><br>
+                    <input type="submit" class="form-control form-control-lg save" value="Guardar">
+
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancelar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- email Modal -->
+        <div class="modal fade" id="emailModal" role="dialog">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Correo electronico</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <form class="" action="<?php echo ROUTE_URL.'/Profile/editEmail'?>" method="post">
+
+                    <input type="text" class="form-control form-control-lg"  name="email" value="<?php echo $_SESSION['email']; ?>">
                     <br><br>
                     <input type="submit" class="form-control form-control-lg save" value="Guardar">
 
@@ -196,7 +259,7 @@
           <tr>
             <th>Correo electronico</th>
             <td> <?php echo $_SESSION['email']; ?> </td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" name="button">Editar</button> </td>
+            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#emailModal">Editar</button> </td>
           </tr>
           <tr>
             <th>Nombre</th>
@@ -274,7 +337,7 @@
                   <td><?php echo $experience->summary; ?></td>
                   <td>
                     <button class="btn btn-info" type="button" data-toggle="modal" data-target="#experienceModal" name="button">Ver</button>
-                    <button class="btn btn-danger" type="button" name="button">Eliminar</button>
+                    <button class="btn btn-danger" type="button"data-toggle="modal" data-target="#deleteExperienceModal">Eliminar</button>
                   </td>
                 </tr>
 
@@ -305,6 +368,32 @@
                           <label><?php echo $experience->end_date; ?></label>
 
                         </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancelar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- delete experience Modal -->
+                <div class="modal fade" id="deleteExperienceModal" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Genero</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+                      <div class="modal-body">
+
+                        <form class="" action="<?php echo ROUTE_URL.'/Profile/deleteExperience'?>" method="post">
+                          <div class="form-group data-experience-row">
+                            <input type="hidden" name="id" value="<?php echo $experience->id; ?>">
+                            <label >Estas seguro de que desceas eliminar la experiencia "<?php echo $experience->name;?>" </label>
+                            <button class="btn btn-warning" type="submit" style="width:25%;">Eliminar</button>
+                          </div>
+                        </form>
+
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancelar</button>
