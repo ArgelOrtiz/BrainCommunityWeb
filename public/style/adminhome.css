@@ -92,25 +92,23 @@ a[data-toggle="collapse"] {
 }
 
 .admin-content{
-  background:red;
   display:flex;
   flex-direction: column;
   position:absolute;
   top:0px;
   left:250px;
+  margin:25px;
   height:auto;
-  width:calc(100% - 250px);
+  width:calc(100% - 300px);
 }
 
 .title-content{
-  background:yellow;
   height: auto;
   width:100%;
   margin-bottom: 15px;
 }
 
 .row-content{
-  background: green;
   height: auto;
   width: 100%;
   margin-bottom: 5px;
@@ -128,4 +126,9 @@ a[data-toggle="collapse"] {
       left:0px;
       width:100%;
     }
+.buttons{
+  width: 400px;
+  display: flex;
+  justify-content: center
+}
 }
