@@ -46,7 +46,7 @@
           <?php }?>
 
             <li ><a class="fa fa-folder-o" href="<?php echo ROUTE_URL.'/MyPosts'?>" title="Mis post"></a></li>
-            <li ><a class="fa fa-file-text-o" href="<?php echo ROUTE_URL.'/MyPosts/newPost'?>" title="Nuevo post"></a></li>
+            <li ><a class="fa fa-file-text-o" data-toggle="modal" data-target="#newPostModal" title="Nuevo post"></a></li>
             <li ><a  class="fa fa-sign-out" href="<?php echo ROUTE_URL.'/Login/logout'?>" title="Cerrar sesión"></a></li>
 
 
@@ -69,3 +69,30 @@
         </form>
       </div>
     </nav>
+
+    <!-- new post Modal -->
+      <div class="modal fade fade" id="newPostModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Nueva plubicación</h4>
+            </div>
+            <div class="modal-body">
+
+              <form class="" action="<?php echo ROUTE_URL.'/MyPosts/newPost'?>" method="post">
+                <select class="form-control" name="category">
+                  <?php foreach($data['posts'] as $category): ?>
+                    <option value="<?php echo $category->id; ?>"> <?php echo $category->title; ?></option>
+                  <?php endforeach ?>
+                </select>
+
+                <button class="btn btn-primary" style="margin-top:15px;" type="submit" name="button">Crear</button>
+              </form>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default close-modal-button" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>

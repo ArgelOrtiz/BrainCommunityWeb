@@ -3,12 +3,13 @@
 /**
  *
  */
-class MyPosts extends Controller
-{
+class MyPosts extends Controller{
+  private $categoryModel;
 
-  function __construct()
-  {
+  function __construct(){
     // code...
+    $this->categoryModel = $this->model('_category');
+
   }
 
   public function index(){
@@ -24,9 +25,15 @@ class MyPosts extends Controller
 
   public function newPost(){
     session_start();
-
     if ($_SESSION) {
-      $this->view('pages/newPost');
+      $id = $_POST['category'];
+
+      $metadata =  $this->categoryModel->getTags();
+
+      $data = [
+        'metadata' => $metadata
+      ];
+      $this->view('pages/newPost',$data);
     }else{
       $this->controller('NotFound');
     }

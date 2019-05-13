@@ -18,6 +18,13 @@
 
       return $this->db->registry();
     }
+
+    public function getTags($category_id){
+      $this->db->query("SELECT * FROM metadata_post where id_category = ' $category_id'");
+
+      return $this->db->records();
+    }
+
   }
 
  ?>
