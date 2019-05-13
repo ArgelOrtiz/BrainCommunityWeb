@@ -32,7 +32,9 @@
   color: #00BFFF;
 }
 
-
+.table{
+  border-radius:15px;
+}
 
 .profile-table {
   /* background:white !important;

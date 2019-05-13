@@ -5,15 +5,19 @@
  */
 class Profile extends Controller{
   private $profileModel;
+  private $registerModel;
   private $experienceResult;
   private $clasification;
+  private $type;
 
   function __construct()
   {
     session_start();
-    $this->experienceResult = [];
-    $this->clasification =[];
-    $this->profileModel = $this->model('_profile');
+    $this->type               = 0;
+    $this->experienceResult   = [];
+    $this->clasification      = [];
+    $this->profileModel       = $this->model('_profile');
+    $this->registerModel      = $this->model('_register');
     $this->getExperience();
     $this->getClasification();
     // code...
@@ -25,7 +29,8 @@ class Profile extends Controller{
       // code...
 
       $data = [
-        'experience' => $this->experienceResult,
+        'type'          => $this->type,
+        'experience'    => $this->experienceResult,
         'clasification' => $this->clasification
       ];
       $this->view('pages/profile',$data);
@@ -33,6 +38,62 @@ class Profile extends Controller{
       $this->controller('NotFound');
     }
 
+  }
+
+  public function editUserName(){
+    $newUserName  = $_POST['username'];
+    $id           = $_SESSION['id'];
+
+    if ($newUserName === $_SESSION['username']) {
+      // code...
+      $this->controller('Profile');
+      die();
+    }
+
+    $result = $this->registerModel->verify_username($newUserName);
+    if ($result->exist != 0) {
+      // code... the username exist
+      $this->type = 1;
+      $this->index();
+      die();
+    }
+
+    if ($this->profileModel->editUserName($newUserName, $id)) {
+      // code...
+      $this->refreshData();
+      $this->controller('Profile');
+    }else {
+      // code...
+      $this->controller('Home');
+    }
+  }
+
+  public function editEmail(){
+    $newEmail     = $_POST['email'];
+    $id           = $_SESSION['id'];
+
+    if ($newEmail === $_SESSION['email']) {
+      // code...
+      $this->controller('Profile');
+      die();
+    }
+
+    $result =  $this->registerModel->verify_email($newEmail);
+    if ($result->exist != 0) {
+      // code... email exist
+      $this->type = 2;
+      $this->index();
+      die();
+    }
+
+    if ($this->profileModel->editEmail($newEmail, $id)) {
+      // code...
+      $this->refreshData();
+      $this->controller('Profile');
+    }else {
+      // code...
+      $this->controller('Home');
+    }
   }
 
   public function editName(){
@@ -133,9 +194,8 @@ class Profile extends Controller{
       'end_date'      => $_POST['end_date']
     ];
 
-    print_r($data);
 
-    $resutl = $this->profileModel->createExperience($data);
+    $result = $this->profileModel->createExperience($data);
 
     if ($result) {
       // code...
@@ -145,6 +205,22 @@ class Profile extends Controller{
       // code...
       echo 'error';
     }
+  }
+
+  function deleteExperience(){
+    $id   = $_POST['id'];
+
+    $result   = $this->profileModel->deleteExperience($id);
+
+    if ($result) {
+      // code...
+      $this->refreshData();
+      $this->controller('Profile');
+    }else {
+      // code...
+      echo 'error';
+    }
+
   }
 
   public function refreshData(){
