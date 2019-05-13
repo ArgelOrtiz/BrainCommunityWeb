@@ -9,7 +9,7 @@
 			<hr/>
       <div align = center>
             <button type="button" class = "btn btn-success btn-lg">
-              <span class="glyphicon glyphicon-plus" aria-hidden="true">Nueva Categoria</span>
+              <span class="glyphicon glyphicon-plus" aria-hidden="true">Crear Categoria</span>
               </button>
           </div>
 
