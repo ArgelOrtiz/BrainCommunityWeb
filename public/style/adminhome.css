@@ -104,14 +104,14 @@ a[data-toggle="collapse"] {
 
 .title-content{
   background:yellow;
-  height: 150px;
+  height: auto;
   width:100%;
   margin-bottom: 15px;
 }
 
 .row-content{
   background: green;
-  height: 200px;
+  height: auto;
   width: 100%;
   margin-bottom: 5px;
 }

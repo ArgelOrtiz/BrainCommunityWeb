@@ -28,19 +28,19 @@
 				<ul class="list-unstyled components">
             <!-- <p>Dummy Heading</p> -->
 						<li>
-                <a href="#">Home</a>
+                <a href="<?php echo ROUTE_URL.'/AdminHome'?>">Home</a>
             </li>
             <li>
                 <a href="<?php echo ROUTE_URL.'/AdminHome/users'?>">Usuarios</a>
             </li>
 						<li>
-								<a href="#">Categorías</a>
+								<a href="<?php echo ROUTE_URL.'/AdminHome/categories'?>">Categorías</a>
 						</li>
 						<li>
 								<a href="<?php echo ROUTE_URL.'/AdminHome/questions'?>">Preguntas</a>
 						</li>
 						<li>
-								<a href="#">Respuestas</a>
+								<a href="<?php echo ROUTE_URL.'/AdminHome/answers'?>">Respuestas</a>
 						</li>
             <li class="active">
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Denuncias</a>
