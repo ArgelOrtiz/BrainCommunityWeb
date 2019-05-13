@@ -2,11 +2,11 @@
 <div class="admin-content">
 
   <div class="title-content">
-    <h3>Categorias</h3>
+    <h3>Comentarios</h3>
   </div>
 
   <div class="row-content">
-			<h4>Lista de categorias</h4>
+			<h4>Lista de comentarios</h4>
 			<hr/>
 
 			<div class="table-responsive">
@@ -17,19 +17,19 @@
 					<th>Resumen</th>
 					<th>Acciones</th>
 				</tr>
-        <?php foreach($data['categories'] as $category): ?>
+        <?php foreach($data['comments'] as $comment): ?>
           <tr>
-						<td><?php echo $category->id; ?></td>
-						<td><?php echo $category->title; ?></td>
-            <td><?php echo $category->summary; ?></td>
+						<td><?php echo $comment->id; ?></td>
+						<td><?php echo $comment->title; ?></td>
+						<td><?php echo $comment->summary; ?></td>
 
 						<td>
-              <form action="<?php echo ROUTE_URL.'/Category/edit/'; ?>" method="POST">
-                <input type="hidden" name="category_id" value="<?php echo $category->id; ?>">
+              <form action="<?php echo ROUTE_URL.'/Comment/edit/'; ?>" method="POST">
+                <input type="hidden" name="comment_id" value="<?php echo $comment->id; ?>">
   							<button type="submit" class="btn btn-primary btn-sm">Editar</button>
               </form>
-              <form action="<?php echo ROUTE_URL.'/Category/delete/'; ?>" method="POST">
-                <input type="hidden" name="category_id" value="<?php echo $category->id; ?>">
+              <form action="<?php echo ROUTE_URL.'/Comment/delete/'; ?>" method="POST">
+                <input type="hidden" name="comment_id" value="<?php echo $comment->id; ?>">
   							<button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
               </form>
 						</td>

@@ -37,10 +37,10 @@
 								<a href="<?php echo ROUTE_URL.'/AdminHome/categories'?>">Categorías</a>
 						</li>
 						<li>
-								<a href="<?php echo ROUTE_URL.'/AdminHome/questions'?>">Preguntas</a>
+								<a href="<?php echo ROUTE_URL.'/AdminHome/posts'?>">Posts</a>
 						</li>
 						<li>
-								<a href="<?php echo ROUTE_URL.'/AdminHome/answers'?>">Respuestas</a>
+								<a href="<?php echo ROUTE_URL.'/AdminHome/comments'?>">Comentarios</a>
 						</li>
             <li class="active">
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Denuncias</a>
