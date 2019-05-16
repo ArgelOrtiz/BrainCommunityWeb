@@ -18,6 +18,12 @@
 
       return $this->db->registry();
     }
+
+    public function getTags($id){
+      $this->db->query("DELETE FROM metadata_post where id_category = '$id'");
+
+      return $this->db->registry();
+    }
   }
 
  ?>

@@ -28,7 +28,7 @@ class MyPosts extends Controller{
     if ($_SESSION) {
       $id = $_POST['category'];
 
-      $metadata =  $this->categoryModel->getTags();
+      $metadata =  $this->categoryModel->getTags($id);
 
       $data = [
         'metadata' => $metadata

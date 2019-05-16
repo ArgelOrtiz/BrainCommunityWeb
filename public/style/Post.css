@@ -1,100 +1,58 @@
-#header{
-      height:10%;
-      width:100%;
-      top:0%;
-      left:0%;
-      z-index:3;
-      position:fixed;
-      text-align:end;
-      background:#1c1c1c;
-      color:#1c1c1c;
-      font-size:10px;
-    }
+.new-post-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top:80px;
+  left:0px;
+  width: 100%;
+  height: auto;
+}
 
-    #left{
-      height:90%;
-      width:15%;
-      top:10%;
-      left:0%;
-      z-index:3;
-      position:fixed;
-      text-align:end;
-      background:#ffffdd;
-      color:#ffffdd;
-      font-size:10px;
-    }
+.post-container{
+  display:flex;
+  flex-direction: column;
+  background: #eee;
+  height:auto;
+  width:60%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-radius:15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
-    #right{
-      height:90%;
-      width:15%;
-      top:10%;
-      left:85%;
-      z-index:3;
-      position:fixed;
-      text-align:end;
-      background:#ffffee;
-      color:#ffffee;
-      font-size:10px;
-    }
+.title-row{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 25px;
+  padding-left: 25px;
+}
 
-    #principal{
-      height:90%;
-      width:70%;
-      top:10%;
-      left:15%;
-      z-index:3;
-      position:fixed;
-      background:#ffffff;
-      color:#ffffff;
-      font-size:10px;
-    }
+.title-row > label{
+  font-size:25px;
+}
 
-    #question{
-      height:30%;
-      width:60%;
-      top:20%;
-      left:20%;
-      z-index:3;
-      position:fixed;
-      text-align:center;
-      background:#112233;
-      color:#112233;
-      font-size:10px;
-    }
+.title-row > label + label {
+  font-size:15px;
+}
 
-    #answer{
-      height:15%;
-      width:60%;
-      top:55%;
-      left:20%;
-      z-index:3;
-      position:fixed;
-      text-align:center;
-      background:#112233;
-      color:#112233;
-      font-size:10px;
-    }
+.post-content-row{
+  display:flex;
+  flex-direction: column;
+  padding-left: 35px;
+  padding-right: 35px;
+  margin-bottom: 15px;
+}
 
-    #answer2{
-      height:15%;
-      width:60%;
-      top:75%;
-      left:20%;
-      z-index:3;
-      position:fixed;
-      text-align:center;
-      background:#ffffff;
-      color:#ffffff;
-      font-size:10px;
-    }
+.metadata-content-row{
+  display:flex;
+  background: white;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
 
-    div {
-      padding-top: 5px;
-      padding-right: 15px;
-      padding-bottom: 5px;
-      padding-left: 15px;
-    }
-
-    h4,h5{
-      color:black;
-    }
+.metadata-row{
+  margin: 15px;
+}
