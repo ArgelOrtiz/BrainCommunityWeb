@@ -30,7 +30,7 @@
 						<td>
               <form action="<?php echo ROUTE_URL.'/Comment/edit/'; ?>" method="POST">
                 <input type="hidden" name="comment_id" value="<?php echo $comment->id; ?>">
-  							<button type="submit" class="btn btn-primary btn-sm">Editar</button>
+  							<button type="button" class="btn btn-primary btn-sm"data-toggle="modal" data-target="#myModal">Editar</button>
               </form>
               <form action="<?php echo ROUTE_URL.'/Comment/delete/'; ?>" method="POST">
                 <input type="hidden" name="comment_id" value="<?php echo $comment->id; ?>">
@@ -42,6 +42,31 @@
         <?php endforeach ?>
 
 			</table>
+      <!--MODAL-->
+        <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg" >
+    <!--MODAL_CONTENT-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Editar</h4>
+      </div>
+      <div class="modal-body">
+        <!--CONTENIDO-->
+        <label>Nombre de usuario</label><br>
+      <input style="width:100%" type="text"name="nombre" id="first_name"class="form_control" width><br>
+      <label>Descripcion</label><br>
+    <input style="width:100%" type="text"name="apellidoM" id="middle_name"class="form_control"><br>
+    <label>Fecha de Creacion</label><br>
+  <input style="width:100%" type="text"name="apellidoP" id="last_name"class="form_control"><br>
+<button float:right; type="submit" class="btn btn-info" data-dismiss="modal">Enviar</button>
+    <!--FIN-->
+      </div>
+      <div class="modal-footer">
+          <button float:left; type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+<!--FIN MODEL-->
 			</div>
   </div>
 </div>
