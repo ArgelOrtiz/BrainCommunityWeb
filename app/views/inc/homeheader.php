@@ -81,7 +81,7 @@
 
               <form class="" action="<?php echo ROUTE_URL.'/MyPosts/newPost'?>" method="post">
                 <select class="form-control" name="category">
-                  <?php foreach($data['posts'] as $category): ?>
+                  <?php foreach($data['categories'] as $category): ?>
                     <option value="<?php echo $category->id; ?>"> <?php echo $category->title; ?></option>
                   <?php endforeach ?>
                 </select>
