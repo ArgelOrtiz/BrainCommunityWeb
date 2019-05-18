@@ -13,6 +13,30 @@
       return $this->db->records();
     }
 
+    public function post($id){
+      $this->db->query("SELECT * FROM ic_post WHERE id = $id");
+
+      return $this->db->registry();
+    }
+
+    public function userPost($id){
+      $this->db->query("SELECT id, username, points FROM ic_user WHERE id= $id");
+
+      return $this->db->registry();
+    }
+
+    public function currentCategory($id){
+      $this->db->query("SELECT id, title FROM category WHERE id= $id");
+
+      return $this->db->registry();
+    }
+
+    public function getComments($id){
+      $this->db->query("SELECT * FROM comments WHERE id_post = $id ORDER BY create_date desc");
+
+      return $this->db->records();
+    }
+
     public function deletePost($post_id){
       $this->db->query("DELETE FROM ic_post where id = " . $post_id);
 

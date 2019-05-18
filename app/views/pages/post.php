@@ -1,54 +1,95 @@
 <?php  require ROUTE_APP.'/views/inc/header.php';?>
-	<div id="left"></div>
-	<div id="right"></div>
-	<div id="principal">
-		<div  class="container">
-			<div class="row">
-	            <div align=left class="col-md-12">
-	            	<h4>Categoría</h4>
-	            	<img src="" width=100px height=20px alt="Regresar">
-	            </div>
-	        </div>
+<link rel="stylesheet" type="text/css" href="<?php echo ROUTE_URL; ?>/style/post.css"/>
 
-	        <div class="container">
-	        	<div style="background:#e6e6e6;" class="row">
-	            	<div style="color:black; font-size: 13px;" class="col-sm">Nombre de usuario</div>
-	            	<div style="color:black; font-size: 13px;" class="col-sm text-right">Fecha</div>
-	            </div>
-	   			<div style="background:#e6e6e6;" class="row">
-	            	<div style="color:black; font-size: 22px;" class="col-sm ">Pregunta</div>
-	            </div>
-	            <div style="background:#e6e6e6;" class="row">
-	            	<div style="color:black; font-size: 14;" class="col-sm text-justify">Descripción detallada de la pregunta.</div>
-	            </div>
-	            <div style="background:#e6e6e6;" class="row">
-	            	<div style="background:white; color:black; font-size: 12; margin-top:20px; margin-right:20px; margin-bottom:20px;" class="col-sm-2 text-center">Tags</div>
-	            	<div style="background:white; color:black; font-size: 12; margin-top:20px; margin-right:20px; margin-bottom:20px;" class="col-sm-2 text-center">Otro tag</div>
-	            </div>
-	        </div> <!-- Pregunta -->
+<?php
+if ($data['post']) {
+	// code...
+	$post = $data['post'];
+}
 
-	        <div style="margin-top:20px; margin-bottom:10px;" class="row">
-	        	<button style="color:black"class="col-sm-4 text-center">Ordenar por</button>
-	        </div>
-	        <!-- for de respuestas -->
+if ($data['user']) {
+	// code...
+	$user = $data['user'];
+}
 
-	        <div class="container">
-	            <div style="background:#e6e6e6;" class="row">
-	            	<div style="color:black; font-size: 14;" class="col-sm text-justify">Descripción detallada de la pregunta.</div>
-	            </div>
-	            <div style="background:#e6e6e6;" class="row">
-	            	<div style="color:black; font-size: 13px;" class="col-sm">Nombre de usuario</div>
-	            	<div style="color:black; font-size: 13px;" class="col-sm text-right">Fecha</div>
+if ($data['category']) {
+	// code...
+	$category = $data['category'];
+}
 
 
-	            </div>
-	            <div style="background:#e6e6e6;" class="row">
-	            	<button style="margin-bottom:20px; margin-left:10px; margin-right:10px;" class="col-sm"> A favor</button>
-	            	<button style="margin-bottom:20px; margin-left:10px; margin-right:10px;" class="col-sm"> En contra</button>
-	            </div>
-	        </div> <!-- Respuesta -->
+ ?>
 
-		</div>  <!-- Container -->
+<div class="info-main-container" >
+	<div class="info-container">
+
+						<label class="titles" for="">Nombre de usuario:</label>
+						<label for=""><?php echo $user->username; ?></label>
+						<label class="titles" for="">Puntos:</label>
+						<label for=""><?php echo $user->points; ?></label>
+						<br> <br>
+						<label class="titles" for="">Categoria:</label>
+						<label for=""><?php echo $category->title; ?></label>
+						<label class="titles" for="">Fecha:</label>
+						<label for=""><?php echo $post->create_date; ?></label>
+						<label class="titles" for="">Comentarios:</label>
+						<label for=""><?php echo $post->comments; ?></label>
+						<label class="titles" for="">Visitas:</label>
+						<label for=""><?php echo $post->visits; ?></label>
+
 	</div>
-</body>
-</html>
+</div>
+
+<div class="post-main-container">
+		<div class="post-container">
+
+			<div class="title-row">
+				<label for="title"><?php echo $post->title;  ?></label>
+			</div>
+
+			<div class="post-content-row">
+				<p><?php echo $post->summary; ?></p>
+
+			</div>
+
+			<div class="post-coments-row" style="  padding-left:15px; padding-right:15px;">
+
+				<?php if ($data['comments']): ?>
+					<?php foreach ($data['comments'] as $comments): ?>
+						<div class="comments-row" style=" background:lightgrey; margin:15px; border-left: 6px #00BFFF solid; display:flex; flex-direction:column; padding:5px;">
+
+							<div class="title-comments" style="width: 100%;display:flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;">
+								<label for="">_username_</label>
+								<label for=""><?php echo $comments->create_date; ?></label>
+							</div>
+
+							<div class="content-comments">
+								<p><?php echo $comments->summary; ?></p>
+							</div>
+						</div>
+					<?php endforeach; ?>
+				<?php endif; ?>
+
+			</div>
+
+		</div>
+
+		<form class="post-container">
+
+			<div class="title-row">
+				<label for="title">Escribir un comentario</label>
+			</div>
+
+			<div class="post-content-row">
+				<textarea name="name" rows="8" cols="80"></textarea>
+			</div>
+
+			<div class="post-content-row">
+				<button class="btn btn-primary" type="submit" name="button" style="width:35%;">Comentar</button>
+			</div>
+
+		</form>
+</div>
+
+
+﻿<?php  require ROUTE_APP.'/views/inc/footer.php';?>

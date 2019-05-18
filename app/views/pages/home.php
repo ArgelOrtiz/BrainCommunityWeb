@@ -65,7 +65,7 @@
 
     <?php foreach ($data['post'] as $post): ?>
 
-      <button class="flip-card" style="background:transparent; border:0px;" onsubmit="<?php echo ROUTE_URL.'/Register'?>">
+      <form class="flip-card" action="<?php echo ROUTE_URL.'/Post/viewPost';?>" method="get">
         <div class="flip-card-inner">
           <div class="flip-card-front">
 
@@ -77,12 +77,13 @@
               <h6 class="date"><?php echo $post->create_date; ?></h1>
             </div>
           </div>
-          <div class="flip-card-back" onclick="#">
+          <button type="submit" class="flip-card-back" style=" border:0px;">
+            <input type="hidden" name="id" value="<?php echo $post->id; ?>">
             <h4 class="title"><?php echo $post->title; ?></h4>
             <p class="description"><?php echo $post->summary; ?></p>
-          </div>
+          </button>
         </div>
-      </button>
+      </form>
 
     <?php endforeach; ?>
 

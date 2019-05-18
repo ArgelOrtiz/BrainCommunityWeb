@@ -11,9 +11,41 @@ class Post extends Controller
     $this->postModel = $this->model('_post');
   }
 
-  public function index()
-  {
+  public function index(){
     $this->view('pages/post');
+  }
+
+  public function viewPost(){
+    $id = $_GET['id'];
+
+    $post     = $this->postModel->post($id);
+    $comments = $this->postModel->getComments($id);
+    $category = $this->postModel->currentCategory($post->id_category);
+
+    if ($post) {
+      // code...
+
+      $user = $this->postModel->userPost($post->id_user);
+
+      if ($user) {
+        // code...
+
+        $data = [
+          'post' => $post,
+          'user' => $user,
+          'category' => $category,
+          'comments' => $comments
+        ];
+
+        $this->view('pages/post',$data);
+      }else {
+        // code...
+      }
+
+    }else {
+      // code...
+    }
+
   }
 
   public function edit()
