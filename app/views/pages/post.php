@@ -2,6 +2,8 @@
 <link rel="stylesheet" type="text/css" href="<?php echo ROUTE_URL; ?>/style/post.css"/>
 
 <?php
+	session_start();
+
 if ($data['post']) {
 	// code...
 	$post = $data['post'];
@@ -54,12 +56,12 @@ if ($data['category']) {
 
 			<div class="post-coments-row" style="  padding-left:15px; padding-right:15px;">
 
-				<?php if ($data['comments']): ?>
+				<?php if ($data['comments']){ ?>
 					<?php foreach ($data['comments'] as $comments): ?>
-						<div class="comments-row" style=" background:lightgrey; margin:15px; border-left: 6px #00BFFF solid; display:flex; flex-direction:column; padding:5px;">
+						<div class="comments-row">
 
-							<div class="title-comments" style="width: 100%;display:flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;">
-								<label for="">_username_</label>
+							<div class="title-comments">
+								<label for=""><?php echo $comments->username; ?></label>
 								<label for=""><?php echo $comments->create_date; ?></label>
 							</div>
 
@@ -68,27 +70,48 @@ if ($data['category']) {
 							</div>
 						</div>
 					<?php endforeach; ?>
-				<?php endif; ?>
+				<?php }else { ?>
+					<div class="comments-row">
+
+						<div class="message-comments" >
+							<label for="">Sin comentarios</label>
+						</div>
+					</div>
+				<?php } ?>
 
 			</div>
 
 		</div>
 
-		<form class="post-container">
+		<?php if($_SESSION){?>
+
+		<form class="post-container" action="<?php echo ROUTE_URL.'/Post/comment';?>" method="post">
 
 			<div class="title-row">
 				<label for="title">Escribir un comentario</label>
 			</div>
 
 			<div class="post-content-row">
-				<textarea name="name" rows="8" cols="80"></textarea>
+				<textarea name="comment" rows="8" cols="80"></textarea>
 			</div>
 
 			<div class="post-content-row">
+				<input type="hidden" name="id_post" value="<?php echo $post->id; ?>">
 				<button class="btn btn-primary" type="submit" name="button" style="width:35%;">Comentar</button>
 			</div>
 
 		</form>
+
+		<?php }else{ ?>
+
+			<div class="post-container">
+
+				<div class="message-comments">
+					<label for="">Para comentar debes hacer login primero</label>
+				</div>
+
+			</div>
+		<?php } ?>
 </div>
 
 

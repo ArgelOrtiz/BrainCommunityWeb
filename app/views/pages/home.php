@@ -77,7 +77,7 @@
               <h6 class="date"><?php echo $post->create_date; ?></h1>
             </div>
           </div>
-          <button type="submit" class="flip-card-back" style=" border:0px;">
+          <button type="submit" class="flip-card-back" style="word-wrap:break-word; border:0px;">
             <input type="hidden" name="id" value="<?php echo $post->id; ?>">
             <h4 class="title"><?php echo $post->title; ?></h4>
             <p class="description"><?php echo $post->summary; ?></p>

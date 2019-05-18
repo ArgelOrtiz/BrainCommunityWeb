@@ -32,9 +32,20 @@
     }
 
     public function getComments($id){
-      $this->db->query("SELECT * FROM comments WHERE id_post = $id ORDER BY create_date desc");
+      $this->db->query("SELECT C.summary, C.create_date, U.username
+        FROM comments C
+        JOIN ic_user U
+        ON C.id_user = U.id
+        WHERE id_post = $id
+        ORDER BY C.create_date desc");
 
       return $this->db->records();
+    }
+
+    public function setComment($id_post, $id_user, $comment,$currentdate){
+      $this->db->query("INSERT INTO comments VALUES (null,'$id_post','$id_user','$comment','$currentdate')");
+
+      return $this->db->execute();
     }
 
     public function deletePost($post_id){

@@ -48,6 +48,34 @@ class Post extends Controller
 
   }
 
+  public function comment(){
+    session_start();
+    $comment = $_POST['comment'];
+    $id_post = $_POST['id_post'];
+    $id_user = $_SESSION['id'];
+
+    date_default_timezone_set('America/Mexico_City');
+
+    $currentdate = date('y-m-d');
+
+    if ($_SESSION) {
+      // code...
+      $result = $this->postModel->setComment($id_post,$id_user,$comment,$currentdate);
+
+      if ($result) {
+        // code...
+        $this->controller('Post/viewPost?id='.$id_post);
+      }else {
+        // code...
+        echo "Hubo un error";
+        die();
+      }
+    }else {
+      // code...
+      echo "error";
+    }
+  }
+
   public function edit()
   {
     $id = $_POST['post_id'];
