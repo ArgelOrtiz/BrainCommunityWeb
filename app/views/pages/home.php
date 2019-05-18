@@ -2,8 +2,8 @@
 <div class="mainContainer" style="margin-top:0px;" >
   <div class="categoryDiv">
     <a href="#" class="active">Categorias</a>
-      <?php foreach($data['posts'] as $post): ?>
-        <a href="#"><?php echo $post->title; ?></a>
+      <?php foreach($data['categories'] as $category): ?>
+        <a href="#"><?php echo $category->title; ?></a>
       <?php endforeach ?>
 
   </div>
@@ -63,195 +63,28 @@
 
   <div class="postsContainer">
 
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
+    <?php foreach ($data['post'] as $post): ?>
 
-        <img src="/categoria.jpg" alt="" background="gray"/>
-        <h4 class="title">Titulo</h4>
+      <button class="flip-card" style="background:transparent; border:0px;" onsubmit="<?php echo ROUTE_URL.'/Register'?>">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
 
-        <div class="extra">
-          <h6 class="coments">Comentarios</h1>
-          <h6 class="date">Fecha</h1>
+            <img src="/categoria.jpg" alt="" background="gray"/>
+            <h4 class="title"><?php echo htmlentities($post->title); ?></h4>
+
+            <div class="extra">
+              <h6 class="coments"><?php echo $post->comments; ?></h1>
+              <h6 class="date"><?php echo $post->create_date; ?></h1>
+            </div>
+          </div>
+          <div class="flip-card-back" onclick="#">
+            <h4 class="title"><?php echo $post->title; ?></h4>
+            <p class="description"><?php echo $post->summary; ?></p>
+          </div>
         </div>
-      </div>
-      <div class="flip-card-back" onclick="#">
-        <h4 class="title">Titulo</h4>
-        <p class="description">Descripcion.....</p>
-      </div>
-    </div>
-  </div>
+      </button>
 
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-
-        <img src="/categoria.jpg" alt="" background="gray"/>
-        <h4 class="title">Titulo</h4>
-
-        <div class="extra">
-          <h6 class="coments">Comentarios</h1>
-          <h6 class="date">Fecha</h1>
-        </div>
-      </div>
-      <div class="flip-card-back">
-        <h4 class="title">Titulo</h4>
-        <p class="description">Descripcion.....</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-
-        <img src="/categoria.jpg" alt="" background="gray"/>
-        <h4 class="title">Titulo</h4>
-
-        <div class="extra">
-          <h6 class="coments">Comentarios</h1>
-          <h6 class="date">Fecha</h1>
-        </div>
-      </div>
-      <div class="flip-card-back">
-        <h4 class="title">Titulo</h4>
-        <p class="description">Descripcion.....</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-
-        <img src="/categoria.jpg" alt="" background="gray"/>
-        <h4 class="title">Titulo</h4>
-
-        <div class="extra">
-          <h6 class="coments">Comentarios</h1>
-          <h6 class="date">Fecha</h1>
-        </div>
-      </div>
-      <div class="flip-card-back">
-        <h4 class="title">Titulo</h4>
-        <p class="description">Descripcion.....</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-
-        <img src="/categoria.jpg" alt="" background="gray"/>
-        <h4 class="title">Titulo</h4>
-
-        <div class="extra">
-          <h6 class="coments">Comentarios</h1>
-          <h6 class="date">Fecha</h1>
-        </div>
-      </div>
-      <div class="flip-card-back">
-        <h4 class="title">Titulo</h4>
-        <p class="description">Descripcion.....</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-
-        <img src="/categoria.jpg" alt="" background="gray"/>
-        <h4 class="title">Titulo</h4>
-
-        <div class="extra">
-          <h6 class="coments">Comentarios</h1>
-          <h6 class="date">Fecha</h1>
-        </div>
-      </div>
-      <div class="flip-card-back">
-        <h4 class="title">Titulo</h4>
-        <p class="description">Descripcion.....</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-
-        <img src="/categoria.jpg" alt="" background="gray"/>
-        <h4 class="title">Titulo</h4>
-
-        <div class="extra">
-          <h6 class="coments">Comentarios</h1>
-          <h6 class="date">Fecha</h1>
-        </div>
-      </div>
-      <div class="flip-card-back">
-        <h4 class="title">Titulo</h4>
-        <p class="description">Descripcion.....</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-
-        <img src="/categoria.jpg" alt="" background="gray"/>
-        <h4 class="title">Titulo</h4>
-
-        <div class="extra">
-          <h6 class="coments">Comentarios</h1>
-          <h6 class="date">Fecha</h1>
-        </div>
-      </div>
-      <div class="flip-card-back">
-        <h4 class="title">Titulo</h4>
-        <p class="description">Descripcion.....</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-
-        <img src="/categoria.jpg" alt="" background="gray"/>
-        <h4 class="title">Titulo</h4>
-
-        <div class="extra">
-          <h6 class="coments">Comentarios</h1>
-          <h6 class="date">Fecha</h1>
-        </div>
-      </div>
-      <div class="flip-card-back">
-        <h4 class="title">Titulo</h4>
-        <p class="description">Descripcion.....</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-
-        <img src="/categoria.jpg" alt="" background="gray"/>
-        <h4 class="title">Titulo</h4>
-
-        <div class="extra">
-          <h6 class="coments">Comentarios</h1>
-          <h6 class="date">Fecha</h1>
-        </div>
-      </div>
-      <div class="flip-card-back">
-        <h4 class="title">Titulo</h4>
-        <p class="description">Descripcion.....</p>
-      </div>
-    </div>
-  </div>
+    <?php endforeach; ?>
 
   </div>
 

@@ -8,7 +8,7 @@
     }
 
     public function getPosts(){
-      $this->db->query("SELECT * FROM ic_post");
+      $this->db->query("SELECT * FROM ic_post ORDER BY create_date desc");
 
       return $this->db->records();
     }

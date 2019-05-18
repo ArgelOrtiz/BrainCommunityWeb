@@ -3,18 +3,22 @@
   class Home extends Controller{
 
     public function __construct(){
-      $this->postModel = $this->model('_category');
+      $this->categoryModel = $this->model('_category');
+      $this->postModel = $this->model('_post');
+
       //echo 'controlador home cargado';
       $this->index();
     }
 
     public function index(){
 
-      $posts = $this->postModel->getCategories();
+      $categories = $this->categoryModel->getCategories();
+      $post       = $this->postModel->getPosts();
 
       $data = [
-        'title'   => 'Bienvenido a community',
-        'posts'     => $posts
+        'title'       => 'Bienvenido a community',
+        'categories'  => $categories,
+        'post'        => $post
       ];
       $this->view('pages/home',$data);
 
@@ -33,11 +37,11 @@
 
     public function search(){
 
-      $posts = $this->postModel->getCategory();
+      $categories = $this->postModel->getCategory();
 
       $data = [
         'title' => 'Bienvenido a community',
-        'posts' => $posts
+        'categories' => $categories
       ];
 
       $this->view('pages/home',$data);
