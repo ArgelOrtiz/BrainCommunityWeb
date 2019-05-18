@@ -19,10 +19,28 @@
       return $this->db->registry();
     }
 
+    public function getCommentPost($id){
+      $this->db->query("SELECT comments FROM ic_post WHERE id = $id");
+
+      return $this->db->registry();
+    }
+
     public function userPost($id){
       $this->db->query("SELECT id, username, points FROM ic_user WHERE id= $id");
 
       return $this->db->registry();
+    }
+
+    public function increaseComments($comments, $id){
+      $this->db->query("UPDATE ic_post SET comments = $comments WHERE id= $id");
+
+      return $this->db->execute();
+    }
+
+    public function increaseViews($views, $id){
+      $this->db->query("UPDATE ic_post SET 	visits = $views WHERE id= $id");
+
+      return $this->db->execute();
     }
 
     public function currentCategory($id){

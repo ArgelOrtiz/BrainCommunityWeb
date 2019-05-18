@@ -17,13 +17,18 @@ class Post extends Controller
 
   public function viewPost(){
     $id = $_GET['id'];
-
+    
     $post     = $this->postModel->post($id);
     $comments = $this->postModel->getComments($id);
     $category = $this->postModel->currentCategory($post->id_category);
 
+    $views = $post->visits + 1;
+
+    $this->postModel->increaseViews($views,$id);
+
     if ($post) {
       // code...
+
 
       $user = $this->postModel->userPost($post->id_user);
 
@@ -54,6 +59,7 @@ class Post extends Controller
     $id_post = $_POST['id_post'];
     $id_user = $_SESSION['id'];
 
+
     date_default_timezone_set('America/Mexico_City');
 
     $currentdate = date('y-m-d');
@@ -64,7 +70,19 @@ class Post extends Controller
 
       if ($result) {
         // code...
-        $this->controller('Post/viewPost?id='.$id_post);
+        $coments = $this->postModel->getCommentPost($id_post);
+
+        $number = $coments->comments + 1;
+
+        $result = $this->postModel->increaseComments($number,$id_post);
+
+        if ($result) {
+          // code...
+          $this->controller('Post/viewPost?id='.$id_post);
+        }else {
+          // code...
+        }
+
       }else {
         // code...
         echo "Hubo un error";
