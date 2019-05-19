@@ -7,6 +7,7 @@
       $this->db = new DataBase;
     }
 
+
     public function getUsers(){
       $this->db->query("SELECT * FROM ic_user");
 
@@ -21,9 +22,10 @@
     }
 
     public function deleteUser($user_id){
-      $this->db->query("DELETE FROM ic_user where id = " . $user_id);
+      $this->db->query("UPDATE ic_user SET status = 0 where id = " . $user_id);
+      $deleted = $this->db->execute();
 
-      return $this->db->registry();
+      return $deleted;
     }
 
   }

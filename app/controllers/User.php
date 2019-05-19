@@ -5,7 +5,7 @@
 
     function __construct()
     {
-      $this->postModel = $this->model('_user');
+      $this->userModel = $this->model('_user');
     }
 
     public function index()
@@ -15,7 +15,7 @@
     public function edit()
     {
       $id = $_POST['user_id'];
-      $user = $this->postModel->getUserById($id);
+      $user = $this->userModel->getUserById($id);
 
       $data = [
         'title' => 'Usuarios',
@@ -28,14 +28,14 @@
     public function delete()
     {
       $id = $_POST['user_id'];
-      $user = $this->postModel->deleteUser($id);
+      $deleted = $this->userModel->deleteUser($id);
 
-      $data = [
-        'title' => 'Usuarios',
-        'status' => $user
-      ];
-
-      $this->view('pages/admin/adminUsers', $data);
+      if($deleted){
+        $url = ROUTE_URL.'/AdminHome/users';
+        header('Location: ' . $url, true, $statusCode);
+        die();
+      }else
+        echo "Hubo un error";
     }
 
   }
