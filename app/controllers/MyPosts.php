@@ -18,7 +18,15 @@ class MyPosts extends Controller{
     session_start();
 
     if ($_SESSION) {
-      $this->view('pages/myPosts');
+      $id = $_SESSION['id'];
+
+      $post = $this->postModel->myPost($id);
+
+      $data = [
+        'post' => $post
+      ];
+
+      $this->view('pages/myPosts',$data);
     }else{
       $this->controller('NotFound');
     }

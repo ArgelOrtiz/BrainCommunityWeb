@@ -13,6 +13,12 @@
       return $this->db->records();
     }
 
+    public function myPost($id){
+      $this->db->query("SELECT * FROM ic_post WHERE id_user = $id ORDER BY create_date desc");
+
+      return $this->db->records();
+    }
+
     public function post($id){
       $this->db->query("SELECT * FROM ic_post WHERE id = $id");
 
