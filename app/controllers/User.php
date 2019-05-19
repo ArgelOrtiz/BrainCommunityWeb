@@ -30,7 +30,7 @@
       $id = $_POST['user_id'];
       $deleted = $this->userModel->deleteUser($id);
 
-      if($deleted){
+      if(!$deleted){
         $url = ROUTE_URL.'/AdminHome/users';
         header('Location: ' . $url, true, $statusCode);
         die();

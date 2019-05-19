@@ -4,7 +4,7 @@
 <div class="admin-content">
 
   <div class="title-content">
-    <h3>Usuarios</h3>
+    <h3>Usuarios Aldo</h3>
   </div>
 
   <div class="row-content">
@@ -38,7 +38,7 @@
             <?php else: ?>                  <td>Usuario</td>
             <?php endif; ?>
 
-            <?php if($user->status == 1): ?> <td>Activo</td>
+            <?php if($user->status = 1): ?> <td>Activo</td>
             <?php else: ?>                  <td>Deshabilitado</td>
             <?php endif; ?>
 
@@ -48,12 +48,12 @@
   							<button type="button" id="Editar" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
                   Editar</button>
               </form>
-              <?php if($user->status == 1): ?>
+              <?php if($user->status = 1): ?>
               <form action="<?php echo ROUTE_URL.'/User/delete/'; ?>" method="POST">
                 <input type="hidden" name="user_id" value="<?php echo $user->id; ?>">
-  							<button type="submit" class="btn btn-danger btn-sm">Deshabilitar</button>
+  							<button type="submit" class="btn btn-danger btn-sm">Desactivar</button>
               </form>
-            <?php endif; ?>
+              <?php endif; ?>
 						</td>
 
 					</tr>
@@ -101,5 +101,42 @@
   </div>
 </div>
 <!--ParteMenu-->
+<!--MODAL-->
+  <div id="myModal" class="modal fade" role="dialog">
+<div class="modal-dialog modal-lg" >
+<!--MODAL_CONTENT-->
+<div class="modal-content">
+<div class="modal-header">
+  <h4 class="modal-title">Editar</h4>
+  <button type="button" class="close" data-dismiss="modal">&times;</button>
+</div>
+<div class="modal-body">
+  <!--CONTENIDO-->
+  <label>Nombre</label><br>
+<input style="width:100%" type="text"name="nombre" id="first_name"class="form_control" width><br>
+<label>Apellido Materno</label><br>
+<input style="width:100%" type="text"name="apellidoM" id="middle_name"class="form_control"><br>
+<label>Apellido Paterno</label><br>
+<input style="width:100%" type="text"name="apellidoP" id="last_name"class="form_control"><br>
+<label>Fecha de Nacimiento</label><br>
+<input style="width:100%" type="text"name="nac" id="birthday"class="form_control"><br>
+<label>Status</label><br>
+<input style="width:100%" type="text"name="sta" id="status"class="form_control"><br>
+<label>Pais</label><br>
+<input style="width:100%" type="text"name="pais" id="country"class="form_control"><br>
+<label>Genero</label><br>
+<input style="width:100%" type="text"name="genero" id="gender"class="form_control"><br>
+<label>Rol</label><br>
+<input style="width:100%" type="text"name="rol" id="role"class="form_control"><br><br>
+<button type="submit" class="btn btn-info float-right" data-dismiss="modal">Enviar</button>
+<!--FIN-->
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-danger mr-auto" data-dismiss="modal">Cancelar</button>
+</div>
+</div>
+<!--FIN MODEL-->
+</div>
+</div>
 
 <?php  require ROUTE_APP.'/views/inc/admin/footer.php';?>
