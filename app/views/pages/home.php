@@ -13,13 +13,74 @@
 
   </div>
 
-  <?php if (!$_SESSION){ ?>search
-    <script type="text/javascript">
-      $(window).on('load',function(){
-          $('#myModal').modal('show');
-      });
-    </script>
+  <?php if (!$_SESSION){ ?>
+
+    <?php if ($data['type'] == 0): ?>
+
+      <script type="text/javascript">
+        $(window).on('load',function(){
+            $('#myModal').modal('show');
+        });
+      </script>
+
+    <?php endif; ?>
+
+    <?php if ($data['type'] == 1): ?>
+
+      <script type="text/javascript">
+        $(window).on('load',function(){
+            $('#badUser').modal('show');
+        });
+      </script>
+
+    <?php endif; ?>
+
+    <?php if ($data['type'] == 2): ?>
+
+      <script type="text/javascript">
+        $(window).on('load',function(){
+            $('#badPass').modal('show');
+        });
+      </script>
+
+    <?php endif; ?>
+
   <?php } ?>
+
+  <!-- bad user modal -->
+  <div class="modal fade fade" id="badUser" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Error en login</h4>
+        </div>
+        <div class="modal-body">
+          <label class="message-reload" >El nombre de usuario <?php echo $data['username']; ?> es incorrecto</label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default close-modal-button" data-dismiss="modal" data-toggle="modal" data-target="#myModal" >Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- bad pass modal -->
+  <div class="modal fade fade" id="badPass" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Error en login</h4>
+        </div>
+        <div class="modal-body">
+          <label class="message-reload" >La contraseña es incorrecta</label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default close-modal-button" data-dismiss="modal" data-toggle="modal" data-target="#myModal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!--Login Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -31,7 +92,7 @@
         </div>
         <div class="modal-body" >
           <!--Login content -->
-          <form name="Login"  method="post" action="<?php echo ROUTE_URL.'/Login/login'?>" onsubmit="return verifyLogin()">
+          <form name="Login"  method="post" action="<?php echo ROUTE_URL.'/Home/login'?>" onsubmit="return verifyLogin()">
 
             <h1 align="left">Iniciar Sesion en Brain Community</h1>
             <h3 align = "left">Ingrese los detalles de su cuenta</h3>
