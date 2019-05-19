@@ -336,13 +336,13 @@
                   <td><?php echo $experience->name; ?></td>
                   <td><?php echo $experience->summary; ?></td>
                   <td>
-                    <button class="btn btn-info" type="button" data-toggle="modal" data-target="#experienceModal" name="button">Ver</button>
+                    <button class="btn btn-info" type="button" data-toggle="modal" data-target="#experienceModal<?php echo $experience->name; ?>" name="button">Ver</button>
                     <button class="btn btn-danger" type="button"data-toggle="modal" data-target="#deleteExperienceModal">Eliminar</button>
                   </td>
                 </tr>
 
                 <!-- view experience Modal -->
-                <div class="modal fade" id="experienceModal" role="dialog">
+                <div class="modal fade" id="experienceModal<?php echo $experience->name; ?>" role="dialog">
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">

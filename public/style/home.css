@@ -85,15 +85,18 @@ h4.errText{
 }
 
 
-.categoryDiv a {
+.categoryDiv button, .categoryDiv a {
   background-color: #eee;
+  text-align: left;
+  width:100%;
+  border:0px;
   color: black;
   display: block;
   padding: 12px;
   text-decoration: none;
 }
 
-.categoryDiv a:hover {
+.categoryDiv button:hover  {
   background-color: #ccc;
 }
 

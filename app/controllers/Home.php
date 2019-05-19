@@ -7,7 +7,7 @@
       $this->postModel = $this->model('_post');
 
       //echo 'controlador home cargado';
-      $this->index();
+      //$this->index();
     }
 
     public function index(){
@@ -24,6 +24,31 @@
 
     }
 
+    public function go(){
+      $result = $this->postModel->countPost();
+
+      print_r($result);
+
+      $result = $result->count / 10;
+
+      echo $result;
+    }
+
+    public function category(){
+      $title = $_GET['title'];
+
+      $categories = $this->categoryModel->getCategories();
+      $post       = $this->postModel->categoryPost($title);
+
+
+      $data = [
+        'title'       => 'Bienvenido a community',
+        'categories'  => $categories,
+        'post'        => $post
+      ];
+      $this->view('pages/home',$data);
+    }
+
 
     public function post($id){
         echo $id;
@@ -34,20 +59,6 @@
       $this->view('pages/profile');
 
     }
-
-    public function search(){
-
-      $categories = $this->postModel->getCategory();
-
-      $data = [
-        'title' => 'Bienvenido a community',
-        'categories' => $categories
-      ];
-
-      $this->view('pages/home',$data);
-
-    }
-
 
   }
 

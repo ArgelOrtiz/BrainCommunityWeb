@@ -25,6 +25,12 @@
       return $this->db->records();
     }
 
+    public function findCategory($title){
+      $this->db->query("SELECT id FROM category where title = $title");
+
+      return $this->db->registry();
+    }
+
   }
 
  ?>

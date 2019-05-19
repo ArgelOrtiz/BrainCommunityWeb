@@ -1,14 +1,19 @@
 <?php  require ROUTE_APP.'/views/inc/homeheader.php';?>
 <div class="mainContainer" style="margin-top:0px;" >
-  <div class="categoryDiv">
+  <div class="categoryDiv" >
     <a href="#" class="active">Categorias</a>
       <?php foreach($data['categories'] as $category): ?>
-        <a href="#"><?php echo $category->title; ?></a>
+
+        <form class="" action="<?php echo ROUTE_URL.'/Home/category';?>" method="get">
+          <input type="hidden" name="title" value="<?php echo $category->title; ?>">
+          <button type="submit" clas="btn" ><?php echo $category->title; ?></button>
+        </form>
+
       <?php endforeach ?>
 
   </div>
 
-  <?php if (!$_SESSION){ ?>
+  <?php if (!$_SESSION){ ?>search
     <script type="text/javascript">
       $(window).on('load',function(){
           $('#myModal').modal('show');
@@ -90,7 +95,7 @@
   </div>
 
 </div>
-<div class="container">
+<!-- <div class="container">
   <ul class="pagination justify-content-center">
     <li class="page-item"><a class="page-link" href="#">Previous</a></li>
     <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -98,7 +103,7 @@
     <li class="page-item"><a class="page-link" href="#">3</a></li>
     <li class="page-item"><a class="page-link" href="#">Next</a></li>
   </ul>
-</div>
+</div> -->
 
 
 </div>

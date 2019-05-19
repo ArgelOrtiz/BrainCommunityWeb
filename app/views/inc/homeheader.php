@@ -30,7 +30,7 @@
     <nav class="navbar navbar-inverse" id="navbar">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#"><?php echo NAME_SITE; ?></a>
+          <a class="navbar-brand" href="<?php echo ROUTE_URL;?>"><?php echo NAME_SITE; ?></a>
         </div>
         <ul class="nav navbar-nav">
           <li class="active"><a class="fa fa-home" href="" title="Home"></a></li>
@@ -57,7 +57,7 @@
           <?php } ?>
 
         </ul>
-        <form class="navbar-form navbar-left" action="/action_page.php" style="margin-left:30px;">
+        <form class="navbar-form navbar-left" action="<?php echo ROUTE_URL.'/Home/search';?>" style="margin-left:30px;">
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search" name="search">
             <div class="input-group-btn">

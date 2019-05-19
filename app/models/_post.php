@@ -13,6 +13,18 @@
       return $this->db->records();
     }
 
+    public function countPost(){
+      $this->db->query("SELECT count(id) count FROM ic_post ORDER BY create_date desc");
+
+      return $this->db->registry();
+    }
+
+    public function categoryPost($id){
+      $this->db->query("SELECT * FROM ic_post WHERE title = $id ORDER BY create_date desc");
+
+      return $this->db->records();
+    }
+
     public function myPost($id){
       $this->db->query("SELECT * FROM ic_post WHERE id_user = $id ORDER BY create_date desc");
 
