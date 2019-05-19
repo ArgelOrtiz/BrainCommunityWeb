@@ -38,7 +38,7 @@
             <?php else: ?>                  <td>Usuario</td>
             <?php endif; ?>
 
-            <?php if($user->status = 1): ?> <td>Activo</td>
+            <?php if($user->status == 1): ?> <td>Activo</td>
             <?php else: ?>                  <td>Deshabilitado</td>
             <?php endif; ?>
 
@@ -48,10 +48,10 @@
   							<button type="button" id="Editar" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
                   Editar</button>
               </form>
-              <?php if($user->status = 1): ?>
+              <?php if($user->status == 1): ?>
               <form action="<?php echo ROUTE_URL.'/User/delete/'; ?>" method="POST">
                 <input type="hidden" name="user_id" value="<?php echo $user->id; ?>">
-  							<button type="submit" class="btn btn-danger btn-sm">Desactivar</button>
+  							<button type="submit" class="btn btn-danger btn-sm">Deshabilitar</button>
               </form>
               <?php endif; ?>
 						</td>
