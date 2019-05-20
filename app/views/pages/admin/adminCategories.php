@@ -8,7 +8,7 @@
 			<h4>Lista de categorias</h4>
 			<hr/>
       <div align = center>
-            <button type="button" class = "btn btn-success btn-lg">
+            <button type="button" class = "btn btn-success btn-lg"data-toggle = "modal" data-target="#Crear" >
               <span class="glyphicon glyphicon-plus" aria-hidden="true">Crear Categoria</span>
               </button>
           </div>
@@ -71,5 +71,35 @@
 <!--FIN MODEL-->
 			</div>
   </div>
+</div>
+
+<!--MODAL-->
+  <div id="Crear" class="modal fade" role="dialog">
+<div class="modal-dialog modal-lg" >
+<!--MODAL_CONTENT-->
+<div class="modal-content">
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">&times;</button>
+  <h4 class="modal-title">Editar</h4>
+</div>
+<div class="modal-body">
+  <!--CONTENIDO-->
+<label>Nombre Categoria</label><br>
+<input style="width:100%" type="text"name="nombreC" id="title"class="form_control" width><br>
+<label>Descripcion</label><br>
+<input style="width:100%" type="text"name="apellidoM" id="summary"class="form_control"><br>
+<label>Fecha de Creacion</label><br>
+<input style="width:100%" type="text"name="apellidoP" id="create_date"class="form_control"><br>
+<label>Prioridad</label><br>
+<input style="width:100%" type="text"name="nac" id="priority"class="form_control"><br><br><br>
+<button float:right; type="submit" class="btn btn-info" data-dismiss="modal">Crear</button>
+<!--FIN-->
+</div>
+<div class="modal-footer">
+<button float:left; type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+</div>
+</div>
+<!--FIN MODEL-->
+</div>
 </div>
 <?php  require ROUTE_APP.'/views/inc/admin/footer.php';?>
