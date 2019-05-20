@@ -20,9 +20,15 @@
     }
 
     public function categoryPost($id){
-      $this->db->query("SELECT * FROM ic_post WHERE title = $id ORDER BY create_date desc");
+      $this->db->query("SELECT * FROM ic_post WHERE id_category = $id ORDER BY create_date desc");
 
       return $this->db->records();
+    }
+
+    public function getIdCategory($title){
+      $this->db->query("SELECT id FROM category WHERE title = '$title'");
+
+      return $this->db->registry();
     }
 
     public function myPost($id){

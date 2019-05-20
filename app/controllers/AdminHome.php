@@ -33,9 +33,9 @@ class AdminHome extends Controller
 
     $data = [
       'title' => 'Usuarios',
-      'users' => $categories
+      'categories' => $categories
     ];
-    $this->view('pages/admin/adminCategories');
+    $this->view('pages/admin/adminCategories',$data);
   }
 
   public function posts(){
@@ -57,6 +57,7 @@ class AdminHome extends Controller
     ];
     $this->view('pages/admin/adminComments');
   }
+
 }
 
 

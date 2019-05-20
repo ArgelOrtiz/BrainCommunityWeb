@@ -17,7 +17,6 @@
 
       $data = [
         'type'        => 0,
-        'title'       => 'Bienvenido a community',
         'categories'  => $categories,
         'post'        => $post
       ];
@@ -93,8 +92,11 @@
     public function category(){
       $title = $_GET['title'];
 
+
       $categories = $this->categoryModel->getCategories();
-      $post       = $this->postModel->categoryPost($title);
+      $result     = $this->postModel->getIdCategory($title);
+      $post       = $this->postModel->categoryPost($result->id);
+
 
 
       $data = [
