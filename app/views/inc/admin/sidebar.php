@@ -56,6 +56,9 @@
                     </li>
                 </ul>
             </li>
+						<li>
+								<a href="<?php echo ROUTE_URL?>">Regresar</a>
+						</li>
         </ul>
 
 	    </nav>

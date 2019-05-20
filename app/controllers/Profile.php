@@ -18,12 +18,13 @@ class Profile extends Controller{
     $this->clasification      = [];
     $this->profileModel       = $this->model('_profile');
     $this->registerModel      = $this->model('_register');
-    $this->getExperience();
-    $this->getClasification();
+
     // code...
   }
 
   public function index(){
+    $this->getExperience();
+    $this->getClasification();
 
     if ($_SESSION) {
       // code...
@@ -38,6 +39,12 @@ class Profile extends Controller{
       $this->controller('NotFound');
     }
 
+  }
+
+  public function user(){
+    $username = $_GET['username'];
+
+    $this->view('pages/userProfile');
   }
 
   public function editUserName(){

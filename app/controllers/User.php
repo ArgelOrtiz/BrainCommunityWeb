@@ -12,17 +12,54 @@
     {
     }
 
+    public function create()
+    {
+      $email       = $_POST['email'];
+      $username    = $_POST['username'];
+      $password    = $_POST['password'];
+      $first_name  = $_POST['nombre'];
+      $middle_name = $_POST['apellidoM'];
+      $last_name   = $_POST['apellidoP'];
+      $birthday    = $_POST['nac'];
+      $status      = $_POST['status'];
+      $country     = $_POST['pais'];
+      $gender      = $_POST['genero'];
+      $rol         = $_POST['rol'];
+
+      $created = $this->userModel->createAdminUser($email, $username, $password,
+        $first_name, $middle_name, $last_name, $birthday, $status, $country,
+        $gender, $rol);
+
+      if($created){
+        $url = ROUTE_URL.'/AdminHome/users';
+        header('Location: ' . $url, true, $statusCode);
+        die();
+      }else
+        echo "Hubo un error";
+    }
+
     public function edit()
     {
-      $id = $_POST['user_id'];
-      $user = $this->userModel->getUserById($id);
+      $id          = $_POST['user_id'];
+      $first_name  = $_POST['nombre'];
+      $middle_name = $_POST['apellidoM'];
+      $last_name   = $_POST['apellidoP'];
+      $birthday    = $_POST['nac'];
+      $status      = $_POST['status'];
+      $country     = $_POST['pais'];
+      $gender      = $_POST['genero'];
+      $rol         = $_POST['rol'];
 
-      $data = [
-        'title' => 'Usuarios',
-        'user' => $user
-      ];
+      $updated = $this->userModel->updateUser($id, $first_name, $middle_name,
+       $last_name, $birthday, $status, $country, $gender, $rol);
 
-      $this->view('pages/admin/adminUserEdit', $data);
+      if($updated){
+        $url = ROUTE_URL.'/AdminHome/users';
+        header('Location: ' . $url, true, $statusCode);
+        die();
+      }else
+        echo "Hubo un error";
+
     }
 
     public function delete()
