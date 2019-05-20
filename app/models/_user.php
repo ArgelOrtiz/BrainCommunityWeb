@@ -38,16 +38,16 @@
     }
 
     public function updateUser($user_id, $first_name, $middle_name, $last_name, $birthday,
-      $status, $country, $gender, $rol){
+      $status, $country, $gender, $role){
 
-      $this->db->query("UPDATE ic_user SET first_name = '".$first_name."',
-         middle_name ='".$middle_name."', last_name = '".$last_name."',
-         birthday ='".$birthday."', status ='".$status."', country ='".$country."',
-         gender ='".$gender."', role ='".$rol."' where id = ".$user_id);
+       $this->db->query(
+         "UPDATE ic_user SET first_name = '$first_name', middle_name = '$middle_name',
+         last_name = '$last_name', birthday = '$birthday', status = '$status',
+         country = '$country', gender = '$gender', role = '$role' where id = $user_id");
 
-      $updated = $this->db->execute();
+       $updated = $this->db->execute();
 
-      return true;
+       return $updated;
     }
 
     public function deleteUser($user_id){

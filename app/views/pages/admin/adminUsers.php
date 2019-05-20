@@ -83,7 +83,6 @@
     </div>
     <div class="modal-body">
       <form action="<?php echo ROUTE_URL.'/User/create/'; ?>" method="POST">
-        <input type="hidden" name="user_id" value="<?php echo $user->id ?>">
         <label >Email</label><br>
         <input style="width:100%" type="text"name="email" id="email"class="form_control"><br>
         <label >Username</label><br>
@@ -140,6 +139,7 @@
     </div>
     <div class="modal-body">
       <form action="<?php echo ROUTE_URL.'/User/edit/'; ?>" method="POST">
+        <input type="hidden" name="user_id" value="<?php echo $user->id ?>">
         <label >Nombre</label><br>
         <input style="width:100%" type="text"name="nombre" id="first_name"class="form_control" value="<?php echo $user->first_name; ?>"><br>
         <label>Apellido Materno</label><br>
