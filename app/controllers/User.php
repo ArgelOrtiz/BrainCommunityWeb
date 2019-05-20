@@ -48,10 +48,10 @@
       $status      = $_POST['status'];
       $country     = $_POST['pais'];
       $gender      = $_POST['genero'];
-      $rol         = $_POST['rol'];
+      $role        = $_POST['role'];
 
       $updated = $this->userModel->updateUser($id, $first_name, $middle_name,
-       $last_name, $birthday, $status, $country, $gender, $rol);
+       $last_name, $birthday, $status, $country, $gender, $role);
 
       if($updated){
         $url = ROUTE_URL.'/AdminHome/users';

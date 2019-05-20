@@ -1,19 +1,4 @@
 <?php  require ROUTE_APP.'/views/inc/admin/sidebar.php';?>
-<link rel="stylesheet" href="BrainCommunity/public/style/editar.css">
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="../jquery.simplePagination.js"></script>
-<link href="../simplePagination.css" rel="stylesheet" type="text/css" />
-
-<script>
-function test(pageNumber)
-{
-
-  var page="#page-id-"+pageNumber;
-  $('.select').hide()
-  $(page).show()
-
-}
-</script>
 
 <div class="admin-content">
 
@@ -29,6 +14,7 @@ function test(pageNumber)
           </div>
       </div>
 			<div class="table-responsive">
+        <!-- Pagination -->
 			<table id="usersTable" class="table table-striped table-hover table-dark">
         <thead>
 				<tr>
@@ -70,8 +56,19 @@ function test(pageNumber)
 					</tr>
         <?php endforeach ?>
         </tbody>
-
+        <tfoot>
+				<tr>
+          <th>Id</th>
+					<th>Username</th>
+					<th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Rol</th>
+					<th>Estatus</th>
+          <th>Acciones</th>
+				</tr>
+        </tfoot>
 			</table>
+    <!-- Pagination -->
 			</div>
   </div>
 </div>
@@ -109,9 +106,16 @@ function test(pageNumber)
         <label>Pais</label><br>
         <input style="width:100%" type="text"name="pais" id="country"class="form_control" placeholder="País"><br>
         <label>Genero</label><br>
-        <input style="width:100%" type="text"name="genero" id="gender"class="form_control" placeholder="M o F"><br>
+        <select class=" form-control" name="genero">
+          <option value="Other">Otro</option>
+          <option value="F">Femenino</option>
+          <option value="M">Masculino</option>
+        </select><br>
         <label>Rol</label><br>
-        <input style="width:100%" type="text"name="rol" id="role"class="form_control" placeholder="#"><br><br>
+        <select class=" form-control" name="rol">
+          <option value="0">Administrador</option>
+          <option value="1">Usuario</option>
+        </select><br>
         <input type="submit" class="btn btn-info float-right" value="Crear">
       </form>
     </div>
@@ -150,9 +154,13 @@ function test(pageNumber)
         <label>Pais</label><br>
         <input style="width:100%" type="text"name="pais" id="country"class="form_control" value="<?php echo $user->country; ?>"><br>
         <label>Genero</label><br>
-        <input style="width:100%" type="text"name="genero" id="gender"class="form_control" value="<?php echo $user->gender; ?>"><br>
+        <select class=" form-control" name="genero" value="<?php echo $gender; ?>">
+          <option value="Other">Otro</option>
+          <option value="F">Femenino</option>
+          <option value="M">Masculino</option>
+        </select><br>
         <label>Rol</label><br>
-        <input style="width:100%" type="text"name="rol" id="role"class="form_control" value="<?php echo $user->role; ?>"><br><br>
+        <input style="width:100%" type="text" name="role" id="role" class="form_control" value="<?php echo $user->role; ?>"><br><br>
         <input type="submit" class="btn btn-info float-right" value="Actualizar">
       </form>
     </div>

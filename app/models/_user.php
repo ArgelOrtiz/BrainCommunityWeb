@@ -41,12 +41,13 @@
       $status, $country, $gender, $rol){
 
       $this->db->query("UPDATE ic_user SET first_name = '".$first_name."',
-        middle_name ='".$middle_name."', last_name = '".$last_name."',
-        birthday ='".$birthday."', status ='".$status."', country ='".$country."',
-        gender ='".$gender."', role ='".$role."' where id = ".$user_id);
+         middle_name ='".$middle_name."', last_name = '".$last_name."',
+         birthday ='".$birthday."', status ='".$status."', country ='".$country."',
+         gender ='".$gender."', role ='".$rol."' where id = ".$user_id);
+
       $updated = $this->db->execute();
 
-      return $updated;
+      return true;
     }
 
     public function deleteUser($user_id){

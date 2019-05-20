@@ -14,7 +14,7 @@
               </button>
           </div>
 			<div class="table-responsive">
-			<table class="table table-striped table-hover">
+			<table class="table table-striped table-hover table-dark">
 				<tr>
           <th>Id</th>
 					<th>Título</th>

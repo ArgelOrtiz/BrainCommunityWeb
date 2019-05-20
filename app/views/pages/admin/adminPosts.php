@@ -8,13 +8,11 @@
   <div class="row-content">
 			<h4>Lista de posts</h4>
 			<hr/>
-      <div align = center>
-            <button type="button" class = "btn btn-success btn-lg" data-toggle="modal" data-target="#myModal1">
-              <span class="glyphicon glyphicon-plus">Crear Post</span>
-              </button>
-          </div>
+      <div align = right>
+        <button type="button" class = "btn btn-success btn-sm" onclick="createModal();">Crear Post</button>
+      </div>
 			<div class="table-responsive">
-			<table class="table table-striped table-hover">
+			<table class="table table-striped table-hover table-dark">
 				<tr>
           <th>Id</th>
 					<th>Título</th>
@@ -83,39 +81,6 @@
 </div>
 
 <!--MODAL-AGREGAR-->
-<<<<<<< HEAD
-      <div id="myModal1" class="modal fade" role="dialog">
-    <div class="modal-dialog" >
-    <!--MODAL_CONTENT-->
-    <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">&times;</button>
-      <h4 class="modal-title">Agregar Post</h4>
-    </div>
-    <div class="modal-body">
-      <!--modal categories to new post-->
-      <div class="post_categoria">
-          <form class="" action="" method="post">
-            <select class="form-control" name="category">
-              <?php foreach($data['categories'] as $category): ?>
-                <option value="<?php echo $category->id; ?>"> <?php echo $category->title; ?></option>
-              <?php endforeach ?>
-            </select>
-      </div>
-
-      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2">Seleccionar
-      </button>
-        </form>
-      </div>
-    <!--FIN-->
-    </div>
-    <div class="modal-footer">
-      <button  type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
-    </div>
-    </div>
-    <!--FIN MODEL-->
-    </div>
-=======
   <div id="myModal1" class="modal fade" role="dialog">
 <div class="modal-dialog" >
 <!--MODAL_CONTENT-->
@@ -146,7 +111,13 @@
 </div>
 <!--FIN MODEL-->
 </div>
->>>>>>> 35b8d2760975a9618b5f54c884133a100d4df570
 </div>
 </div>
+
+<script type="text/javascript">
+
+  function createModal(){
+    $("#myModal1").modal();
+  }
+</script>
 <?php  require ROUTE_APP.'/views/inc/admin/footer.php';?>

@@ -7,14 +7,11 @@
   <div class="row-content">
 			<h4>Lista de categorias</h4>
 			<hr/>
-      <div align = center>
-            <button type="button" class = "btn btn-success btn-lg"data-toggle = "modal" data-target="#Crear" >
-              <span class="glyphicon glyphicon-plus" aria-hidden="true">Crear Categoria</span>
-              </button>
-          </div>
-
+      <div align = right>
+        <button type="button" class = "btn btn-success btn-sm" onclick="createModal();">Crear Categoría</button>
+      </div>
 			<div class="table-responsive">
-			<table class="table table-striped table-hover">
+			<table class="table table-striped table-hover table-dark">
 				<tr>
           <th>Id</th>
 					<th>Título</th>
@@ -74,7 +71,7 @@
 </div>
 
 <!--MODAL-->
-  <div id="Crear" class="modal fade" role="dialog">
+  <div id="crear" class="modal fade" role="dialog">
 <div class="modal-dialog modal-lg" >
 <!--MODAL_CONTENT-->
 <div class="modal-content">
@@ -102,4 +99,11 @@
 <!--FIN MODEL-->
 </div>
 </div>
+
+<script type="text/javascript">
+
+  function createModal(){
+    $("#crear").modal();
+  }
+</script>
 <?php  require ROUTE_APP.'/views/inc/admin/footer.php';?>
