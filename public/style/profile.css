@@ -117,6 +117,7 @@
 }
 
 .user-content{
+  background:#eee;
   display: flex;
   flex-direction:column;
   height: auto;

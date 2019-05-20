@@ -27,7 +27,7 @@
 
   <div class="profile-user-container" >
 
-    <div class="user-content" style="background:#eee;">
+    <div class="user-content" >
 
       <div class="title-content">
         <label><?php echo $user->username; ?></label>

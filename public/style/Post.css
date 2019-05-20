@@ -1,4 +1,7 @@
-
+.table{
+  font-family: arial, sans-serif;
+  border-radius:15px;
+}
 
 .post-main-container{
   display: flex;
@@ -80,7 +83,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: blue;
+  color: #00BFFF;
 }
 
 .message-comments label{

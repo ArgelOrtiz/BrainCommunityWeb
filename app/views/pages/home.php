@@ -1,7 +1,7 @@
 <?php  require ROUTE_APP.'/views/inc/homeheader.php';?>
 <div class="mainContainer" style="margin-top:0px;" >
   <div class="categoryDiv" >
-    <a href="#" class="active">Categorias</a>
+    <a href="<?php echo  ROUTE_URL; ?>" class="active">Categorias</a>
       <?php foreach($data['categories'] as $category): ?>
 
         <form class="" action="<?php echo ROUTE_URL.'/Home/category';?>" method="get">
