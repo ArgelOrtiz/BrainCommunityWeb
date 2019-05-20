@@ -86,6 +86,13 @@
 
       return $this->db->registry();
     }
+
+    public function getUser($username){
+      $this->db->query("SELECT id, username, first_name, 	middle_name,	last_name, country, gender, posts, comments, points from ic_user WHERE username='$username'");
+
+      return $this->db->registry();
+
+    }
   }
 
 

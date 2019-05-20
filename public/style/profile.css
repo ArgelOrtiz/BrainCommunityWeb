@@ -48,6 +48,12 @@
   margin-top: 5%;
 }
 
+.user-table{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
 .profile-container{
   display:flex;
   flex-direction:column;
@@ -89,6 +95,51 @@
   margin-bottom:  15px;
   display: flex;
   flex-direction: column;
+}
+
+.user-main-container{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top:80px;
+  left:0px;
+  width: 100%;
+  height: auto;
+}
+
+.profile-user-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 3%;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.user-content{
+  display: flex;
+  flex-direction:column;
+  height: auto;
+  margin: 15px;
+  padding: 10px;
+  border-radius:15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title-content{
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.row-content{
+  display: flex;
+  flex-direction:column;
+  padding-right: 25px;
+  padding-left: 15px;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width:600px){

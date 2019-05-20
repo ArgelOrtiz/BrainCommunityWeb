@@ -26,7 +26,10 @@ if ($data['category']) {
 	<div class="info-container">
 
 						<label class="titles" for="">Nombre de usuario:</label>
-						<label for=""><?php echo $user->username; ?></label>
+						<form class="" action="<?php echo ROUTE_URL.'/Profile/user';?>" method="get">
+							<input type="hidden" name="username" value="<?php echo $user->username; ?>">
+							<button type="submit" class="btn btn-link" style="padding:0px;"> <?php echo $user->username; ?> </button>
+						</form>
 						<label class="titles" for="">Puntos:</label>
 						<label for=""><?php echo $user->points; ?></label>
 						<br> <br>

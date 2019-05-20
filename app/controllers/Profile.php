@@ -44,7 +44,17 @@ class Profile extends Controller{
   public function user(){
     $username = $_GET['username'];
 
-    $this->view('pages/userProfile');
+    $userResult = $this->profileModel->getUser($username);
+
+    $experienceResult = $this->profileModel->getExperience($userResult->id);
+
+
+    $data = [
+      'user'        => $userResult,
+      'experience'  => $experienceResult
+    ];
+
+    $this->view('pages/userProfile',$data);
   }
 
   public function editUserName(){
