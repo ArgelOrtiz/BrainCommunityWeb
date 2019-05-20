@@ -99,7 +99,7 @@
             <h4 class="errText" id="ValidationUserName">El usuario es obligatorio*</h4>
             <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input id="email" type="text" class="form-control" name="username" placeholder="Username">
+              <input id="email" type="text" class="form-control" name="username" placeholder="Username" value="<?php echo $data['username']; ?>">
             </div>
 
             <h4 class="errText" id="ValidationPassword">La contraseña es obligatoria*</h4>
@@ -134,8 +134,9 @@
       <form class="flip-card" action="<?php echo ROUTE_URL.'/Post/viewPost';?>" method="get">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-
-            <img src="/categoria.jpg" alt="" background="gray"/>
+            <div class="category-card">
+              <label><?php echo $post->title_category; ?></label>
+            </div>
             <h4 class="title"><?php echo htmlentities($post->title); ?></h4>
 
             <div class="extra">
@@ -144,9 +145,12 @@
             </div>
           </div>
           <button type="submit" class="flip-card-back" style="word-wrap:break-word; border:0px;">
-            <input type="hidden" name="id" value="<?php echo $post->id; ?>">
-            <h4 class="title"><?php echo $post->title; ?></h4>
-            <p class="description"><?php echo $post->summary; ?></p>
+            <div class="" style="overflow-y:scroll; ">
+              <input type="hidden" name="id" value="<?php echo $post->id; ?>">
+              <h4 class="title"><?php echo $post->title; ?></h4>
+              <p class="description"><?php echo $post->summary; ?></p>
+            </div>
+
           </button>
         </div>
       </form>

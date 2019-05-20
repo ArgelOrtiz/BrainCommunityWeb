@@ -77,17 +77,6 @@
 
     }
 
-    public function go(){
-      $result = $this->postModel->countPost();
-
-      print_r($result);
-
-      $result = json_encode((array)$result);
-
-      echo $result;
-      print_r($result);
-
-    }
 
     public function category(){
       $title = $_GET['title'];

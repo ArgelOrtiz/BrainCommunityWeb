@@ -28,7 +28,7 @@
                 <td><?php echo $post->create_date; ?></td>
                 <td>
                   <button class="btn btn-info" type="button" data-toggle="modal" data-target="#post<?php echo $post->id; ?>" name="button">Ver</button>
-                  <button class="btn btn-danger" type="button"data-toggle="modal" data-target="#deleteExperienceModal">Eliminar</button>
+                  <button class="disabled btn btn-danger" type="button"data-toggle="modal" data-target="#deleteExperienceModal">Eliminar</button>
                 </td>
               </tr>
 

@@ -83,36 +83,37 @@
 </div>
 
 <!--MODAL-AGREGAR-->
-  <div id="myModal1" class="modal fade" role="dialog">
-<div class="modal-dialog" >
-<!--MODAL_CONTENT-->
-<div class="modal-content">
-<div class="modal-header">
-  <button type="button" class="close" data-dismiss="modal">&times;</button>
-  <h4 class="modal-title">Agregar Post</h4>
-</div>
-<div class="modal-body">
-  <!--CONTENIDO-->
-  <div class="post_categoria">
-      <form class="" action="" method="post">
-        <select class="form-control" name="category">
-          <?php foreach($data['categories'] as $category): ?>
-            <option value="<?php echo $category->id; ?>"> <?php echo $category->title; ?></option>
-          <?php endforeach ?>
-        </select>
-  </div>
-  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2">Seleccionar
-  </button>
-    </form>
-  </div>
-<!--FIN-->
-</div>
-<div class="modal-footer">
-  <button float:left; type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
-</div>
-</div>
-<!--FIN MODEL-->
-</div>
+      <div id="myModal1" class="modal fade" role="dialog">
+    <div class="modal-dialog" >
+    <!--MODAL_CONTENT-->
+    <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Agregar Post</h4>
+    </div>
+    <div class="modal-body">
+      <!--modal categories to new post-->
+      <div class="post_categoria">
+          <form class="" action="" method="post">
+            <select class="form-control" name="category">
+              <?php foreach($data['categories'] as $category): ?>
+                <option value="<?php echo $category->id; ?>"> <?php echo $category->title; ?></option>
+              <?php endforeach ?>
+            </select>
+      </div>
+
+      <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2">Seleccionar
+      </button>
+        </form>
+      </div>
+    <!--FIN-->
+    </div>
+    <div class="modal-footer">
+      <button  type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+    </div>
+    </div>
+    <!--FIN MODEL-->
+    </div>
 </div>
 <!--MODAL-Contiuacion-->
   <div id="myModal2" class="modal fade" role="dialog">

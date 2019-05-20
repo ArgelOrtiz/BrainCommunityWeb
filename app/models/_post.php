@@ -8,7 +8,12 @@
     }
 
     public function getPosts(){
-      $this->db->query("SELECT * FROM ic_post ORDER BY create_date desc");
+      $this->db->query(
+        "SELECT P.id, P.title, P.comments, P.create_date, P.summary, C.title as title_category
+        FROM ic_post P
+        JOIN category C
+        ON C.id = P.id_category
+        ORDER BY create_date desc");
 
       return $this->db->records();
     }
@@ -20,7 +25,13 @@
     }
 
     public function categoryPost($id){
-      $this->db->query("SELECT * FROM ic_post WHERE id_category = $id ORDER BY create_date desc");
+      $this->db->query(
+        "SELECT P.id, P.title, P.comments, P.create_date, P.summary, C.title as title_category
+        FROM ic_post P
+        JOIN category C
+        ON C.id = P.id_category
+        WHERE id_category = $id
+        ORDER BY create_date desc");
 
       return $this->db->records();
     }

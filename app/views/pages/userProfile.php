@@ -54,11 +54,11 @@
       </div>
 
       <div class="row-content">
-        <button class="btn btn-success" type="button" name="button">+1 Punto</button>
+        <button class="disabled btn btn-success" type="button" name="button">+1 Punto</button>
       </div>
 
       <div class="row-content">
-        <button class="btn btn-danger" type="button" name="button">Reportar</button>
+        <button class="disabled btn btn-danger" type="button" name="button">Reportar</button>
       </div>
 
     </div>

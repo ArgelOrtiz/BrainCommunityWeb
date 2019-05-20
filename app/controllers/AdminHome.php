@@ -39,13 +39,15 @@ class AdminHome extends Controller
   }
 
   public function posts(){
+    $categories = $this->categoryModel->getCategories();
     $posts = $this->postsModel->getPosts();
 
     $data = [
       'title' => 'Posts',
-      'posts' => $posts
+      'posts' => $posts,
+      'categories' => $categories
     ];
-    $this->view('pages/admin/adminPosts');
+    $this->view('pages/admin/adminPosts',$data);
   }
 
   public function comments(){

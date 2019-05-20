@@ -18,7 +18,7 @@ class AdminPost extends Controller
 
 
   public function new(){
-
+    echo "test";
   }
 
 }

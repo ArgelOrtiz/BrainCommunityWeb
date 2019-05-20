@@ -194,13 +194,18 @@ h4.errText{
   /*alinear los elementos*/
   justify-content: flex-start;
 }
-.flip-card-front img{
+.category-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-sizing:border-box;
-  background: gray;
+  background: #2C2C2C;
+  color: #00BFFF;
   display: flex;
   width:calc(100% - 10px);
   height: 100px;
   margin:5px;
+  border-radius: 10px;
 }
 
 .extra{
