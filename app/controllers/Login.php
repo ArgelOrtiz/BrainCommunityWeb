@@ -22,45 +22,7 @@
       $this->view('pages/forgot_password');
     }
 
-    public function login(){
-      $this->loginModel = $this->model('_login');
-      $username = $_POST['username'];
-      $password = $_POST['password'];
 
-      $result = $this->loginModel->verifyUser($username);
-
-      if ($result != null) {
-        // code...
-
-        if ($result->password === $password) {
-          // code...
-          session_start();
-          $_SESSION['id']           = $result->id;
-          $_SESSION['email']        = $result->email;
-          $_SESSION['username']     = $result->username;
-          $_SESSION['first_name']   = $result->first_name;
-          $_SESSION['middle_name']  = $result->middle_name;
-          $_SESSION['last_name']    = $result->last_name;
-          $_SESSION['birthday']     = $result->birthday;
-          $_SESSION['country']      = $result->country;
-          $_SESSION['gender']       = $result->gender;
-          $_SESSION['role']         = $result->role;
-
-          echo "second";
-
-
-          $this->controller('Home');
-        }else{
-          //bad password
-
-        }
-
-      }else{
-        //user doesn't exist.
-
-      }
-
-    }
 
     public function badUser(){
       $data = '1';
