@@ -113,6 +113,12 @@
 
       return $this->db->execute();
     }
+
+    public function getSearchPost($search){
+      $this->db->query("SELECT * FROM ic_post WHERE title LIKE '%$search%'");
+
+      return $this->db->records();
+    }
   }
 
  ?>

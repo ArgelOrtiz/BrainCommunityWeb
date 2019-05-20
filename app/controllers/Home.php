@@ -98,7 +98,6 @@
 
 
       $data = [
-        'title'       => 'Bienvenido a community',
         'categories'  => $categories,
         'post'        => $post
       ];
@@ -114,6 +113,29 @@
     public function profile(){
       $this->view('pages/profile');
 
+    }
+
+    public function search(){
+      $title = $_GET['post'];
+
+      $title =  preg_replace('/\s+/', '%', $title);
+
+      $categories = $this->categoryModel->getCategories();
+      $result     = $this->postModel->getSearchPost($title);
+
+      if ($result) {
+        // code...
+        $data = [
+          'categories'  => $categories,
+          'post'        => $result
+        ];
+
+        $this->view('pages/home',$data);
+
+      }else {
+        // code...
+        $this->index();
+      }
     }
 
   }

@@ -57,9 +57,9 @@
           <?php } ?>
 
         </ul>
-        <form class="navbar-form navbar-left" action="<?php echo ROUTE_URL.'/Home/search';?>" style="margin-left:30px;">
+        <form class="navbar-form navbar-left" action="<?php echo ROUTE_URL.'/Home/search';?>" style="margin-left:30px;" method="get">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" name="search">
+            <input type="text" class="form-control" placeholder="Search" name="post">
             <div class="input-group-btn">
               <button class="btn btn-default" type="submit">
                 <i class="glyphicon glyphicon-search"></i>
