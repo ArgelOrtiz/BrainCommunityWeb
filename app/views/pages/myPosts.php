@@ -28,7 +28,7 @@
                 <td><?php echo $post->create_date; ?></td>
                 <td>
                   <button class="btn btn-info" type="button" data-toggle="modal" data-target="#post<?php echo $post->id; ?>" name="button">Ver</button>
-                  <button class="disabled btn btn-danger" type="button"data-toggle="modal" data-target="#deleteExperienceModal">Eliminar</button>
+                  <button class=" btn btn-danger" type="button"data-toggle="modal"  data-target="#deletePost<?php echo $post->id; ?>">Eliminar</button>
                 </td>
               </tr>
 
@@ -72,6 +72,32 @@
                         </label>
 
                       </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancelar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- delete post Modal -->
+              <div class="modal fade" id="deletePost<?php echo $post->id; ?>" role="dialog">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Publicacion</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+
+                      <form class="" action="<?php echo ROUTE_URL.'/MyPosts/deletePost'?>" method="post">
+                        <div class="form-group data-experience-row">
+                          <input type="hidden" name="id" value="<?php echo $post->id; ?>">
+                          <label >Estas seguro de que desceas eliminar la experiencia "<?php echo $post->title;?>" </label>
+                          <button class="btn btn-warning" type="submit" style="width:25%;">Eliminar</button>
+                        </div>
+                      </form>
+
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancelar</button>

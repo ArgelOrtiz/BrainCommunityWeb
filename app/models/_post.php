@@ -13,6 +13,7 @@
         FROM ic_post P
         JOIN category C
         ON C.id = P.id_category
+        WHERE P.active = 1
         ORDER BY create_date desc");
 
       return $this->db->records();
@@ -43,7 +44,7 @@
     }
 
     public function myPost($id){
-      $this->db->query("SELECT * FROM ic_post WHERE id_user = $id ORDER BY create_date desc");
+      $this->db->query("SELECT * FROM ic_post WHERE id_user = $id and active = 1 ORDER BY create_date desc");
 
       return $this->db->records();
     }
@@ -102,9 +103,9 @@
     }
 
     public function deletePost($post_id){
-      $this->db->query("DELETE FROM ic_post where id = " . $post_id);
+      $this->db->query("UPDATE ic_post set active = 0 where id = " . $post_id);
 
-      return $this->db->registry();
+      return $this->db->execute();
     }
 
     public function getTags($id){
@@ -132,7 +133,7 @@
     }
 
     public function getSearchPost($search){
-      $this->db->query("SELECT * FROM ic_post WHERE title LIKE '%$search%'");
+      $this->db->query("SELECT * FROM ic_post WHERE title LIKE '%$search%' and active = 1");
 
       return $this->db->records();
     }

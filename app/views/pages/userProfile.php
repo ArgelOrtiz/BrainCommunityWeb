@@ -29,6 +29,10 @@
 
     <div class="user-content" >
 
+      <form class="row-content" action="http://braincommunity.net/Post/viewPost?id=".<?php echo '37'; ?>>
+        <button class=" btn btn-info" type="submit" name="button"> <a class="glyphicon glyphicon-arrow-left" style="color:white"></a> Regresar al la publicacion</button>
+      </form>
+
       <div class="title-content">
         <label><?php echo $user->username; ?></label>
       </div>
@@ -53,13 +57,15 @@
         <label ><?php echo $gender; ?></label>
       </div>
 
-      <div class="row-content">
-        <button class="disabled btn btn-success" type="button" name="button">+1 Punto</button>
-      </div>
+      <form class="row-content" action="<?php echo ROUTE_URL.'/Profile/setPoint';?>" method="post">
+        <input type="hidden" name="id" value="<?php echo $user->id; ?>">
+        <input type="hidden" name="username" value="<?php echo $user->username; ?>">
+        <button class=" btn btn-success" type="submit" name="button">+1 Punto</button>
+      </form>
 
-      <div class="row-content">
+      <form class="row-content">
         <button class="disabled btn btn-danger" type="button" name="button">Reportar</button>
-      </div>
+      </form>
 
     </div>
 

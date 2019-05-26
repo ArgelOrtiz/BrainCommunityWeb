@@ -26,10 +26,13 @@ if ($data['category']) {
 	<div class="info-container">
 
 						<label class="titles" for="">Nombre de usuario:</label>
+
 						<form class="" action="<?php echo ROUTE_URL.'/Profile/user';?>" method="get">
 							<input type="hidden" name="username" value="<?php echo $user->username; ?>">
+							<input type="hidden" name="post" value="<?php echo ROUTE_URL.'/Post/viewPost';?>">
 							<button type="submit" class="btn btn-link" style="padding:0px;"> <?php echo $user->username; ?> </button>
 						</form>
+
 						<label class="titles" for="">Puntos:</label>
 						<label for=""><?php echo $user->points; ?></label>
 						<br> <br>
@@ -64,9 +67,11 @@ if ($data['category']) {
 						<div class="comments-row">
 
 							<div class="title-comments">
-								<label for=""><?php echo $comments->username; ?></label>
-								<label for=""><?php echo $comments->create_date; ?></label>
-							</div>
+								<form class="" action="<?php echo ROUTE_URL.'/Profile/user';?>" method="get">
+									<input type="hidden" name="username" value="<?php echo $comments->username; ?>">
+									<button type="submit" class="btn btn-link" style="padding:0px;"> <?php echo $comments->username; ?> </button>
+								</form>
+								</div>
 
 							<div class="content-comments">
 								<p><?php echo $comments->summary; ?></p>
@@ -100,7 +105,7 @@ if ($data['category']) {
 
 			<div class="post-content-row">
 				<input type="hidden" name="id_post" value="<?php echo $post->id; ?>">
-				<button class="btn btn-primary" type="submit" name="button" style="width:35%;">Comentar</button>
+				<button class="btn btn-primary" type="submit" name="button" style="width:125px; display:flex; justify-content: space-between;">Comentar <li class="glyphicon glyphicon-send"></li></button>
 			</div>
 
 		</form>

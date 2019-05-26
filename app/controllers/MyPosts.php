@@ -89,6 +89,17 @@ class MyPosts extends Controller{
     }
 
   }
+
+  public function deletePost(){
+    $id = $_POST['id'];
+
+    $result = $this->postModel->deletePost($id);
+
+    if ($result) {
+      // code...
+      $this->index();
+    }
+  }
 }
 
 

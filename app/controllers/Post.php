@@ -17,7 +17,8 @@ class Post extends Controller
 
   public function viewPost(){
     $id = $_GET['id'];
-    
+
+  
     $post     = $this->postModel->post($id);
     $comments = $this->postModel->getComments($id);
     $category = $this->postModel->currentCategory($post->id_category);
@@ -55,7 +56,7 @@ class Post extends Controller
 
   public function comment(){
     session_start();
-    $comment = $_POST['comment'];
+    $comment = nl2br($_POST['comment']);
     $id_post = $_POST['id_post'];
     $id_user = $_SESSION['id'];
 

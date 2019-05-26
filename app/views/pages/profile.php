@@ -83,13 +83,13 @@
 
                     <input type="text" class="form-control form-control-lg"  name="username" value="<?php echo $_SESSION['username']; ?>">
                     <br><br>
-                    <input type="submit" class="form-control form-control-lg save" value="Guardar">
+                    <button class="btn btn-primary" type="submit" name="button" style="width:125px; "> Guardar </button>
 
                   </form>
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@
 
                     <input type="text" class="form-control form-control-lg"  name="email" value="<?php echo $_SESSION['email']; ?>">
                     <br><br>
-                    <input type="submit" class="form-control form-control-lg save" value="Guardar">
+                    <button class="btn btn-primary" type="submit" name="button" style="width:125px; "> Guardar </button>
 
                   </form>
                 </div>
@@ -135,7 +135,7 @@
 
                     <input type="text" class="form-control form-control-lg"  name="name" value="<?php echo $_SESSION['first_name']; ?>">
                     <br><br>
-                    <input type="submit" class="form-control form-control-lg save" value="Guardar">
+                    <button class="btn btn-primary" type="submit" name="button" style="width:125px; "> Guardar </button>
 
                   </form>
                 </div>
@@ -160,7 +160,7 @@
                   <form class="" action="<?php echo ROUTE_URL.'/Profile/editMiddleName'?>" method="post">
                     <input type="text" class="form-control form-control-lg"  name="middle_name" value="<?php echo $_SESSION['middle_name']; ?>">
                     <br><br>
-                    <input type="submit" class="form-control form-control-lg save" value="Guardar">
+                    <button class="btn btn-primary" type="submit" name="button" style="width:125px; "> Guardar </button>
                   </form>
                 </div>
               </div>
@@ -184,7 +184,7 @@
                   <form class="" action="<?php echo ROUTE_URL.'/Profile/editLastName'?>" method="post">
                     <input type="text" class="form-control form-control-lg"  name="last_name" value="<?php echo $_SESSION['last_name']; ?>">
                     <br><br>
-                    <input type="submit" class="form-control form-control-lg save" value="Guardar">
+                    <button class="btn btn-primary" type="submit" name="button" style="width:125px; "> Guardar </button>
                   </form>
                 </div>
               </div>
@@ -208,7 +208,7 @@
                   <form class="" action="<?php echo ROUTE_URL.'/Profile/editCountry'?>" method="post">
                     <input type="text" class="form-control form-control-lg"  name="country" value="<?php echo $_SESSION['country']; ?>">
                     <br><br>
-                    <input type="submit" class="form-control form-control-lg save" value="Guardar">
+                    <button class="btn btn-primary" type="submit" name="button" style="width:125px; "> Guardar </button>
                   </form>
                 </div>
               </div>
@@ -236,7 +236,7 @@
                       <option value="M">Masculino</option>
                     </select>
                     <br><br>
-                    <input type="submit" class="form-control form-control-lg save" value="Guardar">
+                    <button class="btn btn-primary" type="submit" name="button" style="width:125px; "> Guardar </button>
                   </form>
 
                 </div>
@@ -254,27 +254,27 @@
           <tr>
             <th>Nombre de usuario</th>
             <td> <?php echo $_SESSION['username']; ?> </td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#userNameModal">Editar</button> </td>
+            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#userNameModal"> <li class="glyphicon glyphicon-edit"></li> </button> </td>
           </tr>
           <tr>
             <th>Correo electronico</th>
             <td> <?php echo $_SESSION['email']; ?> </td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#emailModal">Editar</button> </td>
+            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#emailModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
           </tr>
           <tr>
             <th>Nombre</th>
             <td> <?php echo $_SESSION['first_name']; ?> </td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#nameModal">Editar</button> </td>
+            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#nameModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
           </tr>
           <tr>
             <th>Apellido paterno</th>
             <td> <?php echo $_SESSION['middle_name']; ?> </td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#middleModal">Editar</button> </td>
+            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#middleModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
           </tr>
           <tr>
             <th>Apellido materno</th>
             <td><?php echo $_SESSION['last_name']; ?></td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#lastModal">Editar</button> </td>
+            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#lastModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
           </tr>
           <tr>
             <th>País</th>
@@ -287,7 +287,7 @@
                 echo "Vacío";
               } ?>
             </td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#countryModal">Editar</button> </td>
+            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#countryModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
           </tr>
           <tr>
             <th>Genero</th>
@@ -300,7 +300,7 @@
                 echo "Vacío";
               } ?>
             </td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#genderModal">Editar</button> </td>
+            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#genderModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
           </tr>
         </table>
 
@@ -315,13 +315,15 @@
           <thead>
             <tr>
               <th colspan="5">
-                  <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#newExperienceModal" name="button">Agregar</button>
+                  <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#newExperienceModal" name="button"> <li class="glyphicon glyphicon-plus"></li> </button>
               </th>
             </tr>
             <tr>
-              <th>Nombre</th>
+              <th>
+                <label for="name">Nombre</label>
+              </th>
               <th>Descripcion</th>
-              <th>Accion</th>
+              <th style="display:flex; justify-content: flex-end;">Accion</th>
             </tr>
           </thead>
           <tbody>
@@ -335,9 +337,9 @@
                 <tr>
                   <td><?php echo $experience->name; ?></td>
                   <td><?php echo $experience->summary; ?></td>
-                  <td>
-                    <button class="btn btn-info" type="button" data-toggle="modal" data-target="#experienceModal<?php echo $experience->name; ?>" name="button">Ver</button>
-                    <button class="btn btn-danger" type="button"data-toggle="modal" data-target="#deleteExperienceModal">Eliminar</button>
+                  <td style="display:flex; justify-content: flex-end;">
+                    <button class="btn btn-info" type="button" data-toggle="modal" data-target="#experienceModal<?php echo $experience->name; ?>" name="button"><li class="glyphicon glyphicon-eye-open"></li></button>
+                    <button class="btn btn-danger" type="button"data-toggle="modal" data-target="#deleteExperienceModal"> <li class="glyphicon glyphicon-trash"></li> </button>
                   </td>
                 </tr>
 
@@ -381,7 +383,7 @@
                   <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h4 class="modal-title">Genero</h4>
+                        <h4 class="modal-title">experiencia</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                       </div>
                       <div class="modal-body">
@@ -471,7 +473,7 @@
                   </div>
 
                   <div class="content-experience-row">
-                    <button class="btn btn-success" type="submit" name="button">Guardar</button>
+                    <button class="btn btn-primary" type="submit" name="button" style="width:125px; "> Guardar </button>
                   </div>
 
                 </div>
@@ -480,7 +482,7 @@
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
             </div>
           </div>
         </div>

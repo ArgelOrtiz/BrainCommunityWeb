@@ -93,6 +93,18 @@
       return $this->db->registry();
 
     }
+
+    public function getUserPoints($id){
+      $this->db->query("SELECT points FROM ic_user WHERE id = $id ");
+
+      return $this->db->registry();
+    }
+
+    public function setUserPoints($points,$id){
+      $this->db->query("UPDATE ic_user set points = $points WHERE id = $id ");
+
+      return $this->db->execute();
+    }
   }
 
 

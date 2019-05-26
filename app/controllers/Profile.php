@@ -42,9 +42,19 @@ class Profile extends Controller{
   }
 
   public function user(){
+
     $username = $_GET['username'];
 
     $userResult = $this->profileModel->getUser($username);
+
+    if ($_SESSION) {
+      // code...
+      if ($userResult->id === $_SESSION['id']) {
+        // code...
+        $this->controller('Profile');
+        die();
+      }
+    }
 
     $experienceResult = $this->profileModel->getExperience($userResult->id);
 
@@ -55,6 +65,27 @@ class Profile extends Controller{
     ];
 
     $this->view('pages/userProfile',$data);
+  }
+
+  public function setPoint(){
+    $id       = $_POST['id'];
+    $username = $_POST['username'];
+
+    $result = $this->profileModel->getUserPoints($id);
+
+    if ($result) {
+      // code...
+      $points = $result->points + 1;
+
+      $result = $this->profileModel->setUserPoints($points,$id);
+
+      if ($result) {
+        // code...
+
+        $this->controller("Profile/user?username=".$username);
+      }
+
+    }
   }
 
   public function editUserName(){
