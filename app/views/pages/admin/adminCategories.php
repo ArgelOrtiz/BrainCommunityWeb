@@ -10,14 +10,17 @@
       <div align = right>
         <button type="button" class = "btn btn-success btn-sm" onclick="createModal();">Crear Categoría</button>
       </div>
-			<div class="table-responsive">
-			<table class="table table-striped table-hover table-dark">
+
+			<table id="category_table" class="table table-hover">
+        <thead>
 				<tr>
           <th>Id</th>
 					<th>Título</th>
 					<th>Resumen</th>
 					<th>Acciones</th>
 				</tr>
+        </thead>
+        <tbody>
         <?php foreach($data['categories'] as $category): ?>
           <tr>
 						<td><?php echo $category->id; ?></td>
@@ -37,8 +40,9 @@
 
 					</tr>
         <?php endforeach ?>
-
+      </tbody>
 			</table>
+
       <!--MODAL-->
         <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg" >
@@ -71,7 +75,7 @@
 </div>
 
 <!--MODAL-->
-  <div id="crear" class="modal fade" role="dialog">
+<div id="crear" class="modal fade" role="dialog">
 <div class="modal-dialog modal-lg" >
 <!--MODAL_CONTENT-->
 <div class="modal-content">
@@ -101,6 +105,9 @@
 </div>
 
 <script type="text/javascript">
+  $(document).ready( function () {
+    $('#category_table').DataTable();
+  } );
 
   function createModal(){
     $("#crear").modal();
