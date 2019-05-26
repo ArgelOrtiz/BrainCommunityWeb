@@ -36,6 +36,7 @@
         die();
       }else
         echo "Hubo un error";
+
     }
 
     public function edit()
@@ -49,8 +50,6 @@
       $country     = $_POST['pais'];
       $gender      = $_POST['genero'];
       $role        = $_POST['role'];
-      echo $id;
-      die();
 
       $updated = $this->userModel->updateUser($id, $first_name, $middle_name,
        $last_name, $birthday, $status, $country, $gender, $role);
