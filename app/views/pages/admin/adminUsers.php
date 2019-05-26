@@ -162,9 +162,9 @@
 
 <script type="text/javascript">
 
-$(document).ready( function () {
-  $('#users_table').DataTable();
-} );
+  $(document).ready( function () {
+    $('#users_table').DataTable();
+  } );
 
   function createModal(){
     $("#createModal").modal();

@@ -12,13 +12,16 @@
         <button type="button" class = "btn btn-success btn-sm" onclick="createModal();">Crear Post</button>
       </div>
 			<div class="table-responsive">
-			<table class="table table-striped table-hover table-dark">
+			<table id="posts_table" class="table table-hover">
+        <thead>
 				<tr>
           <th>Id</th>
 					<th>Título</th>
 					<th>Resumen</th>
 					<th>Acciones</th>
 				</tr>
+        </thead>
+        <tbody>
         <?php foreach($data['posts'] as $post): ?>
           <tr>
 						<td><?php echo $post->id; ?></td>
@@ -38,7 +41,7 @@
 
 					</tr>
         <?php endforeach ?>
-
+        </tbody>
 			</table>
       <!--MODAL-->
         <div id="myModal" class="modal fade" role="dialog">
@@ -115,6 +118,10 @@
 </div>
 
 <script type="text/javascript">
+
+  $(document).ready( function () {
+    $('#posts_table').DataTable();
+  } );
 
   function createModal(){
     $("#myModal1").modal();
