@@ -57,7 +57,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
       <div class="modal-body">
-      <form action="<?php echo ROUTE_URL.'/Category/create'; ?>" method="POST">
+      <form action="<?php echo ROUTE_URL.'/Category/create/'; ?>" method="POST">
         <label>Nombre Categoria</label><br>
         <input style="width:100%" type="text" name="title" id="title" class="form_control" width><br>
         <label>Descripcion</label><br>

@@ -1,6 +1,6 @@
 <?php
 
-  class User extends Controller
+  class Category extends Controller
   {
 
     function __construct()
@@ -16,7 +16,7 @@
         'title' => 'Categorias',
         'categories' => $categories
       ];
-      $this->view('pages/admin/adminCategories');
+      $this->view('pages/admin/adminCategories', $data);
     }
 
     public function create()
@@ -25,13 +25,12 @@
       $summary  = $_POST['summary'];
       $priority = $_POST['priority'];
 
-      $created = $this->categoryModel->createAdminCategory($title, $summary,
-                 $priority);
+      $created = $this->categoryModel->createCat($title, $summary, $priority);
 
       if($created){
         $url = ROUTE_URL.'/AdminHome/categories';
         header('Location: ' . $url, true, $statusCode);
-        die();
+        die();ss
       }else
         echo "Hubo un error";
     }

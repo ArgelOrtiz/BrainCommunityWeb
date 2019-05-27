@@ -7,13 +7,21 @@
       $this->db = new DataBase;
     }
 
-    public function createAdminCategory($title, $summary, $priority){
+    public function getCategories(){
+      $this->db->query("SELECT * from category");
+
+      return $this->db->records();
+    }
+
+    public function createCat($title, $summary, $priority){
       $current = date("Y-m-d");
+
+      // $this->db->query("INSERT into category (id, title, summary, create_date,
+      //   priority) VALUES (7, 'Películas', 'Info de películas', '2019-05-26')");
       $this->db->query("INSERT into category (title, summary, create_date,
-        priority) VALUES ('".$title."', '".$summary."', '".$current."', '".$priority."')");
+        priority) VALUES ('$title', '$summary', '$current', '.$priority')");
 
       $created = $this->db->execute();
-
       return $created;
     }
 
@@ -33,12 +41,6 @@
       $deleted = $this->db->execute();
 
       return $deleted;
-    }
-
-    public function getCategories(){
-      $this->db->query("SELECT * from category");
-
-      return $this->db->records();
     }
 
     public function getTags($category_id){
