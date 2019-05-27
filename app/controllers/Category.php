@@ -30,7 +30,7 @@
       if($created){
         $url = ROUTE_URL.'/AdminHome/categories';
         header('Location: ' . $url, true, $statusCode);
-        die();ss
+        die();
       }else
         echo "Hubo un error";
     }

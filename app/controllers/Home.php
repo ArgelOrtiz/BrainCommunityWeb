@@ -24,6 +24,10 @@
 
     }
 
+    public function page($page){
+      echo $page;
+    }
+
     public function badData($username,$type){
       $categories = $this->categoryModel->getCategories();
       $post       = $this->postModel->getPosts();
