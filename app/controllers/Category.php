@@ -24,14 +24,13 @@
       $title    = $_POST['title'];
       $summary  = $_POST['summary'];
       $priority = $_POST['priority'];
+      $current  = date("Y-m-d");
 
-      $created = $this->categoryModel->createCat($title, $summary, $priority);
+      $created = $this->categoryModel->createCat($title, $summary, $priority, $current);
 
-      if($created){
-        $url = ROUTE_URL.'/AdminHome/categories';
-        header('Location: ' . $url, true, $statusCode);
-        die();
-      }else
+      if($created)
+        $this->controller('/AdminHome/categories');
+      else
         echo "Hubo un error";
     }
 
@@ -40,15 +39,14 @@
       $id       = $_POST['category_id'];
       $title    = $_POST['title'];
       $summary  = $_POST['summary'];
+      $status   = $_POST['status'];
       $priority = $_POST['priority'];
 
-      $updated = $this->categoryModel->updateCategory($id, $title, $summary, $priority);
+      $updated = $this->categoryModel->updateCategory($id, $title, $summary, $status, $priority);
 
-      if($updated){
-        $url = ROUTE_URL.'/AdminHome/categories';
-        header('Location: ' . $url, true, $statusCode);
-        die();
-      }else
+      if($updated)
+        $this->controller('/AdminHome/categories');
+      else
         echo "Hubo un error";
 
     }

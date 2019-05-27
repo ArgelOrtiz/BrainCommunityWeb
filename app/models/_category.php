@@ -13,11 +13,8 @@
       return $this->db->records();
     }
 
-    public function createCat($title, $summary, $priority){
-      $current = date("Y-m-d");
+    public function createCat($title, $summary, $priority, $current){
 
-      // $this->db->query("INSERT into category (id, title, summary, create_date,
-      //   priority) VALUES (7, 'Películas', 'Info de películas', '2019-05-26')");
       $this->db->query("INSERT into category (title, summary, create_date,
         priority) VALUES ('$title', '$summary', '$current', '.$priority')");
 
@@ -25,11 +22,11 @@
       return $created;
     }
 
-    public function updateCategory($category_id, $title, $summary, $priority){
+    public function updateCategory($category_id, $title, $summary, $status, $priority){
 
        $this->db->query(
          "UPDATE category SET title = '$title', summary = '$summary',
-         priority = '$priority' where id = $category_id");
+         priority = '$priority', status = '$status' where id = $category_id");
 
        $updated = $this->db->execute();
 

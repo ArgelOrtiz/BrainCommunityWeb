@@ -34,7 +34,7 @@
 
 						<td>
               <input id="clickMe" id="Editar" class="btn btn-primary btn-sm" type="button" value="Editar" onclick="editModal(<?php echo $category->id; ?>);" />
-              <?php if($category->id == 1): ?>
+              <?php if($category->status == 1): ?>
               <form action="<?php echo ROUTE_URL.'/Category/delete/'; ?>" method="POST">
                 <input type="hidden" name="category_id" value="<?php echo $category->id; ?>">
                 <button type="submit" class="btn btn-danger btn-sm">Deshabilitar</button>
@@ -93,6 +93,9 @@
         <input style="width:100%" type="text" name="summary" id="summary" class="form_control" value="<?php echo $category->summary; ?>"><br>
         <label>Prioridad</label><br>
         <input style="width:100%" type="text" name="priority" id="priority" class="form_control" value="<?php echo $category->priority; ?>"><br>
+        <label>Estatus</label><br>
+        <input type="radio" name="status" id="status" value="1">Habilitado<br>
+        <input type="radio" name="status" id="status" value="0">Deshabilitado<br>
         <input type="submit" class="btn btn-info float-right" value="Actualizar">
       </form>
       </div>
