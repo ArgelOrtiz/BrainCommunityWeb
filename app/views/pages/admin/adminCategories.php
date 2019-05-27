@@ -17,6 +17,7 @@
           <th>Id</th>
 					<th>Título</th>
 					<th>Resumen</th>
+					<th>Estatus</th>
 					<th>Acciones</th>
 				</tr>
         </thead>
@@ -27,82 +28,82 @@
 						<td><?php echo $category->title; ?></td>
             <td><?php echo $category->summary; ?></td>
 
+            <?php if($category->status == 1): ?> <td>Activo</td>
+            <?php else: ?>                  <td>Deshabilitado</td>
+            <?php endif; ?>
+
 						<td>
-              <form action="<?php echo ROUTE_URL.'/Category/edit/'; ?>" method="POST">
-                <input type="hidden" name="category_id" value="<?php echo $category->id; ?>">
-  							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">Editar</button>
-              </form>
+              <input id="clickMe" id="Editar" class="btn btn-primary btn-sm" type="button" value="Editar" onclick="editModal(<?php echo $category->id; ?>);" />
+              <?php if($category->id == 1): ?>
               <form action="<?php echo ROUTE_URL.'/Category/delete/'; ?>" method="POST">
                 <input type="hidden" name="category_id" value="<?php echo $category->id; ?>">
-  							<button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                <button type="submit" class="btn btn-danger btn-sm">Deshabilitar</button>
               </form>
+              <?php endif; ?>
 						</td>
 
 					</tr>
         <?php endforeach ?>
       </tbody>
 			</table>
+</div>
 
-      <!--MODAL-->
-        <div id="myModal" class="modal fade" role="dialog">
+<!--Create modal-->
+<div id="create_modal" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg" >
-    <!--MODAL_CONTENT-->
     <div class="modal-content">
       <div class="modal-header">
+        <h4 class="modal-title">Crear Categoría</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Editar</h4>
       </div>
       <div class="modal-body">
-        <!--CONTENIDO-->
+      <form action="<?php echo ROUTE_URL.'/Category/create'; ?>" method="POST">
         <label>Nombre Categoria</label><br>
-      <input style="width:100%" type="text"name="nombreC" id="title"class="form_control" width><br>
-      <label>Descripcion</label><br>
-    <input style="width:100%" type="text"name="apellidoM" id="summary"class="form_control"><br>
-    <label>Fecha de Creacion</label><br>
-  <input style="width:100%" type="text"name="apellidoP" id="create_date"class="form_control"><br>
-  <label>Prioridad</label><br>
-<input style="width:100%" type="text"name="nac" id="priority"class="form_control"><br>
-  <button float:right; type="submit" class="btn btn-info" data-dismiss="modal">Enviar</button>
-    <!--FIN-->
+        <input style="width:100%" type="text" name="title" id="title" class="form_control" width><br>
+        <label>Descripcion</label><br>
+        <input style="width:100%" type="text" name="summary" id="summary" class="form_control"><br>
+        <label>Prioridad</label><br>
+        <input style="width:100%" type="text" name="priority" id="priority" class="form_control"><br><br><br>
+        <input type="submit" class="btn btn-info" value="Crear">
+      </form>
       </div>
       <div class="modal-footer">
-  <button float:left; type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+      <button float:left; type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
       </div>
     </div>
-<!--FIN MODEL-->
-			</div>
   </div>
 </div>
+<!--Create modal-->
 
-<!--MODAL-->
-<div id="crear" class="modal fade" role="dialog">
-<div class="modal-dialog modal-lg" >
-<!--MODAL_CONTENT-->
-<div class="modal-content">
-<div class="modal-header">
-  <button type="button" class="close" data-dismiss="modal">&times;</button>
-  <h4 class="modal-title">Editar</h4>
+<!--Edit modal-->
+<?php foreach($data['categories'] as $category): ?>
+<div id="myModal<?php echo $category->id; ?>" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>Editar</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+      <form action="<?php echo ROUTE_URL.'/Category/edit/'; ?>" method="POST">
+        <input type="hidden" name="category_id" value="<?php echo $category->id; ?>">
+        <label>Nombre Categoria</label><br>
+        <input style="width:100%" type="text" name="title" id="title" class="form_control" value="<?php echo $category->title; ?>"><br>
+        <label>Descripcion</label><br>
+        <input style="width:100%" type="text" name="summary" id="summary" class="form_control" value="<?php echo $category->summary; ?>"><br>
+        <label>Prioridad</label><br>
+        <input style="width:100%" type="text" name="priority" id="priority" class="form_control" value="<?php echo $category->priority; ?>"><br>
+        <input type="submit" class="btn btn-info float-right" value="Actualizar">
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button float:left; type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="modal-body">
-  <!--CONTENIDO-->
-<label>Nombre Categoria</label><br>
-<input style="width:100%" type="text"name="nombreC" id="title"class="form_control" width><br>
-<label>Descripcion</label><br>
-<input style="width:100%" type="text"name="apellidoM" id="summary"class="form_control"><br>
-<label>Fecha de Creacion</label><br>
-<input style="width:100%" type="text"name="apellidoP" id="create_date"class="form_control"><br>
-<label>Prioridad</label><br>
-<input style="width:100%" type="text"name="nac" id="priority"class="form_control"><br><br><br>
-<button float:right; type="submit" class="btn btn-info" data-dismiss="modal">Crear</button>
-<!--FIN-->
-</div>
-<div class="modal-footer">
-<button float:left; type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
-</div>
-</div>
-<!--FIN MODEL-->
-</div>
-</div>
+<?php endforeach ?>
+<!--Edit modal-->
 
 <script type="text/javascript">
   $(document).ready( function () {
@@ -110,7 +111,12 @@
   } );
 
   function createModal(){
-    $("#crear").modal();
+    $("#create_modal").modal();
   }
+
+  function editModal(id){
+    $("#myModal" + id).modal();
+  }
+
 </script>
 <?php  require ROUTE_APP.'/views/inc/admin/footer.php';?>
