@@ -2,7 +2,7 @@
 
   class Issue extends Controller{
     private $issueModel;
-    
+
     function __construct()
     {
       $this->issueModel = $this->model('_issue');
@@ -24,13 +24,10 @@
 
       $result = $this->issueModel->create($id,$reported,$title,$summary,$summary);
 
-      if ($result) {
-        // code...
+      if ($result)
         $this->controller('Home');
-      }else {
-        // code...
+      else
         echo "Ocurrio un error";
-      }
 
     }
 
@@ -44,7 +41,7 @@
       $updated = $this->issueModel->updateIssue($id, $title, $summary, $status);
 
       if($updated)
-        $this->controller('/AdminHome/user_issues');
+        $this->controller('/AdminHome/user_issue');
       else
         echo "Hubo un error";
     }
@@ -55,7 +52,7 @@
       $deleted = $this->issueModel->deleteIssue($id);
 
       if($deleted)
-        $this->controller('/AdminHome/user_issues');
+        $this->controller('/AdminHome/user_issue');
       else
         echo "Hubo un error";
     }

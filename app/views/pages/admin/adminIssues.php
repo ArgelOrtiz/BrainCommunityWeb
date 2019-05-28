@@ -14,6 +14,7 @@
           <th>Id</th>
 					<th>Título</th>
 					<th>Fecha</th>
+					<th>Estatus</th>
 					<th>Acciones</th>
 				</tr>
         </thead>
@@ -23,12 +24,19 @@
 						<td><?php echo $issue->id; ?></td>
 						<td><?php echo $issue->title; ?></td>
             <td><?php echo $issue->report_date; ?></td>
+
+            <?php if($issue->status == 1): ?>
+              <td>Atendido</td>
+            <?php else: ?>
+              <td>Por atender</td>
+            <?php endif; ?>
+
 						<td>
               <input id="clickMe" id="Editar" class="btn btn-primary btn-sm" type="button" value="Editar" onclick="editModal(<?php echo $issue->id; ?>);" />
-              <?php if($issue->status == 1): ?>
+              <?php if($issue->status == 0): ?>
               <form action="<?php echo ROUTE_URL.'/Issue/delete/'; ?>" method="POST">
                 <input type="hidden" name="issue_id" value="<?php echo $issue->id; ?>">
-                <button type="submit" class="btn btn-danger btn-sm">Deshabilitar</button>
+                <button type="submit" class="btn btn-danger btn-sm">Atender</button>
               </form>
               <?php endif; ?>
 						</td>
