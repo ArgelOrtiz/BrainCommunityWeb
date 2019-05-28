@@ -12,68 +12,51 @@
     {
     }
 
-    public function create()
-    {
-      $email       = $_POST['email'];
-      $username    = $_POST['username'];
-      $password    = $_POST['password'];
-      $first_name  = $_POST['nombre'];
-      $middle_name = $_POST['apellidoM'];
-      $last_name   = $_POST['apellidoP'];
-      $birthday    = $_POST['nac'];
-      $status      = $_POST['status'];
-      $country     = $_POST['pais'];
-      $gender      = $_POST['genero'];
-      $rol         = $_POST['rol'];
+    public function create(){
+      $id       = $_POST['id'];
+      $reported = $_POST['reported'];
+      $title    = $_POST['title'];
+      $summary  = $_POST['summary'];
 
-      $created = $this->userModel->createAdminUser($email, $username, $password,
-        $first_name, $middle_name, $last_name, $birthday, $status, $country,
-        $gender, $rol);
+      date_default_timezone_set('America/Mexico_City');
 
-      if($created){
-        $url = ROUTE_URL.'/AdminHome/users';
-        header('Location: ' . $url, true, $statusCode);
-        die();
-      }else
-        echo "Hubo un error";
+      $currentdate = date('y-m-d H:i:s');
+
+      $result = $this->issueModel->create($id,$reported,$title,$summary,$summary);
+
+      if ($result) {
+        // code...
+        $this->controller('Home');
+      }else {
+        // code...
+        echo "Ocurrio un error";
+      }
 
     }
 
     public function edit()
     {
-      $id          = $_POST['user_id'];
-      $first_name  = $_POST['nombre'];
-      $middle_name = $_POST['apellidoM'];
-      $last_name   = $_POST['apellidoP'];
-      $birthday    = $_POST['nac'];
-      $status      = $_POST['status'];
-      $country     = $_POST['pais'];
-      $gender      = $_POST['genero'];
-      $role        = $_POST['role'];
+      $id      = $_POST['issue_id'];
+      $title   = $_POST['title'];
+      $summary = $_POST['summary'];
+      $status  = $_POST['status'];
 
-      $updated = $this->userModel->updateUser($id, $first_name, $middle_name,
-       $last_name, $birthday, $status, $country, $gender, $role);
+      $updated = $this->issueModel->updateIssue($id, $title, $summary, $status);
 
-
-      if($updated){
-        $url = ROUTE_URL.'/AdminHome/users';
-        header('Location: ' . $url, true, $statusCode);
-        die();
-      }else
+      if($updated)
+        $this->controller('/AdminHome/user_issues');
+      else
         echo "Hubo un error";
-
     }
 
     public function delete()
     {
-      $id = $_POST['user_id'];
-      $deleted = $this->userModel->deleteUser($id);
+      $id = $_POST['issue_id'];
+      $deleted = $this->issueModel->deleteIssue($id);
 
-      if($deleted){
-        $url = ROUTE_URL.'/AdminHome/users';
-        header('Location: ' . $url, true, $statusCode);
-        die();
-      }else
+      if($deleted)
+        $this->controller('/AdminHome/user_issues');
+      else
         echo "Hubo un error";
     }
 

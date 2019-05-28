@@ -10,7 +10,7 @@ class AdminHome extends Controller
     $this->userModel      = $this->model('_user');
     $this->categoryModel  = $this->model('_category');
     $this->postsModel     = $this->model('_post');
-    $this->issueModel    = $this->model('_issue');
+    $this->issueModel     = $this->model('_issue');
   }
 
   public function index(){
@@ -58,7 +58,7 @@ class AdminHome extends Controller
       'issues' => $user_issues
     ];
 
-    $this->view('pages/admin/adminComments', $data);
+    $this->view('pages/admin/adminIssues', $data);
   }
 
 }
