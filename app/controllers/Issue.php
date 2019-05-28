@@ -1,8 +1,8 @@
 <?php
 
-  class Issue extends Controller
-  {
-
+  class Issue extends Controller{
+    private $issueModel;
+    
     function __construct()
     {
       $this->issueModel = $this->model('_issue');
