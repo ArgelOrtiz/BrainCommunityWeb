@@ -51,13 +51,7 @@
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Denuncias</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                        <a href="#">Usuarios</a>
-                    </li>
-                    <li>
-                        <a href="#">Preguntas</a>
-                    </li>
-                    <li>
-                        <a href="#">Respuestas</a>
+                        <a href="<?php echo ROUTE_URL.'/AdminHome/user_issue'?>">Usuarios</a>
                     </li>
                 </ul>
             </li>

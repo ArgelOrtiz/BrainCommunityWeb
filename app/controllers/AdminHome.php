@@ -7,10 +7,10 @@ class AdminHome extends Controller
 
   function __construct()
   {
-    $this->userModel       = $this->model('_user');
-    $this->categoryModel   = $this->model('_category');
-    $this->postsModel   = $this->model('_post');
-    $this->commentModel   = $this->model('_comment');
+    $this->userModel      = $this->model('_user');
+    $this->categoryModel  = $this->model('_category');
+    $this->postsModel     = $this->model('_post');
+    $this->issueModel    = $this->model('_issue');
   }
 
   public function index(){
@@ -47,17 +47,18 @@ class AdminHome extends Controller
       'posts' => $posts,
       'categories' => $categories
     ];
-    $this->view('pages/admin/adminPosts',$data);
+    $this->view('pages/admin/adminPosts', $data);
   }
 
-  public function comments(){
-    $comments = $this->commentModel->getComments();
+  public function user_issue(){
+    $user_issues = $this->issueModel->get_issues();
 
     $data = [
-      'title' => 'Comentarios',
-      'comments' => $comments
+      'title' => 'Reportes de usuario',
+      'issues' => $user_issues
     ];
-    $this->view('pages/admin/adminComments');
+
+    $this->view('pages/admin/adminComments', $data);
   }
 
 }
