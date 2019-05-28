@@ -6,6 +6,7 @@
 class Profile extends Controller{
   private $profileModel;
   private $registerModel;
+  private $issueModal;
   private $experienceResult;
   private $clasification;
   private $type;
@@ -18,6 +19,7 @@ class Profile extends Controller{
     $this->clasification      = [];
     $this->profileModel       = $this->model('_profile');
     $this->registerModel      = $this->model('_register');
+    $this->issueModal         = $this->model('_issue');
 
     // code...
   }
@@ -42,7 +44,6 @@ class Profile extends Controller{
   }
 
   public function user(){
-
     $username = $_GET['username'];
 
     $userResult = $this->profileModel->getUser($username);
@@ -53,7 +54,22 @@ class Profile extends Controller{
         // code...
         $this->controller('Profile');
         die();
+      }else {
+        // code...
+        $issueResult = $this->issueModal->get_user_issue($userResult->id,$_SESSION['id'] );
+
+        if ($issueResult) {
+          // code...
+          $issue = 0;
+        }else {
+          // code...
+          $issue = 1;
+        }
+
       }
+    }else {
+      // code...
+      $issue = 0;
     }
 
     $experienceResult = $this->profileModel->getExperience($userResult->id);
@@ -61,7 +77,8 @@ class Profile extends Controller{
 
     $data = [
       'user'        => $userResult,
-      'experience'  => $experienceResult
+      'experience'  => $experienceResult,
+      'issue'       => $issue
     ];
 
     $this->view('pages/userProfile',$data);

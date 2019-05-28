@@ -110,17 +110,22 @@
 
             <br><br>
 
-            <input class="loginButton" type="submit" name="Enter" value="Entrar"/>
+            <input class="btn btn-primary" type="submit" name="Enter" value="Entrar"/>
 
           	<br><br>
           	<a href="<?php echo ROUTE_URL.'/Register'?>">Registrate</a>
             <a href="<?php echo ROUTE_URL.'/Login/forgotPassword'?>">¿Olvido su contraseña?</a>
 
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.3&appId=2128166953976158&autoLogAppEvents=1"></script>
+
+            <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false" style="margin-top:15px;"></div>
+
           </form>
 
         </div>
         <div class="modal-footer" >
-          <button type="button" class="btn btn-default close-modal-button" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
@@ -172,5 +177,6 @@
 
 
 </div>
+
 
 <?php  require ROUTE_APP.'/views/inc/homefooter.php';?>

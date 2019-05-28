@@ -29,7 +29,6 @@ if ($data['category']) {
 
 						<form class="" action="<?php echo ROUTE_URL.'/Profile/user';?>" method="get">
 							<input type="hidden" name="username" value="<?php echo $user->username; ?>">
-							<input type="hidden" name="post" value="<?php echo ROUTE_URL.'/Post/viewPost';?>">
 							<button type="submit" class="btn btn-link" style="padding:0px;"> <?php echo $user->username; ?> </button>
 						</form>
 

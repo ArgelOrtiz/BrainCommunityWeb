@@ -22,6 +22,50 @@
   }
  ?>
 
+ <!-- Modal report -->
+  <div class="modal fade" id="reportModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Reportar a <?php echo $user->username; ?></h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <form class="modal-body issue-modal" action="<?php echo ROUTE_URL.'/Issue/create';?>" method="post" >
+
+          <div class="title-content">
+            <label for="">Describa la razon por la cual descea reportar a este usuario</label>
+          </div>
+
+          <div class="content-modal form-group">
+            <label for="">Titulo</label>
+            <input type="text" class="form-control" name="title"></input>
+          </div>
+
+          <div class="content-modal form-group">
+            <label for="">Descripcion</label>
+            <textarea class="form-control"  name="summary" rows="8" cols="80"></textarea>
+          </div>
+
+          <div class="content-modal">
+              <button class="btn btn-warning" type="submit" >Reportar</button>
+          </div>
+
+          <div class="content-modal">
+            <?php if ($_SESSION): ?>
+              <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
+            <?php endif; ?>
+            <input type="hidden" name="reported" value="<?php echo $user->id; ?>">
+          </div>
+
+        </form>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="user-main-container" >
 
@@ -29,12 +73,8 @@
 
     <div class="user-content" >
 
-      <form class="row-content" action="http://braincommunity.net/Post/viewPost?id=".<?php echo '37'; ?>>
-        <button class=" btn btn-info" type="submit" name="button"> <a class="glyphicon glyphicon-arrow-left" style="color:white"></a> Regresar al la publicacion</button>
-      </form>
-
-      <div class="title-content">
-        <label><?php echo $user->username; ?></label>
+      <div class="title-content" style="background:#00BFFF; border-radius:10px;">
+        <label style="padding:5px; color:white;"><?php echo $user->username; ?></label>
       </div>
 
       <div class="row-content">
@@ -57,15 +97,13 @@
         <label ><?php echo $gender; ?></label>
       </div>
 
-      <form class="row-content" action="<?php echo ROUTE_URL.'/Profile/setPoint';?>" method="post">
-        <input type="hidden" name="id" value="<?php echo $user->id; ?>">
-        <input type="hidden" name="username" value="<?php echo $user->username; ?>">
-        <button class=" btn btn-success" type="submit" name="button">+1 Punto</button>
-      </form>
-
-      <form class="row-content">
-        <button class="disabled btn btn-danger" type="button" name="button">Reportar</button>
-      </form>
+      <div class="row-content">
+        <button class="btn btn-danger
+        <?php if ($data['issue'] == 0): ?>
+          disabled
+        <?php endif; ?>
+        " data-toggle="modal" data-target="#reportModal" type="submit" name="button">Reportar</button>
+      </div>
 
     </div>
 

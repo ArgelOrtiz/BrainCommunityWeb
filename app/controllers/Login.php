@@ -49,6 +49,10 @@
       $this->controller('home');
     }
 
+    public function face(){
+      echo "hola";
+    }
+
 
   }
  ?>
