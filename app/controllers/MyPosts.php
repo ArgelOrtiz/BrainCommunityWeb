@@ -52,8 +52,8 @@ class MyPosts extends Controller{
 
   public function createPost(){
     session_start();
-    $title        = $_POST['title'];
-    $summary      = $_POST['summary'];
+    $title        = nl2br($_POST['title']);
+    $summary      = nl2br($_POST['summary']);
     $id_category  = $_POST['id_category'];
     $metadata     = $_POST['metadata[]'];
     $id_user      = $_SESSION['id'];
