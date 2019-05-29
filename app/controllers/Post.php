@@ -97,16 +97,18 @@ class Post extends Controller
   }
 
   public function deleteComment(){
-    $id = $_POST['comment'];
+    $post = $_POST['id_post'];
+    $id   = $_POST['comment'];
 
     $result = $this->commentModel->deleteComment($id);
 
     if ($result) {
       // code...
-      $this->controller('Home');
+      $this->postModel->reduceComments($post);
+      $this->controller('Post/viewPost?id='.$post);
     }else {
       // code...
-      echo "string";
+      echo "Error en la operacion";
     }
 
 

@@ -73,6 +73,12 @@
       return $this->db->execute();
     }
 
+    public function reduceComments( $id){
+      $this->db->query("UPDATE ic_post SET comments = (comments - 1) WHERE id= $id");
+
+      return $this->db->execute();
+    }
+
     public function increaseViews($views, $id){
       $this->db->query("UPDATE ic_post SET 	visits = $views WHERE id= $id");
 
@@ -97,7 +103,7 @@
     }
 
     public function setComment($id_post, $id_user, $comment,$currentdate){
-      $this->db->query("INSERT INTO comments VALUES (null,'$id_post','$id_user','$comment','$currentdate')");
+      $this->db->query("INSERT INTO comments VALUES (null,'$id_post','$id_user','$comment','$currentdate',1)");
 
       return $this->db->execute();
     }

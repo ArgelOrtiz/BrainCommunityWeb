@@ -75,6 +75,7 @@ if ($data['category']) {
 									<?php if ($_SESSION['username'] === $comments->username): ?>
 										<form class="" action="<?php echo ROUTE_URL.'/Post/deleteComment';?>" method="post">
 											<input type="hidden" name="comment" value="<?php echo $comments->id; ?>">
+											<input type="hidden" name="id_post" value="<?php echo $post->id; ?>">
 											<button class="btn glyphicon glyphicon-trash" style="color:red;" type="submit"></button>
 										</form>
 									<?php endif; ?>
