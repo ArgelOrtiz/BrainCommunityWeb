@@ -1,3 +1,7 @@
+* {
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
 body {
     background: #f1f1f1;
 }
@@ -16,21 +20,23 @@ a, a:hover, a:focus {
 }
 
 .admin-sidebar {
-    /* don't forget to add all the previously mentioned styles here too */
-    background: #7386D5;
+    background: #000000;
+    /* background: #7386D5; */
     color: #fff;
     transition: all 0.3s;
     position: fixed !important
 }
 
 .admin-sidebar .sidebar-header {
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
     padding: 20px;
-    background: #6d7fcc;
+    background: #000000;
 }
 
 .admin-sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
+    border-bottom: 1px solid #00000;
 }
 
 .admin-sidebar ul p {
@@ -50,13 +56,13 @@ a, a:hover, a:focus {
 
 .admin-sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: #000009;
 }
 
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #000009;
 }
 
 .wrapper {

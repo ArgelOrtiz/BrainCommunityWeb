@@ -10,6 +10,9 @@
 <!-- Our Custom CSS -->
 <link rel="stylesheet" type="text/css" href="<?php echo ROUTE_URL; ?>/style/adminhome.css"/>
 
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <!-- Scrollbar Custom CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 <!-- Font Awesome JS -->
@@ -33,31 +36,19 @@
         </div>
 
 				<ul class="list-unstyled components">
-            <!-- <p>Dummy Heading</p> -->
-						<li>
-                <a href="<?php echo ROUTE_URL.'/AdminHome'?>">Home</a>
-            </li>
-            <li>
-                <a href="<?php echo ROUTE_URL.'/AdminHome/users'?>">Usuarios</a>
-            </li>
-						<li>
-								<a href="<?php echo ROUTE_URL.'/AdminHome/categories'?>">Categorías</a>
-						</li>
-						<li>
-								<a href="<?php echo ROUTE_URL.'/AdminHome/posts'?>">Posts</a>
-						</li>
 
-            <li class="active">
+						<!-- <li class="x1"><a href="<?php echo ROUTE_URL.'/AdminHome'?>" class="x1"><i class="fas fa-home"></i>&nbsp;&nbsp;Home</a></li> -->
+						<li class="x1"><a href="<?php echo ROUTE_URL.'/AdminHome/users'?>" class="x1"><i class="fas fa-users"></i>&nbsp;&nbsp;Usuarios</a></li>
+						<li class="x1"><a href="<?php echo ROUTE_URL.'/AdminHome/categories'?>" class="x1"><i class="fas fa-cubes"></i>&nbsp;&nbsp;Categorías</a></li>
+						<li class="x1"><a href="<?php echo ROUTE_URL.'/AdminHome/posts'?>" class="x1"><i class="fas fa-archive"></i>&nbsp;&nbsp;Posts</a></li>
+						<li class="x1"><a href="<?php echo ROUTE_URL.'/AdminHome/user_issue'?>" class="x1"><i class="fas fa-exclamation-triangle"></i>&nbsp;&nbsp;Reportes</a></li>
+						<br><li class="x1"><a href="<?php echo ROUTE_URL?>" class="x1"><i class="fas fa-undo"></i>&nbsp;&nbsp;Regresar</a></li>
+						<!-- <li class="active">
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Denuncias</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="<?php echo ROUTE_URL.'/AdminHome/user_issue'?>">Usuarios</a>
-                    </li>
+										<li class="x1"><a href="<?php echo ROUTE_URL.'/AdminHome/user_issue'?>" class="x1"><i class="fas fa-exclamation-triangle"></i>&nbsp;Usuarios</a></li>
                 </ul>
-            </li>
-						<li>
-								<a href="<?php echo ROUTE_URL?>">Regresar</a>
-						</li>
+            </li> -->
         </ul>
 
 	    </nav>

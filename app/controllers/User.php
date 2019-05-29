@@ -30,11 +30,9 @@
         $first_name, $middle_name, $last_name, $birthday, $status, $country,
         $gender, $rol);
 
-      if($created){
-        $url = ROUTE_URL.'/AdminHome/users';
-        header('Location: ' . $url, true, $statusCode);
-        die();
-      }else
+      if($created)
+        $this->controller('/AdminHome/users');
+      else
         echo "Hubo un error";
 
     }
@@ -55,13 +53,10 @@
        $last_name, $birthday, $status, $country, $gender, $role);
 
 
-      if($updated){
-        $url = ROUTE_URL.'/AdminHome/users';
-        header('Location: ' . $url, true, $statusCode);
-        die();
-      }else
+      if($updated)
+        $this->controller('/AdminHome/users');
+      else
         echo "Hubo un error";
-
     }
 
     public function delete()
@@ -69,11 +64,9 @@
       $id = $_POST['user_id'];
       $deleted = $this->userModel->deleteUser($id);
 
-      if($deleted){
-        $url = ROUTE_URL.'/AdminHome/users';
-        header('Location: ' . $url, true, $statusCode);
-        die();
-      }else
+      if($deleted)
+        $this->controller('/AdminHome/users');
+      else
         echo "Hubo un error";
     }
 
