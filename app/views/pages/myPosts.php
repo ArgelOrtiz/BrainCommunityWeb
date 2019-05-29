@@ -29,8 +29,8 @@
                 <td>
                   <form class="" action="<?php echo ROUTE_URL.'/Post/viewPost';?>" method="get">
                     <input type="hidden" name="id" value="<?php echo $post->id; ?>">
-                    <button class="btn btn-info" type="submit" ><li class="glyphicon glyphicon-eye-open"></li></button>
-                    <button class=" btn btn-danger" type="button"data-toggle="modal"  data-target="#deletePost<?php echo $post->id; ?>"><li class="glyphicon glyphicon-trash"></li></button>
+                    <button class="btn btn-outline-info" type="submit" ><li class="glyphicon glyphicon-eye-open"></li></button>
+                    <button class=" btn btn-outline-danger" type="button"data-toggle="modal"  data-target="#deletePost<?php echo $post->id; ?>"><li class="glyphicon glyphicon-trash"></li></button>
                   </form>
                 </td>
               </tr>

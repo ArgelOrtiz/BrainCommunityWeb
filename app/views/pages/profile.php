@@ -55,7 +55,7 @@
              <label class="message-reload" ><?php echo $message; ?></label>
            </div>
            <div class="modal-footer">
-             <button type="button" class="btn btn-default close-modal-button" data-dismiss="modal">Close</button>
+             <button type="button" class="btn btn-default  " data-dismiss="modal">Close</button>
            </div>
          </div>
        </div>
@@ -254,27 +254,27 @@
           <tr>
             <th>Nombre de usuario</th>
             <td> <?php echo $_SESSION['username']; ?> </td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#userNameModal"> <li class="glyphicon glyphicon-edit"></li> </button> </td>
+            <td class="editRow"> <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#userNameModal"> <li class="glyphicon glyphicon-edit"></li> </button> </td>
           </tr>
           <tr>
             <th>Correo electronico</th>
             <td> <?php echo $_SESSION['email']; ?> </td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#emailModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
+            <td class="editRow"> <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#emailModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
           </tr>
           <tr>
             <th>Nombre</th>
             <td> <?php echo $_SESSION['first_name']; ?> </td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#nameModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
+            <td class="editRow"> <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#nameModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
           </tr>
           <tr>
             <th>Apellido paterno</th>
             <td> <?php echo $_SESSION['middle_name']; ?> </td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#middleModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
+            <td class="editRow"> <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#middleModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
           </tr>
           <tr>
             <th>Apellido materno</th>
             <td><?php echo $_SESSION['last_name']; ?></td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#lastModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
+            <td class="editRow"> <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#lastModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
           </tr>
           <tr>
             <th>País</th>
@@ -287,7 +287,7 @@
                 echo "Vacío";
               } ?>
             </td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#countryModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
+            <td class="editRow"> <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#countryModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
           </tr>
           <tr>
             <th>Genero</th>
@@ -300,7 +300,7 @@
                 echo "Vacío";
               } ?>
             </td>
-            <td class="editRow"> <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#genderModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
+            <td class="editRow"> <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#genderModal"><li class="glyphicon glyphicon-edit"></li></button> </td>
           </tr>
         </table>
 
@@ -315,7 +315,7 @@
           <thead>
             <tr>
               <th colspan="5">
-                  <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#newExperienceModal" name="button"> <li class="glyphicon glyphicon-plus"></li> </button>
+                  <button class="btn btn-outline-primary" type="button" data-toggle="modal" data-target="#newExperienceModal" name="button"> <li class="glyphicon glyphicon-plus"></li> </button>
               </th>
             </tr>
             <tr>
@@ -338,8 +338,8 @@
                   <td><?php echo $experience->name; ?></td>
                   <td><?php echo $experience->summary; ?></td>
                   <td style="display:flex; justify-content: flex-end;">
-                    <button class="btn btn-info" type="button" data-toggle="modal" data-target="#experienceModal<?php echo $experience->name; ?>" name="button"><li class="glyphicon glyphicon-eye-open"></li></button>
-                    <button class="btn btn-danger" type="button"data-toggle="modal" data-target="#deleteExperienceModal"> <li class="glyphicon glyphicon-trash"></li> </button>
+                    <button class="btn btn-outline-info" type="button" data-toggle="modal" data-target="#experienceModal<?php echo $experience->name; ?>" name="button"><li class="glyphicon glyphicon-eye-open"></li></button>
+                    <button class="btn btn-outline-danger" type="button"data-toggle="modal" data-target="#deleteExperienceModal"> <li class="glyphicon glyphicon-trash"></li> </button>
                   </td>
                 </tr>
 
@@ -392,7 +392,7 @@
                           <div class="form-group data-experience-row">
                             <input type="hidden" name="id" value="<?php echo $experience->id; ?>">
                             <label >Estas seguro de que desceas eliminar la experiencia "<?php echo $experience->name;?>" </label>
-                            <button class="btn btn-warning" type="submit" style="width:25%;">Eliminar</button>
+                            <button class="btn btn-outline-warning" type="submit" style="width:25%;">Eliminar</button>
                           </div>
                         </form>
 
@@ -473,7 +473,7 @@
                   </div>
 
                   <div class="content-experience-row">
-                    <button class="btn btn-primary" type="submit" name="button" style="width:125px; "> Guardar </button>
+                    <button class="btn btn-outline-primary" type="submit" name="button" style="width:125px; "> Guardar </button>
                   </div>
 
                 </div>
@@ -482,7 +482,7 @@
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
             </div>
           </div>
         </div>

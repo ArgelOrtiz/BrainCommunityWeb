@@ -214,7 +214,7 @@ if (isset($data)) {
         <!-- send -->
         <div class="row-content form-group  ">
 
-          <input id="GeneralButton" type="submit" name="send"/>
+          <input class="btn btn-primary" type="submit" name="send"/>
 
         </div>
 
