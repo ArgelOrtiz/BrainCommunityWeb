@@ -65,11 +65,20 @@ if ($data['category']) {
 					<?php foreach ($data['comments'] as $comments): ?>
 						<div class="comments-row">
 
-							<div class="title-comments">
-								<form class="" action="<?php echo ROUTE_URL.'/Profile/user';?>" method="get">
+							<div class="title-comments" style="width:100%; display:flex; flex-direction:row; flex-wrap: wrap; justify-content: space-between;">
+								<form class=""   action="<?php echo ROUTE_URL.'/Profile/user';?>" method="get">
 									<input type="hidden" name="username" value="<?php echo $comments->username; ?>">
 									<button type="submit" class="btn btn-link" style="padding:0px;"> <?php echo $comments->username; ?> </button>
+
 								</form>
+								<?php if ($_SESSION): ?>
+									<?php if ($_SESSION['username'] === $comments->username): ?>
+										<form class="" action="<?php echo ROUTE_URL.'/Post/deleteComment';?>" method="post">
+											<input type="hidden" name="comment" value="<?php echo $comments->id; ?>">
+											<button class="btn glyphicon glyphicon-trash" style="color:red;" type="submit"></button>
+										</form>
+									<?php endif; ?>
+								<?php endif; ?>
 								</div>
 
 							<div class="content-comments">

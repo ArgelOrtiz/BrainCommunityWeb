@@ -178,5 +178,25 @@
 
 </div>
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '2128166953976158',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v3.3'
+    });
+  };
+
+  FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    alert('conectado');
+  }
+});
+
+
+</script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+
 
 <?php  require ROUTE_APP.'/views/inc/homefooter.php';?>

@@ -8,7 +8,8 @@ class Post extends Controller
 
   function __construct()
   {
-    $this->postModel = $this->model('_post');
+    $this->postModel    = $this->model('_post');
+    $this->commentModel = $this->model('_comment');
   }
 
   public function index(){
@@ -18,7 +19,7 @@ class Post extends Controller
   public function viewPost(){
     $id = $_GET['id'];
 
-  
+
     $post     = $this->postModel->post($id);
     $comments = $this->postModel->getComments($id);
     $category = $this->postModel->currentCategory($post->id_category);
@@ -93,6 +94,22 @@ class Post extends Controller
       // code...
       echo "error";
     }
+  }
+
+  public function deleteComment(){
+    $id = $_POST['comment'];
+
+    $result = $this->commentModel->deleteComment($id);
+
+    if ($result) {
+      // code...
+      $this->controller('Home');
+    }else {
+      // code...
+      echo "string";
+    }
+
+
   }
 
   public function edit()

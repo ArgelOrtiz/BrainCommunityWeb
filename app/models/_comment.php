@@ -14,9 +14,9 @@
     }
 
     public function deleteComment($comment_id){
-      $this->db->query("DELETE FROM comments where id = " . $comment_id);
+      $this->db->query("UPDATE comments SET status = 0 where id = " . $comment_id);
 
-      return $this->db->registry();
+      return $this->db->execute();
     }
   }
 

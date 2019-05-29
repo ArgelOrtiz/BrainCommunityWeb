@@ -86,11 +86,11 @@
     }
 
     public function getComments($id){
-      $this->db->query("SELECT C.summary, C.create_date, U.username
+      $this->db->query("SELECT C.id, C.summary, C.create_date, U.username
         FROM comments C
         JOIN ic_user U
         ON C.id_user = U.id
-        WHERE id_post = $id
+        WHERE id_post = $id and C.status = 1
         ORDER BY C.create_date desc");
 
       return $this->db->records();
