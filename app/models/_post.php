@@ -137,6 +137,16 @@
 
       return $this->db->records();
     }
+    public function updatePost($id, $title, $summary, $status,$priority){
+
+       $this->db->query(
+         "UPDATE category SET title = '$title', summary = '$summary',
+         priority = '$priority', status = '$status' where id = $post_id");
+
+       $updated = $this->db->execute();
+
+       return $updated;
+    }
   }
 
  ?>

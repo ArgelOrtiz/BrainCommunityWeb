@@ -43,3 +43,4 @@
 
   </div>
 </form>
+<?php  require ROUTE_APP.'/views/inc/admin/footer.php';?>
