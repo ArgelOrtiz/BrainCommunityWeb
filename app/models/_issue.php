@@ -12,7 +12,6 @@
 
       return $this->db->records();
     }
-  }
 
   public function create($id,$reported,$title,$summary,$date){
       $this->db->query("INSERT INTO issue VALUES (null, $reported,$id, '$title',
@@ -44,5 +43,6 @@
 
       return $this->db->registry();
     }
+}
 
  ?>
