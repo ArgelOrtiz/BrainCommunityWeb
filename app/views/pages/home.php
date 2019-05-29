@@ -58,7 +58,7 @@
           <label class="message-reload" >El nombre de usuario <?php echo $data['username']; ?> es incorrecto</label>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default close-modal-button" data-dismiss="modal" data-toggle="modal" data-target="#myModal" >Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#myModal" >Close</button>
         </div>
       </div>
     </div>
@@ -75,7 +75,7 @@
           <label class="message-reload" >La contraseña es incorrecta</label>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default close-modal-button" data-dismiss="modal" data-toggle="modal" data-target="#myModal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#myModal">Close</button>
         </div>
       </div>
     </div>
@@ -115,6 +115,9 @@
           	<br><br>
           	<a href="<?php echo ROUTE_URL.'/Register'?>">Registrate</a>
             <a href="<?php echo ROUTE_URL.'/Login/forgotPassword'?>">¿Olvido su contraseña?</a>
+            <hr>
+            
+            <label for="">Ó</label>
 
             <div id="fb-root"></div>
             <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.3&appId=2128166953976158&autoLogAppEvents=1"></script>
