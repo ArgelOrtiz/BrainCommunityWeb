@@ -103,7 +103,7 @@
     }
 
     public function setComment($id_post, $id_user, $comment,$currentdate){
-      $this->db->query("INSERT INTO comments VALUES (null,'$id_post','$id_user','$comment','$currentdate',1)");
+      $this->db->query("INSERT INTO comments VALUES (null,$id_post,$id_user,'$comment',$currentdate,1)");
 
       return $this->db->execute();
     }
