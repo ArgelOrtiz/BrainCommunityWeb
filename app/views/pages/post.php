@@ -102,14 +102,14 @@ if ($data['category']) {
 
 		<?php if($_SESSION){?>
 
-		<form class="post-container" action="<?php echo ROUTE_URL.'/Post/comment';?>" method="post">
+		<form class="post-container" action="<?php echo ROUTE_URL.'/Post/comment';?>" method="post" onsubmit="return commentario()">
 
 			<div class="title-row">
 				<label for="title">Escribir un comentario</label>
 			</div>
 
 			<div class="post-content-row">
-				<textarea name="comment" rows="8" cols="80"></textarea>
+				<textarea id="comment" name="comment" rows="8" cols="80"></textarea>
 			</div>
 
 			<div class="post-content-row">
@@ -131,5 +131,6 @@ if ($data['category']) {
 		<?php } ?>
 </div>
 
+<script type="text/javascript" src="<?php echo ROUTE_URL?>/js/post.js"></script>
 
 ﻿<?php  require ROUTE_APP.'/views/inc/footer.php';?>

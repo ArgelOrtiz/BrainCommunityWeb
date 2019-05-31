@@ -61,7 +61,6 @@ class Post extends Controller
     $id_post = $_POST['id_post'];
     $id_user = $_SESSION['id'];
 
-
     date_default_timezone_set('America/Mexico_City');
 
     $currentdate = date('y-m-d');
@@ -69,7 +68,7 @@ class Post extends Controller
     if ($_SESSION) {
       // code...
       $result = $this->postModel->setComment($id_post,$id_user,$comment,$currentdate);
-
+      //die();
       if ($result) {
         // code...
         $coments = $this->postModel->getCommentPost($id_post);

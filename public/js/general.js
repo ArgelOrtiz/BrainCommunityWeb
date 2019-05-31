@@ -126,3 +126,16 @@ function wrongUser(){
     }else{return false;}
 
   }
+
+  function comment(){
+    alert('test');
+    var comment = document.getElementById('comment').value;
+
+    if (comment == ' ' || comment == '') {
+      document.getElementById("comment").style.border = "red";
+      return false;
+    }else {
+      document.getElementById("comment").style.border = "black";
+      return true;
+    }
+  }
