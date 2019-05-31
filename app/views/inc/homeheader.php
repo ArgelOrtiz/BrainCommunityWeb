@@ -57,11 +57,11 @@
           <?php } ?>
 
         </ul>
-        <form class="navbar-form navbar-left" action="<?php echo ROUTE_URL.'/Home/search';?>" style="margin-left:30px;" method="get">
+        <form class="navbar-form navbar-left" action="<?php echo ROUTE_URL.'/Home/search';?>" style="margin-left:30px;" method="get" onsubmit="return toSearch()">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" name="post">
+            <input type="text" class="form-control" placeholder="Search" name="post" id="post">
             <div class="input-group-btn">
-              <button class="btn btn-default" type="submit">
+              <button class="btn btn-default" id="buttonId" type="submit">
                 <i class="glyphicon glyphicon-search"></i>
               </button>
             </div>
