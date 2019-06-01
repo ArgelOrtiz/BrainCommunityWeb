@@ -64,9 +64,19 @@
       <label>Descripcion</label><br>
       <input style="width:100%" type="text"name="summary" id="summary" value="<?php echo $post->summary; ?>" class="form_control"><br>
       <label>Prioridad</label><br>
-      <input style="width:100%" type="text"name="priority" id="priority" value="<?php echo $post->priority; ?>" class="form_control"><br>
+
+      <select class="form_control" name="priority" value="<?php echo $post->priority; ?>">
+        <option value="2">Alta</option>
+        <option value="1">Media</option>
+        <option value="0">Baja</option>
+      </select><br>
       <label>Estatus</label><br>
-      <input style="width:100%" type="text"name="status" id="status" value="<?php echo $post->status; ?>" |class="form_control"><br>
+
+      <select class="form_control" name="status" values="<?php echo $post->status; ?>">
+        <option value="0">Inactivo</option>
+        <option value="1">Activo</option>
+      </select>
+      <br>
       <input type="submit" class="btn btn-info float-right" value="Actualizar">
         </form>
     <!--FIN-->

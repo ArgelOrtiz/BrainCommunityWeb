@@ -145,13 +145,10 @@
     }
     public function updatePost($id, $title, $summary, $status,$priority){
 
-       $this->db->query(
-         "UPDATE category SET title = '$title', summary = '$summary',
-         priority = '$priority', status = '$status' where id = $post_id");
+       $this->db->query("UPDATE ic_post SET title = '$title', summary = '$summary',status = $status, priority = $priority  where id = $id");
 
-       $updated = $this->db->execute();
 
-       return $updated;
+       return $this->db->execute();
     }
   }
 
