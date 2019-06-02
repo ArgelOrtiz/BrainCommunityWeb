@@ -22,7 +22,7 @@
 
       $currentdate = date('y-m-d H:i:s');
 
-      $result = $this->issueModel->create($id,$reported,$title,$summary,$summary);
+      $result = $this->issueModel->create($id,$reported,$title,$summary,$currentdate);
 
       if ($result)
         $this->controller('Home');

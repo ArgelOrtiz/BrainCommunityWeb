@@ -30,7 +30,7 @@
           <h4 class="modal-title">Reportar a <?php echo $user->username; ?></h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <form class="modal-body issue-modal" action="<?php echo ROUTE_URL.'/Issue/create';?>" method="post" >
+        <form class="modal-body issue-modal" action="<?php echo ROUTE_URL.'/Issue/create';?>" method="post" onsubmit="return report()">
 
           <div class="title-content">
             <label for="">Describa la razon por la cual descea reportar a este usuario</label>
@@ -38,12 +38,12 @@
 
           <div class="content-modal form-group">
             <label for="">Titulo</label>
-            <input type="text" class="form-control" name="title"></input>
+            <input type="text" class="form-control" id="title" name="title"></input>
           </div>
 
           <div class="content-modal form-group">
             <label for="">Descripcion</label>
-            <textarea class="form-control"  name="summary" rows="8" cols="80"></textarea>
+            <textarea class="form-control"  id="summary" name="summary" rows="8" cols="80"></textarea>
           </div>
 
           <div class="content-modal">
@@ -136,3 +136,5 @@
   </div>
 
 </div>
+
+<script type="text/javascript" src="<?php echo ROUTE_URL?>/js/user.js"></script>
